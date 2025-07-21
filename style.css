@@ -9,12 +9,35 @@
 }
 body{
     font-family:Arial, Helvetica, sans-serif;
+    background: #f0ffff;
 }
 button{
     transition: transform .3s;
 }
 button:hover {
     transform: scale(1.03);
+}
+.section-head {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+.section-head  h2 {
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.section-head p {
+    margin: 20px 0 30px;
+    font-size: 15px;
+    color: #555;
+}
+.section-head  h3 {
+    font-weight: 400;
+    font-size: 17px;
+    cursor: pointer;
+    i{
+        margin-right: 10px;
+    }
 }
 header{
     width: 100%;
@@ -26,6 +49,7 @@ header{
     gap: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     position: fixed;
+    z-index: 100;
 }
 header .logo-nav {
     flex: 1;
@@ -98,7 +122,7 @@ header .sign button.btn-up {
 .landing h1 {
     font-size: 60px;
     span {
-        color: var(--main-color);
+        color:lightgreen;
     }
 }
 .landing p:first-of-type {
@@ -131,29 +155,6 @@ header .sign button.btn-up {
 /* flights */
 .flights {
     padding: 60px 20px;
-    background: #f0ffff;
-}
-.flights .info {
-    width: 700px;
-    margin: 0 auto;
-    text-align: center;
-}
-.flights .info h2 {
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-.flights .info p {
-    margin: 20px 0 30px;
-    font-size: 15px;
-    color: #555;
-}
-.flights .info h3 {
-    font-weight: 400;
-    font-size: 17px;
-    cursor: pointer;
-    i{
-        margin-right: 10px;
-    }
 }
 .flights .cards {
     margin: 40px 0;
@@ -248,10 +249,6 @@ header .sign button.btn-up {
         }
     }
 }
-.why {
-    padding: 40px 20px;
-    background: #f0ffff;
-}
 .why-me {
     width: 600px;
     text-align: center;
@@ -278,5 +275,205 @@ header .sign button.btn-up {
     background-color: rgb(47, 214, 47);
     i{
         margin-right: 10px;
+    }
+}
+/* popular */
+.popular {
+    margin: 60px 0;
+    padding: 60px 20px;
+}
+.popular .container {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+    padding: 10px;
+}
+.container .box {
+    background: #fff;
+    border-radius: var(--border-5);
+    padding-bottom: 20px; ;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .03);
+}
+.container .box .img {
+    margin-bottom: 10px;
+    overflow: hidden;
+    border-radius: var(--border-5);
+    position: relative;
+    img {
+        width: 100%;
+        height: 250px;
+        border-radius: var(--border-5) var(--border-5) 0 0;
+        transition: .3s ease;
+        filter: grayscale(100%);
+    }
+    img:hover {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+    }
+    span {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background: #fff;
+        border-radius: 30px;
+        font-size: 12px;
+        padding: 2px 5px;
+        i {
+            color: gold;
+        }
+    } 
+}
+.container .text {
+    padding: 0 10px;
+    margin-bottom: 15px;
+    h3 {
+        font-weight: normal;
+        margin-bottom: 5px;
+        i {
+            margin-right: 10px;
+            color: #50c878;
+        }
+    }
+    span {
+        font-size: 12px;
+        color: #555;
+    }
+}
+.container .prise-book {
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    p {
+        font-size: 13px;
+        color: #777;
+        span {
+            font-size: 16px;
+            color:#50c878;
+            font-weight: 600;
+        }
+    }
+    button {
+        border: 0;
+        outline: 0;
+        border-radius: var(--border-5);
+        background-color: transparent;
+        color: #222;
+        font-weight: 700;
+        padding: 5px 10px;
+        cursor: pointer;
+        border: 1px solid #ddd;
+    }
+    button:hover {
+        background-color: var(--main-color);
+        color: #fff;
+    }
+}
+/* choose me  */
+.choose-me .parent {
+    margin: 40px 30px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+}
+.choose-me .parent .child {
+    padding: 20px;
+    background: #fff;
+    text-align: center;
+    border-radius: var(--border-5);
+    box-shadow: 0 0 5px rgba(0, 0, 0, .03);
+    i {
+        padding: 20px;
+        background: var(--main-color);
+        color: #fff;
+        border-radius: 50%;
+        font-size: 20px;
+        margin-bottom: 30px;
+    }
+    h3 {
+        font-weight: normal;
+        margin-bottom: 10px;
+    }
+    p {
+        font-weight: 400;
+        color: #444;
+        font-size: 14px;
+        line-height: 1.7;
+    }
+}
+/* footer  */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 50px 30px;
+}
+footer .content{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    padding-bottom: 30px;
+} 
+ul li {
+    list-style: none;
+    margin-bottom: 15px;
+    cursor: pointer;
+    font-size: 14px;
+}
+footer .one{
+    h3 {
+        font-size: 18px;    
+        margin-bottom: 30px;
+        i {
+            padding: 10px;
+            background: var(--main-color);
+            margin-right: 10px;
+            border-radius: var(--border-5);
+        }
+    }
+    p{
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    .social {
+        i {
+            display: inline-block;
+            border-radius: var(--border-5);
+            background: rgba(255, 255, 255, .1);
+            margin-right: 10px;
+            padding: 10px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+        i.fa-facebook-f:hover {
+            background-color: #1877f2;
+        }
+         i.fa-square-x-twitter:hover {
+            background-color: #000;
+        }
+         i.fa-instagram:hover {
+            background-color: #E1306C;
+        }
+    }
+}
+footer .two h4 ,.three h4, .four h4 {
+    margin-bottom: 30px;
+}
+.four h5 , .four p {
+    margin-bottom: 15px;
+    i {
+        margin-right: 10px;
+        color: var(--main-color);
+    }
+}
+.four p {
+    font-size: 14px;
+}
+.footer {
+    border-top: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    ul {
+        display: flex;
+        gap: 20px;
     }
 }
