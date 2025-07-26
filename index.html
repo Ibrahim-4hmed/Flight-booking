@@ -48,69 +48,34 @@
             <p>Exclusive deals from your trusted airline agent. Contact me on Whatsapp for instant booking!</p>
             <h3><i class="fa-brands fa-whatsapp"></i>Whatsapp:+1234567890</h3>
         </div>
-        <div class="filter"></div>
+        <div class="filter">
+            <h4><i class="fa-solid fa-filter"></i>Filter Flights</h4>
+            <ul class="filter-nav">
+                <li data-filter="all" class="active">All</li>
+                <li data-filter="Tarco">Tarco</li>
+                <li data-filter="Badr">Badr</li>
+                <li data-filter="Sudaner">Sudaner</li>
+            </ul>
+        </div>
         <div class="cards">
-            <div class="card">
+            <template id="template">
+                <div class="card">
                 <div class="head">
                     <i class="fa-solid fa-plane"></i>
-                    <p>Gaza<i class="fa-solid fa-arrow-right"></i>Douha<br><span>Tarco Air Line</span></p>
-                    <span class="red">5 left</span>
+                    <p><span class="from"></span><i class="fa-solid fa-arrow-right"></i><span class="to"></span><br>
+                    <span class="airline"></span></p>
+                    <span class="red left"></span>
                 </div>
-                <div class="date">
-                    <span><i class="fa-regular fa-calendar"></i> Wed,Des 25</span>
-                    <span><i class="fa-regular fa-clock"></i>1:45AM*12h 30m</span>
+                <div class="date-card">
+                    <span class="date"><i class="fa-regular fa-calendar"></i></span>
+                    <span class="time"><i class="fa-regular fa-clock"></i></span>
                 </div>
-                <div class="price">
-                    <p><i class="fa-solid fa-dollar-sign"></i>$720 <span>Business</span></p>
-                    <button class="book-now"><i class="fa-brands fa-whatsapp"></i>Book on Whatsapp</button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="head">
-                    <i class="fa-solid fa-plane"></i>
-                    <p>Khartoum<i class="fa-solid fa-arrow-right"></i>Cairo<br><span>Egyption Air Line</span></p>
-                    <span class="red">8 left</span>
-                </div>
-                <div class="date">
-                    <span><i class="fa-regular fa-calendar"></i> Wed,Des 25</span>
-                    <span><i class="fa-regular fa-clock"></i>1:45AM*12h 30m</span>
-                </div>
-                <div class="price">
-                    <p><i class="fa-solid fa-dollar-sign"></i>$720 <span>Business</span></p>
-                    <button class="book-now"><i class="fa-brands fa-whatsapp"></i>Book on Whatsapp</button>
+                <div class="price-card">
+                    <p><i class="fa-solid fa-dollar-sign"></i><span class="price"></span> <span class="cls"></span></p>
+                    <button class="book-now"><i class="fa-brands fa-whatsapp"></i>Book on WhatsApp</button>
                 </div>
             </div>
-            <div class="card">
-                <div class="head">
-                    <i class="fa-solid fa-plane"></i>
-                    <p>Khartoum<i class="fa-solid fa-arrow-right"></i>Entbee<br><span>Badr Air Line</span></p>
-                    <span class="green">13 left</span>
-                </div>
-                <div class="date">
-                    <span><i class="fa-regular fa-calendar"></i> Wed,Des 25</span>
-                    <span><i class="fa-regular fa-clock"></i>1:45AM*12h 30m</span>
-                </div>
-                <div class="price">
-                    <p><i class="fa-solid fa-dollar-sign"></i>$520 <span>Business</span></p>
-                    <button class="book-now"><i class="fa-brands fa-whatsapp"></i>Book on Whatsapp</button>
-                </div>
-            </div>
-            <div class="card">
-                <div class="head">
-                    <i class="fa-solid fa-plane"></i>
-                    <p>Riyad<i class="fa-solid fa-arrow-right"></i>New York<br><span>Sudai Air Line</span></p>
-                    <span class="green">18 left</span>
-                </div>
-                <div class="date">
-                    <span><i class="fa-regular fa-calendar"></i> Wed,Nov 15</span>
-                    <span><i class="fa-regular fa-clock"></i>1:45AM*12h 30m</span>
-                </div>
-                <div class="price">
-                    <p><i class="fa-solid fa-dollar-sign"></i>$1,20 <span>Economic</span></p>
-                    <button class="book-now"><i class="fa-brands fa-whatsapp"></i>Book on Whatsapp</button>
-                </div>
-            </div>
+        </template>
         </div>
     </div>
 
@@ -302,6 +267,6 @@
             </ul>
         </div>
     </footer>
-    <script src="main.js"></script>
+    <script type="module" src="main.js"></script>
 </body>
 </html>

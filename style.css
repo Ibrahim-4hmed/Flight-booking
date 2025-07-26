@@ -67,8 +67,9 @@ header .logo-nav h1 {
 }
 header .logo-nav ul {
     display: flex;
+    align-items: center;
     li {
-        margin-left: 30px;
+        margin: auto  30px auto 0;
         list-style: none;
         a {
             text-decoration: none;
@@ -156,35 +157,66 @@ header .sign button.btn-up {
 .flights {
     padding: 60px 20px;
 }
-.flights .cards {
+.filter {
+    background: #fff;
+    width: 500px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: var(--border-5);
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+    h4 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: normal;
+        i {
+            margin-right: 10px;
+        }
+    }
+}
+.filter ul li {
+    margin-right: 30px;
+    padding: 7px 15px;
+    border-radius: var(--border-5);
+    font-weight: 500;
+    border: 1px solid var(--main-color);
+}
+.active{
+    background-color: var(--main-color);
+    color: #fff;
+    border: 0;
+}
+.flights .wrapper {
     margin: 40px 0;
     display: grid;
     grid-template-columns: auto auto;
     gap: 20px;
 }
-.flights .cards .card {
+.flights .wrapper .card {
     background: #fff;
     border-radius: var(--border-5);
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, .03);
 }
-.flights .cards .card .head {
+.flights .wrapper .card .head {
     display: flex;
     margin-bottom: 15px;
     i {
         margin-right: 10px;
         padding: 5px;
     }
-    p {
+    .from,.to {
         font-weight: 600;
         i {
             font-size: 10px;
         }
-        span {
+    }
+    .airline {
             font-size: 12px;
             font-weight: normal;
             color: #777;
-        }
     }
     > span {
         margin-left: auto;
@@ -196,12 +228,9 @@ header .sign button.btn-up {
     }
 }
 .red {
-    background: red;
+    background: rgb(207, 80, 207);
 }
-.green {
-    background: green;
-}
-.flights .cards .card .date {
+.flights .wrapper .card .date-card {
     display: flex;
     font-size: 12px;
     color: #555;
@@ -216,7 +245,7 @@ header .sign button.btn-up {
         }
     }
 }
-.flights .cards .card  .price {
+.flights .wrapper  .price-card {
     display: flex;
     justify-content: space-between;
     p {
@@ -226,7 +255,7 @@ header .sign button.btn-up {
             color: var(--main-color);
             margin-right: 10px;
         }
-        span {
+        .cls {
             font-size: 12px;
             border: 1px solid #ddd;
             border-radius: 20px;
@@ -235,17 +264,18 @@ header .sign button.btn-up {
             margin-left: 10px;
         }
     }
-    button {
+    .book-now {
         padding: 10px 25px;
         color: #fff;
         background: rgb(47, 214, 47);
         border: 0;
         outline: 0;
         border-radius: var(--border-5);
-        font-weight: 500;
+        font-weight: 600;
         cursor: pointer;
         i {
             margin-right: 10px;
+            font-weight: bold;
         }
     }
 }
@@ -404,7 +434,7 @@ header .sign button.btn-up {
 footer {
     background: #333;
     color: #fff;
-    padding: 50px 30px;
+    padding: 50px 30px 20px;
 }
 footer .content{
     display: grid;

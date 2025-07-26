@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "from": "Chicago",
+    "to": "Tokyo",
+    "airline": "Badr",
+    "date": "Thu, Dec 26",
+    "time": "2:20PM*13h 15m",
+    "price": "$580",
+    "cls": "Business",
+    "left": "25 left"
+  },
+  {
+    "id": "2",
+    "from": "New York",
+    "to": "Paris",
+    "airline": "Tarco",
+    "date": "Fri, Jan 10",
+    "time": "5:45PM*7h 30m",
+    "price": "$670",
+    "cls": "Economy",
+    "left": "18 left"
+  },
+  {
+    "id": "3",
+    "from": "Los Angeles",
+    "to": "Dubai",
+    "airline": "Sudaner",
+    "date": "Mon, Feb 3",
+    "time": "10:00AM*15h 20m",
+    "price": "$820",
+    "cls": "First",
+    "left": "5 left"
+  },
+  {
+    "id": "4",
+    "from": "Toronto",
+    "to": "London",
+    "airline": "Badr",
+    "date": "Sat, Mar 15",
+    "time": "11:30PM*6h 50m",
+    "price": "$590",
+    "cls": "Economy",
+    "left": "12 left"
+  },
+  {
+    "id": "5",
+    "from": "San Francisco",
+    "to": "Beijing",
+    "airline": "Tarco",
+    "date": "Tue, Apr 22",
+    "time": "8:00AM*12h 40m",
+    "price": "$750",
+    "cls": "Business",
+    "left": "20 left"
+  },
+  {
+    "id": "6",
+    "from": "Miami",
+    "to": "Madrid",
+    "airline": "Sudaner",
+    "date": "Wed, May 14",
+    "time": "9:15PM*9h 10m",
+    "price": "$610",
+    "cls": "Economy",
+    "left": "16 left"
+  },
+  {
+    "id": "7",
+    "from": "Seattle",
+    "to": "Seoul",
+    "airline": "Badr",
+    "date": "Thu, Jun 5",
+    "time": "7:30AM*11h 45m",
+    "price": "$720",
+    "cls": "First",
+    "left": "9 left"
+  },
+  {
+    "id": "8",
+    "from": "Boston",
+    "to": "Rome",
+    "airline": "Tarco",
+    "date": "Sun, Jul 20",
+    "time": "4:00PM*8h 25m",
+    "price": "$645",
+    "cls": "Business",
+    "left": "7 left"
+  },
+  {
+    "id": "9",
+    "from": "Houston",
+    "to": "Berlin",
+    "airline": "Sudaner",
+    "date": "Mon, Aug 18",
+    "time": "6:50AM*10h 5m",
+    "price": "$685",
+    "cls": "Economy",
+    "left": "14 left"
+  },
+  {
+    "id": "10",
+    "from": "Denver",
+    "to": "Istanbul",
+    "airline": "Badr",
+    "date": "Fri, Sep 12",
+    "time": "3:25PM*13h 50m",
+    "price": "$770",
+    "cls": "Business",
+    "left": "11 left"
+  }
+]
