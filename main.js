@@ -1,4 +1,4 @@
-const flightPromise = await fetch("./data.json")
+const flightPromise = await fetch("data.json")
 const flightsData = await flightPromise.json();
 
 console.log(flightsData)
@@ -63,7 +63,9 @@ function filterFlights(flight){
 
 
 
-
+// footer
+const copyRight = new Date(); 
+document.querySelector(".cRight").textContent = copyRight.getFullYear()
 
 
 

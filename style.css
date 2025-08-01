@@ -149,9 +149,13 @@ header .sign button.btn-up {
     font-weight: bold;
     cursor: pointer;
     margin-top: 50px;
-    i {
-        margin-right: 10px;
+    a{
+        text-decoration: none;
+        color: #fff;
     }
+}
+.landing button i {
+        margin-right: 10px;
 }
 /* flights */
 .flights {
