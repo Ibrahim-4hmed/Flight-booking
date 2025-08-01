@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <i class="fa-solid fa-plane-up"></i>
+            <div class="text">
+                <h1>Flights Dashboard</h1>
+                <p>Manage your flight inventory</p>
+            </div>
+        </div>
+        <nav>
+            <button>Import JSON</button>
+            <button><i class="fa-solid fa-download"></i>Export JSON</button>
+            <button class="add-flight">+  Add Flight</button>
+        </nav>
+    </header>
+    <main>
+        <section class="detials">
+            <div>
+                <i class="fa-solid fa-plane-up"></i>
+                <div class="text">
+                    <h3>5</h3>
+                    <p>Total Flights</p>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-location-dot"></i>
+                <div class="text">
+                    <h3>5</h3>
+                    <p>Destinations</p>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-plane-circle-check"></i>
+                <div class="text">
+                    <h3>3</h3>
+                    <p>Airlines</p>
+                </div>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-money-check-dollar"></i>
+                <div class="text">
+                    <h3>$6,848</h3>
+                    <p>Total Value</p>
+                </div>
+            </div>
+        </section>
+        <section class="filter">
+            <div class="input" >
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" placeholder="Search flights by route, or flight number...">
+            </div>
+            <i class="fa-solid fa-filter"></i>
+            <span>5 flights</span>
+        </section>
+    </main>
+    <script src="admin.js"></script>
+</body>
+</html>
