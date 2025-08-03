@@ -8,6 +8,7 @@
     <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div id="overlay"></div>
     <header>
         <div>
             <i class="fa-solid fa-plane-up"></i>
@@ -27,7 +28,7 @@
             <div>
                 <i class="fa-solid fa-plane-up"></i>
                 <div class="text">
-                    <h3>5</h3>
+                    <h3 class="total-flights">5</h3>
                     <p>Total Flights</p>
                 </div>
             </div>
@@ -35,7 +36,7 @@
             <div>
                 <i class="fa-solid fa-location-dot"></i>
                 <div class="text">
-                    <h3>5</h3>
+                    <h3 class="destinations">5</h3>
                     <p>Destinations</p>
                 </div>
             </div>
@@ -43,7 +44,7 @@
             <div>
                 <i class="fa-solid fa-plane-circle-check"></i>
                 <div class="text">
-                    <h3>3</h3>
+                    <h3 class="airlines">3</h3>
                     <p>Airlines</p>
                 </div>
             </div>
@@ -51,7 +52,7 @@
             <div>
                 <i class="fa-solid fa-money-check-dollar"></i>
                 <div class="text">
-                    <h3>$6,848</h3>
+                    <h3>$ <span  class="total-value"></span></h3>
                     <p>Total Value</p>
                 </div>
             </div>
@@ -64,7 +65,139 @@
             <i class="fa-solid fa-filter"></i>
             <span>5 flights</span>
         </section>
+        <section class="flight-cards">
+            <template id="template">
+            <article class="flight-card">
+                <div class="row-one">
+                    <div>
+                        <i class="fa-solid fa-plane-up " style="color: rgb(91, 91, 189);"></i>
+                        <span class="flight-number">BA117</span>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-pen-to-square edit-flight-btn" style="display: block;" ></i>
+                        <i class="fa-regular fa-trash-can delete"></i>
+                    </div>
+                </div>
+                <div class="row-two">
+                    <p><span class="from">New York (JFK)</span><br>From</p>
+                    <i class="fa-solid fa-plane-departure" ></i>
+                    <p id="to"><span class="to">London (LHR)</span><br>To</p>
+                </div>
+                <div class="row-three">
+                    <div>
+                        <i class="fa-regular fa-calendar"></i>
+                        <p><span class="date">Thu, Feb 15</span><br>Date</p>
+                    </div>
+                    <div>
+                        <i class="fa-regular fa-clock"></i>
+                        <p><span class="move-time">21:30</span><br><span class="time duration">7h 20m</span></p>
+                    </div>
+                </div>
+                <div class="row-four">
+                    <h3><span class="airline">British Airways</span><br>Airline</h3>
+                    <h3><span class="dollar">$</span><span class="price">$899</span><br>Total Price</h3>
+                </div>
+            </article>
+            </template>
+        </section>
+        <section class="flight-popup add-flight-popup">
+            <div class="head">
+                <h1>Add New Flight</h1>
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+            <form action="">
+                <div class="from-to-air-num">
+                    <label for="from">
+                        From <br>
+                        <input type="text" id="from" name="from" placeholder="e.g., New York(JFK)">
+                    </label>
+                    <label for="to">
+                        To <br>
+                        <input type="text" id="to" name="to" placeholder="e.g., New York(JFK)">
+                    </label>
+                    <label for="airline">
+                        Airline <br>
+                        <input type="text" id="airline" name="airline" placeholder="e.g., Badr">
+                    </label>
+                    <label for="flight-number">
+                        Flight Number <br>
+                        <input type="text" id="flight-number" name="flight-number" placeholder="e.g., BA117">
+                    </label>
+                </div>
+                <div class="time-date-duration">
+                    <label for="date">
+                        Date <br>
+                        <input type="date" id="date" name="date">
+                    </label>
+                    <label for="time">
+                        Time <br>
+                        <input type="time" id="time" name="time">
+                    </label>
+                    <label for="duration">
+                        Duration <br>
+                        <input type="duration" id="duration" name="duration" placeholder="e.g., 7h 20m">
+                    </label>
+                </div>
+                <label class="price" for="price">
+                    Price ($) <br>
+                    <input type="number" min="0" id="price" name="price" placeholder="0">
+                </label>
+                <div class="btns">
+                    <button class="add">Add Flight</button>
+                    <button class="cancel">Cancel</button>
+                </div>
+            </form>
+        </section>
+        <section class="flight-popup edit-flight-popup">
+            <div class="head">
+                <h1>Edit Flight</h1>
+                <i class="fa-solid fa-xmark can-edit"></i>
+            </div>
+            <form action="">
+                <div class="from-to-air-num">
+                    <label for="from">
+                        From <br>
+                        <input type="text" id="from" name="from" placeholder="e.g., New York(JFK)">
+                    </label>
+                    <label for="to">
+                        To <br>
+                        <input type="text" id="to" name="to" placeholder="e.g., New York(JFK)">
+                    </label>
+                    <label for="airline">
+                        Airline <br>
+                        <input type="text" id="airline" name="airline" placeholder="e.g., Badr">
+                    </label>
+                    <label for="flight-number">
+                        Flight Number <br>
+                        <input type="text" id="flight-number" name="flight-number" placeholder="e.g., BA117">
+                    </label>
+                </div>
+                <div class="time-date-duration">
+                    <label for="date">
+                        Date <br>
+                        <input type="date" id="date" name="date">
+                    </label>
+                    <label for="time">
+                        Time <br>
+                        <input type="time" id="time" name="time">
+                    </label>
+                    <label for="duration">
+                        Duration <br>
+                        <input type="duration" id="duration" name="duration" placeholder="e.g., 7h 20m">
+                    </label>
+                </div>
+                <label class="price" for="price">
+                    Price ($) <br>
+                    <input type="number" min="0" id="price" name="price" placeholder="0">
+                </label>
+                <div class="btns">
+                    <button class="add">Add Flight</button>
+                    <button class="cancel cancel-edit">Cancel</button>
+                </div>
+            </form>
+        </section>
     </main>
-    <script src="admin.js"></script>
+    </main>
+    <script type="module" src="admin.js"></script>
 </body>
 </html>

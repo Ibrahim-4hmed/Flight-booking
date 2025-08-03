@@ -1,7 +1,7 @@
 const flightPromise = await fetch("data.json")
 const flightsData = await flightPromise.json();
 
-console.log(flightsData)
+// console.log(flightsData)
 
 const template = document.getElementById("template")
 const wrapper = document.createElement("div");
@@ -13,6 +13,7 @@ flightsData.forEach(flight => {
     clone.querySelector(".airline").textContent = flight.airline;
     clone.querySelector(".date").textContent = flight.date;
     clone.querySelector(".time").textContent = flight.time;
+    clone.querySelector(".duration").textContent = flight.duration;
     clone.querySelector(".price").textContent = flight.price;
     clone.querySelector(".cls").textContent = flight.cls;
     clone.querySelector(".left").textContent = flight.left;
