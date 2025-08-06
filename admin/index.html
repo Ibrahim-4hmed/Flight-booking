@@ -19,7 +19,7 @@
         </div>
         <nav>
             <button>Import JSON</button>
-            <button><i class="fa-solid fa-download"></i>Export JSON</button>
+            <button class="export"><i class="fa-solid fa-download"></i>Export JSON</button>
             <button class="add-flight">+  Add Flight</button>
         </nav>
     </header>
@@ -105,7 +105,7 @@
                 <h1>Add New Flight</h1>
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <form action="">
+            <form action="" id="addFlightForm">
                 <div class="from-to-air-num">
                     <label for="from">
                         From <br>
@@ -121,7 +121,7 @@
                     </label>
                     <label for="flight-number">
                         Flight Number <br>
-                        <input type="text" id="flight-number" name="flight-number" placeholder="e.g., BA117">
+                        <input type="text" id="flight-number" name="flightNumber" placeholder="e.g., BA117">
                     </label>
                 </div>
                 <div class="time-date-duration">
