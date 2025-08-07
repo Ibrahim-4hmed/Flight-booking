@@ -290,6 +290,8 @@ label input {
     padding: 10px;
     margin-top: 5px;
     background-color: #eeeeee4b;
+    font-size: 16px;
+
 }
 label input:focus {
     outline: 2px solid var(--main-color);

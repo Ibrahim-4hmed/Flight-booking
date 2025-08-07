@@ -1,18 +1,5 @@
 [
   {
-    "id": "1",
-    "from": "Chicago",
-    "to": "Tokyo",
-    "airline": "Badr",
-    "date": "Thu, Dec 26",
-    "time": "2:20PM",
-    "duration": "13h 15m",
-    "price": 580,
-    "cls": "Business",
-    "left": "25 left",
-    "flightNumber": "BA117"
-  },
-  {
     "id": "3",
     "from": "Los Angeles",
     "to": "Dubai",
@@ -52,29 +39,16 @@
     "flightNumber": "D217"
   },
   {
-    "id": 1754483151149,
-    "from": "test",
-    "to": "sudia",
-    "airline": "British Airways",
-    "date": "2025-09-04",
-    "time": "15:29",
-    "duration": "12h 20m",
+    "id": 1754567500919,
+    "from": "Joba",
+    "to": "Tarablos",
+    "airline": "badr",
+    "date": "2025-08-20",
+    "time": "14:55",
+    "duration": "10h 45m",
     "price": "1000",
     "cls": "Business",
     "left": "25 left",
-    "flightNumber": "BA136"
-  },
-  {
-    "id": 1754483734594,
-    "from": "test2",
-    "to": "test2",
-    "airline": "test2",
-    "date": "2025-09-05",
-    "time": "16:35",
-    "duration": "10h 45m",
-    "price": 2000,
-    "cls": "Business",
-    "left": "25 left",
-    "flightNumber": "BA136"
+    "flightNumber": "E004"
   }
 ]
