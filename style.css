@@ -195,7 +195,7 @@ header .sign button.btn-up {
 .flights .wrapper {
     margin: 40px 0;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 .flights .wrapper .card {
@@ -292,7 +292,8 @@ header .sign button.btn-up {
     }
 }
 .why-me {
-    width: 600px;
+    /* width: 600px; */
+    width: fit-content;
     text-align: center;
     padding: 20px;
     margin: 0 auto;
@@ -326,7 +327,7 @@ header .sign button.btn-up {
 }
 .popular .container {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     padding: 10px;
 }
@@ -417,7 +418,7 @@ header .sign button.btn-up {
 .choose-me .parent {
     margin: 40px 20px;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 .choose-me .parent .child {
