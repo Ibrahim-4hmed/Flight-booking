@@ -18,134 +18,119 @@ button:hover {
     transform: scale(1.03);
 }
 .section-head {
-    width: 700px;
+    width: auto;
     margin: 0 auto;
     text-align: center;
 }
 .section-head  h2 {
     letter-spacing: 1px;
-    font-weight: 600;
+    font-size: 1.7em;
+    font-weight: normal;
 }
 .section-head p {
     margin: 20px 0 30px;
-    font-size: 15px;
-    color: #555;
-}
-.section-head  h3 {
-    font-weight: 400;
-    font-size: 17px;
-    cursor: pointer;
-    i{
-        margin-right: 10px;
-    }
+    font-size: 14px;
+    color: #222;
 }
 header{
     width: 100%;
-    padding: 10px 20px;
+    height: 68px;
+    padding: 10px 40px;
     background: #f9f9f9;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     position: fixed;
     z-index: 100;
 }
-header .logo-nav {
-    flex: 1;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-header .logo-nav h1 {
-    font-size: 30px;
+header .logo h1 {
+    font-size: 2.2em;
     cursor: pointer;
+    color: #50c878;
     i {
         margin-right: 10px;
         color: var(--main-color);
     }
 }
-header .logo-nav ul {
-    display: flex;
-    align-items: center;
+header nav ul {
+    text-align: right;
     li {
-        margin: auto  30px auto 0;
+        display: inline-block;
+        margin: auto 10px ;
         list-style: none;
         a {
             text-decoration: none;
             color: #000;
-            font-weight: 500;
+            font-size: 1.2em;
+            font-weight: normal;
+            transition: .5s ;
+            padding: 10px;
+            border-radius: var(--border-5) ;
+            font-weight: 600;
         }
     }
 }
-header .logo-nav ul li:hover a {
-    color: var(--main-color);
-}
-header .sign {
-    flex: 1;
-    display: flex;
-    gap: 30px;
-}
-header .sign p {
-    padding: 5px 0;
-    i{
-    margin-right: 10px;
+header nav .bargar {
+    width: 30px;
+    display: none;
+    span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        margin: 5px 0; 
+        background-color: #333;
     }
 }
-header .sign button {
-    padding: 5px 10px;
-    background: #fff;
-    border: 0;
-    outline: 0;
-    border-radius: var(--border-5);
-    box-shadow: 0 0 5px rgba(0, 0, 0, .03);
-    cursor: pointer;
-    font-weight: 600;
+@media (max-width:767px){
+    header nav ul {
+        display: none;
+    }
+    header nav .bargar {
+        display: block;
+    }
 }
-header .sign button.btn-in i {
-    margin-right: 10px;
-}
-header .sign button.btn-up {
-    background: var(--main-color);
-    color: #fff;
+header nav ul li a:hover  {
+    color: var(--main-color);
+    background-color: #50c87810;
 }
 /* landing */
 .landing {
     width: 100%;
-    height: 100vb;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("./flights-imges/flight-on07.jpeg");
+    background-image: url("./flights-imges/flight-on04.jpeg");
     background-size: cover;
+    position: relative;
 }
 .landing h1 {
-    font-size: 60px;
-    span {
-        color:lightgreen;
-    }
+    font-size: 3.5em;
+    color: #0Bf623;
 }
 .landing p:first-of-type {
-    font-size: 25px;
+    font-size: 1.5em;
     max-width:800px;
     text-align: center;
+    color: #fff;
 }
 .landing p {
-    color: #555;
+    color: #fff;
     margin: 10px 0;
     i {
         color: gold;
     }
 }
 .landing button {
-    padding: 10px 30px;
+    padding: 15px 25px;
     border: 0;
     outline: 0;
     border-radius: var(--border-5);
     color: #fff;
-    background: rgb(13, 219, 13);
-    font-size: 16px;
+    background: #0Bf623;
+    font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
     margin-top: 50px;
@@ -163,13 +148,15 @@ header .sign button.btn-up {
 }
 .filter {
     background: #fff;
-    width: 500px;
+    width: auto;
     margin: 30px auto;
     padding: 20px;
     border-radius: var(--border-5);
+    box-shadow: 0 0 4px rgba(0, 0, 0, .05);
     ul {
         display: flex;
         justify-content: center;
+        gap: 20px;
     }
     h4 {
         text-align: center;
@@ -181,7 +168,6 @@ header .sign button.btn-up {
     }
 }
 .filter ul li {
-    margin-right: 30px;
     padding: 7px 15px;
     border-radius: var(--border-5);
     font-weight: 500;
@@ -190,13 +176,14 @@ header .sign button.btn-up {
 .active{
     background-color: var(--main-color);
     color: #fff;
-    border: 0;
+}
+.filter ul li:not(.active):hover {
+    background-color: #50c8781e;
 }
 .flights .wrapper {
-    margin: 40px 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    gap: 15px;
 }
 .flights .wrapper .card {
     background: #fff;
@@ -207,36 +194,29 @@ header .sign button.btn-up {
 .flights .wrapper .card .head {
     display: flex;
     margin-bottom: 15px;
+    text-wrap: nowrap;
+    position: relative;
     i {
-        margin-right: 10px;
+        margin-right: 5px;
         padding: 5px;
     }
     .from,.to {
-        font-weight: 600;
-        i {
-            font-size: 10px;
-        }
+        font-size: 1.4em;
+        font-weight: normal;
     }
     .flight-number {
-        margin-left: 20px;
+        position: absolute;
+        right: 5px;
         background-color: #f0ffff;
         font-weight: 600;
         border-radius:50px;
         padding: 5px 10px;
-        font-size: 13px;
+        font-size: .89em
     }
     .airline {
-            font-size: 12px;
+            font-size: 11px;
             font-weight: normal;
-            color: #777;
-    }
-    > span {
-        margin-left: auto;
-        font-size: 12px;
-        padding: 2px 5px;
-        height: fit-content;
-        color: #fff;
-        border-radius: var(--border-5);
+            color: #333;
     }
 }
 .red {
@@ -260,30 +240,32 @@ header .sign button.btn-up {
 .flights .wrapper  .price-card {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     p {
-        font-weight: 600;
-        i {
-            font-size: 12px;
-            color: var(--main-color);
-            margin-right: 10px;
-        }
+        font-weight: 900;
+        color: #1877f2;
         .cls {
             font-size: 12px;
             border: 1px solid #ddd;
             border-radius: 20px;
             font-weight: 300;
             padding: 2px 5px;
-            margin-left: 10px;
+            margin-left: 20px;
+            color: #333;
+        }
+        .price {
+            font-size: 1.3em;
         }
     }
     .book-now {
-        padding: 10px 25px;
+        padding: 10px 20px;
         color: #fff;
         background: rgb(47, 214, 47);
         border: 0;
         outline: 0;
         border-radius: var(--border-5);
         font-weight: 600;
+        font-size: .9em;
         cursor: pointer;
         i {
             margin-right: 10px;
@@ -292,37 +274,41 @@ header .sign button.btn-up {
     }
 }
 .why-me {
-    /* width: 600px; */
-    width: fit-content;
+    width: auto;
     text-align: center;
-    padding: 20px;
+    padding: 20px ;
     margin: 0 auto;
     background: #fff;
     border-radius: var(--border-5);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, .05);
 }
 .why-me h2 {
     margin-bottom: 15px;
+    font-size: 1.6em;
 }
 .why-me p {
-    color: #666;
+    color: #444;
     line-height: 1.6;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 .why-me button {
     border: 0;
     outline: 0;
-    padding: 10px 25px;
+    padding: 10px 20px;
+    font-size: 1em;
+    font-weight: bold;
     color: #fff;
     border-radius: var(--border-5);
     cursor: pointer;
     background-color: rgb(47, 214, 47);
     i{
         margin-right: 10px;
+        font-weight: bold;
     }
 }
 /* popular */
 .popular {
-    margin: 60px 0;
+    margin: 0;
     padding: 60px 40px;
 }
 .popular .container {
@@ -347,7 +333,7 @@ header .sign button.btn-up {
         height: 250px;
         border-radius: var(--border-5) var(--border-5) 0 0;
         transition: .3s ease;
-        filter: grayscale(100%);
+        filter: grayscale(30%);
     }
     img:hover {
         transform: scale(1.05);
@@ -363,6 +349,7 @@ header .sign button.btn-up {
         padding: 2px 5px;
         i {
             color: gold;
+            margin-right: 3px;
         }
     } 
 }
@@ -372,27 +359,30 @@ header .sign button.btn-up {
     h3 {
         font-weight: normal;
         margin-bottom: 5px;
+        font-size: 1.3em;
         i {
             margin-right: 10px;
             color: #50c878;
         }
     }
     span {
-        font-size: 12px;
-        color: #555;
+        font-size: 13px;
+        color: #333;
     }
 }
 .container .prise-book {
     padding: 0 10px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0;
     p {
         font-size: 13px;
-        color: #777;
+        color: #222;
         span {
-            font-size: 16px;
+            font-size: 1.7em;
+            font-weight: bold;
             color:#50c878;
-            font-weight: 600;
         }
     }
     button {
@@ -401,14 +391,17 @@ header .sign button.btn-up {
         border-radius: var(--border-5);
         background-color: transparent;
         color: #222;
-        font-weight: 700;
-        padding: 5px 10px;
+        font-weight: 600;
+        padding: 10px 20px;
+        font-size: .9em;
         cursor: pointer;
         border: 1px solid #ddd;
+        transition: .5s;
     }
     button:hover {
         background-color: var(--main-color);
         color: #fff;
+        border: 0;
     }
 }
 /* choose me  */
@@ -433,17 +426,19 @@ header .sign button.btn-up {
         color: #fff;
         border-radius: 50%;
         font-size: 20px;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
     h3 {
-        font-weight: normal;
+        font-weight: 600;
         margin-bottom: 10px;
+        font-size: 1.4em;
+        color: #50c878;
     }
     p {
         font-weight: 400;
-        color: #444;
+        color: #333;
         font-size: 14px;
-        line-height: 1.7;
+        line-height: 1.5;
     }
 }
 /* footer  */
@@ -454,7 +449,7 @@ footer {
 }
 footer .content{
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 40px;
     padding-bottom: 30px;
 } 
@@ -466,27 +461,30 @@ ul li {
 }
 footer .one{
     h3 {
-        font-size: 18px;    
-        margin-bottom: 30px;
+        font-size: 1.8em;    
+        margin:0 0 10px ;
+        color: #50c878;
         i {
             padding: 10px;
-            background: var(--main-color);
             margin-right: 10px;
             border-radius: var(--border-5);
         }
     }
     p{
         margin-bottom: 20px;
-        line-height: 1.5;
+        line-height: 1.4;
     }
     .social {
+        display: flex;
         i {
-            display: inline-block;
+            display: block;
+            width: 40px;
+            text-align: center;
             border-radius: var(--border-5);
             background: rgba(255, 255, 255, .1);
-            margin-right: 10px;
+            margin-right: 15px;
             padding: 10px;
-            font-size: 18px;
+            font-size: 1.4em;
             cursor: pointer;
         }
         i.fa-facebook-f:hover {
@@ -501,7 +499,8 @@ footer .one{
     }
 }
 footer .two h4 ,.three h4, .four h4 {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    font-size: 1.3em;
 }
 .four h5 , .four p {
     margin-bottom: 15px;
@@ -517,7 +516,14 @@ footer .two h4 ,.three h4, .four h4 {
     border-top: 1px solid #ccc;
     display: flex;
     justify-content: space-between;
-    padding: 15px 0;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 15px 0 0 ;
+    .skyWing {
+        font-size: 1.3em;
+        color: #50c878;
+        font-weight: 600;
+    }
     ul {
         display: flex;
         gap: 20px;

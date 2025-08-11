@@ -16,9 +16,7 @@ flightsData.forEach(flight => {
     clone.querySelector(".duration").textContent = flight.duration;
     clone.querySelector(".price").textContent = flight.price;
     clone.querySelector(".cls").textContent = flight.cls;
-    clone.querySelector(".left").textContent = flight.left;
-
-    
+    clone.querySelector(".flight-number").textContent = flight.flightNumber;
     wrapper.appendChild(clone);
 });
 document.querySelector(".cards").appendChild(wrapper);

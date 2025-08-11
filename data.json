@@ -9,7 +9,7 @@
     "duration": "3h 45m",
     "price": "750",
     "cls": "Economy",
-    "left": "15 left",
+  
     "flightNumber": "EG101"
   },
   {
@@ -22,7 +22,7 @@
     "duration": "7h 55m",
     "price": "1500",
     "cls": "First Class",
-    "left": "5 left",
+  
     "flightNumber": "BA203"
   },
   {
@@ -35,7 +35,7 @@
     "duration": "2h 40m",
     "price": "450",
     "cls": "Economy",
-    "left": "22 left",
+  
     "flightNumber": "TK305"
   },
   {
@@ -48,7 +48,7 @@
     "duration": "2h 5m",
     "price": "380",
     "cls": "Economy",
-    "left": "10 left",
+
     "flightNumber": "AF110"
   },
   {
@@ -61,7 +61,6 @@
     "duration": "9h 25m",
     "price": "1800",
     "cls": "Business",
-    "left": "8 left",
     "flightNumber": "QF500"
   },
   {
@@ -74,7 +73,6 @@
     "duration": "4h 10m",
     "price": "600",
     "cls": "Economy",
-    "left": "18 left",
     "flightNumber": "UA702"
   },
   {
@@ -87,7 +85,6 @@
     "duration": "1h 20m",
     "price": "220",
     "cls": "Economy",
-    "left": "30 left",
     "flightNumber": "IB404"
   },
   {
@@ -100,7 +97,6 @@
     "duration": "8h 15m",
     "price": "1200",
     "cls": "Business",
-    "left": "12 left",
     "flightNumber": "QR908"
   },
   {
@@ -113,7 +109,6 @@
     "duration": "5h 10m",
     "price": "950",
     "cls": "Economy",
-    "left": "16 left",
     "flightNumber": "EK213"
   },
   {
@@ -126,7 +121,6 @@
     "duration": "4h 50m",
     "price": "500",
     "cls": "Economy",
-    "left": "20 left",
     "flightNumber": "AC345"
   }
 ]
