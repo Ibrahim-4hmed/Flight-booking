@@ -60,8 +60,6 @@ function filterFlights(flight){
 
 
 
-
-
 // footer
 const copyRight = new Date(); 
 document.querySelector(".cRight").textContent = copyRight.getFullYear()

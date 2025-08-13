@@ -18,7 +18,7 @@ button:hover {
     transform: scale(1.03);
 }
 .section-head {
-    width: auto;
+    width: fit-content;
     margin: 0 auto;
     text-align: center;
 }
@@ -148,7 +148,7 @@ header nav ul li a:hover  {
 }
 .filter {
     background: #fff;
-    width: auto;
+    width: fit-content;
     margin: 30px auto;
     padding: 20px;
     border-radius: var(--border-5);
@@ -193,7 +193,9 @@ header nav ul li a:hover  {
 }
 .flights .wrapper .card .head {
     display: flex;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding-bottom:20px ;
+    border-bottom: 1px solid #eee;
     text-wrap: nowrap;
     position: relative;
     i {
@@ -201,8 +203,8 @@ header nav ul li a:hover  {
         padding: 5px;
     }
     .from,.to {
-        font-size: 1.4em;
-        font-weight: normal;
+        font-size: 1.6em;
+        font-weight: 500;
     }
     .flight-number {
         position: absolute;
@@ -211,12 +213,14 @@ header nav ul li a:hover  {
         font-weight: 600;
         border-radius:50px;
         padding: 5px 10px;
-        font-size: .89em
+        font-size: .89em;
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, .03);
+
     }
     .airline {
             font-size: 11px;
             font-weight: normal;
-            color: #333;
+            color: #666;
     }
 }
 .red {
@@ -224,13 +228,13 @@ header nav ul li a:hover  {
 }
 .flights .wrapper .card .date-card {
     display: flex;
+    justify-content: space-around;
     font-size: 12px;
     color: #555;
-    padding-bottom :10px; 
+    padding-bottom :20px; 
     margin-bottom: 20px;
     border-bottom: 1px solid #eee;
-    span {
-        flex: 1;
+    p {
         i {
             margin-right: 10px;
             color: var(--main-color);
@@ -274,7 +278,7 @@ header nav ul li a:hover  {
     }
 }
 .why-me {
-    width: auto;
+    width: fit-content;
     text-align: center;
     padding: 20px ;
     margin: 0 auto;

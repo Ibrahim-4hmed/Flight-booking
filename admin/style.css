@@ -41,9 +41,11 @@ header {
     h1 {
         margin-bottom: 4px;
         font-size: 30px;
+        color: var(--main-color);
     }
     p{
         color: #555;
+        font-size: .9em;
     }
 }
 header button {
@@ -210,7 +212,7 @@ input::placeholder {
     margin-bottom: 30px;
 }
 .row-three > div {
-    flex: 1;
+    flex: 4;
     display: flex;
     align-items: center;
     i {
@@ -229,6 +231,9 @@ input::placeholder {
         font-size: 11px;
         color: #888;
     }
+}
+.row-three .time-div {
+    flex: 1;
 }
 .row-four {
     margin-bottom: 0;
@@ -347,6 +352,17 @@ form button.add:hover {
     flex-direction: column;
     align-items: center;
     gap: 30px;
+  }
+  header nav {
+    display: flex;
+  }
+  header button {
+    height: fit-content;
+    text-wrap:nowrap;
+  }
+  header h1 {
+    font-size: 1.5em;
+    text-wrap: nowrap;
   }
   .detials > div {
     max-width: 300px;
