@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class="logo">
-            <h1><i class="fa-solid fa-plane-departure"></i>SkyWing</h1>
+             <img src="./flights-imges/shaar.png" alt="">
         </div>
         <nav>
             <ul>
@@ -28,16 +28,13 @@
     </header>
 
     <section class="landing">
-        <h1>Welcome to SkyWing Airlines</h1>
+        <h1>Welcome to SkyWing Agency</h1>
         <p>Exclusive flight deals and personalized service contact me directly for 
             instant booking assistance!
         </p>
-        <p><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
-            Your personal airline agent with 1000+ satisfied customers</p>
             <button type="button"><i class="fa-brands fa-whatsapp"></i>
             <a target="_blank" href=" https://wa.me/249920637397">Contact Me on Whatsapp</a></button>
-    </section>
+    </section> 
 
     <section class="flights">
         <div class="section-head">
@@ -53,25 +50,40 @@
                 <li data-filter="Sudaner">Sudaner</li>
             </ul>
         </div>
-        <div class="cards">
-            <template id="template">
-                <div class="card">
-                <div class="head">
-                    <i class="fa-solid fa-plane"></i>
-                    <p><span class="from"></span><i class="fa-solid fa-arrow-right"></i><span class="to"></span><span class="flight-number">BA117</span><br>
-                    <span class="airline"></span></p>
+         <div class="cards">
+         <template id="template">
+            <article class="flight-card">
+                <div class="row-one">
+                    <div>
+                    <i class="fa-solid fa-plane-departure" ></i>
+                        <span class="flight-number">BA117</span>
+                    </div>
+                    <div>
+                        <div class="cls"></div>
+                    </div>
                 </div>
-                <div class="date-card">
-                    <p><i class="fa-regular fa-calendar"></i><span class="date"></span></p>
-                    <p><i class="fa-regular fa-clock"></i><span class="time"></span></p>
-                    <p><i class="fa-regular fa-hourglass-half"></i><p class="duration"></p></p>
+                <div class="row-two">
+                    <p><span class="from">New York (JFK)</span><br>From</p>
+                    <i class="fa-solid fa-plane-up fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i>
+                    <p id="to"><span class="to">London (LHR)</span><br>To</p>
                 </div>
-                <div class="price-card">
-                    <p>$ <span class="price"></span> <span class="cls"></span></p>
-                    <button class="book-now"><i class="fa-brands fa-whatsapp"></i>Book Now</button>
+                <div class="row-three">
+                    <div>
+                        <i class="fa-regular fa-calendar"></i>
+                        <p><span class="date">Thu, Feb 15</span><br>Date</p>
+                    </div>
+                    <div class="time-div">
+                        <i class="fa-regular fa-clock"></i>
+                        <p><span class="move-time">21:30</span><br><span class="time duration">7h 20m</span></p>
+                    </div>
                 </div>
-            </div>
-        </template>
+                <div class="row-four">
+                    <h3><span class="airline">British Airways</span><br>Airline</h3>
+                    <h3><span class="dollar">$</span><span class="price">$899</span><br>Total Price</h3>
+                </div>
+                <button class="book">Book Now</button>
+            </article>
+            </template>
         </div>
     </section>
 
@@ -216,7 +228,7 @@
     <footer>
         <div class="content">
             <div class="one">
-            <h3><i class="fa-solid fa-plane-departure"></i>SkyWing</h3>
+            <h3><img src="./flights-imges/shaar.png" alt="">SkyWing</h3>
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>

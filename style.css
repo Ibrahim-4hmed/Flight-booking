@@ -4,12 +4,13 @@
     padding: 0;
 }
 :root {
-    --main-color : #50c878;
+    --main-color : #00bfff;
     --border-5:5px;
+    --border-rad-10:10px;
 }
 body{
     font-family:Arial, Helvetica, sans-serif;
-    background: #f0ffff;
+    background: #f6f6f6;
 }
 button{
     transition: transform .3s;
@@ -24,8 +25,27 @@ button:hover {
 }
 .section-head  h2 {
     letter-spacing: 1px;
-    font-size: 1.7em;
-    font-weight: normal;
+    line-height: 2;
+    font-size: 2rem;
+    margin:0 auto 30px;
+    width:fit-content;
+    font-weight: 700;
+    background: linear-gradient(135deg, #2ecc71, #3498db); /* green + blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    position: relative;
+}
+.section-head h2::after {
+    content:"";
+    position: absolute;
+    background-color: #00bfff;
+    width:100%;
+    height: 2px;
+    border-radius: 2px;
+    top: 50%;
+    left: 0;
 }
 .section-head p {
     margin: 20px 0 30px;
@@ -35,7 +55,7 @@ button:hover {
 header{
     width: 100%;
     height: 68px;
-    padding: 10px 40px;
+    padding: 20px;
     background: #f9f9f9;
     display: flex;
     justify-content: space-between;
@@ -44,14 +64,8 @@ header{
     position: fixed;
     z-index: 100;
 }
-header .logo h1 {
-    font-size: 2.2em;
-    cursor: pointer;
-    color: #50c878;
-    i {
-        margin-right: 10px;
-        color: var(--main-color);
-    }
+header .logo img {
+    width:100px;
 }
 header nav ul {
     text-align: right;
@@ -94,21 +108,28 @@ header nav ul li a:hover  {
     color: var(--main-color);
     background-color: #50c87810;
 }
-/* landing */
-.landing {
-    width: 100%;
-    height: 100vh;
+ .landing {
+    height: 100vh; /* full viewport height */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-image: url("./flights-imges/flight-on04.jpeg");
-    background-size: cover;
-    position: relative;
+    text-align:center;
+
+    /* Background image settings */
+    background-image: url("./flights-imges/flight-on04.jpeg"); /* Replace with your image path */
+    background-size: cover;   /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-attachment: fixed; /* Optional: makes background fixed on scroll */
 }
 .landing h1 {
     font-size: 3.5em;
-    color: #0Bf623;
+    background: linear-gradient(135deg, #2ecc71, #3498db); /* green + blue */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
 }
 .landing p:first-of-type {
     font-size: 1.5em;
@@ -129,7 +150,7 @@ header nav ul li a:hover  {
     outline: 0;
     border-radius: var(--border-5);
     color: #fff;
-    background: #0Bf623;
+    background:#00bfff;
     font-size: 1.1em;
     font-weight: bold;
     cursor: pointer;
@@ -144,7 +165,8 @@ header nav ul li a:hover  {
 }
 /* flights */
 .flights {
-    padding: 60px 40px;
+    width:100%;
+    padding: 60px 30px;
 }
 .filter {
     background: #fff;
@@ -155,6 +177,7 @@ header nav ul li a:hover  {
     box-shadow: 0 0 4px rgba(0, 0, 0, .05);
     ul {
         display: flex;
+        flex-wrap: wrap;
         justify-content: center;
         gap: 20px;
     }
@@ -182,106 +205,123 @@ header nav ul li a:hover  {
 }
 .flights .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
-.flights .wrapper .card {
-    background: #fff;
-    border-radius: var(--border-5);
-    padding: 20px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, .03);
-}
-.flights .wrapper .card .head {
-    display: flex;
-    margin-bottom: 20px;
-    padding-bottom:20px ;
-    border-bottom: 1px solid #eee;
-    text-wrap: nowrap;
-    position: relative;
-    i {
-        margin-right: 5px;
-        padding: 5px;
-    }
-    .from,.to {
-        font-size: 1.6em;
-        font-weight: 500;
-    }
-    .flight-number {
-        position: absolute;
-        right: 5px;
-        background-color: #f0ffff;
-        font-weight: 600;
-        border-radius:50px;
-        padding: 5px 10px;
-        font-size: .89em;
-        box-shadow: 0px 0px 5px rgba(0, 0, 0, .03);
 
-    }
-    .airline {
-            font-size: 11px;
-            font-weight: normal;
-            color: #666;
+.flight-card {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .01);
+    border-radius: var(--border-5);
+    > div {
+        display: flex;
+        justify-content: space-between;
     }
 }
-.red {
-    background: rgb(207, 80, 207);
-}
-.flights .wrapper .card .date-card {
-    display: flex;
-    justify-content: space-around;
-    font-size: 12px;
-    color: #555;
-    padding-bottom :20px; 
-    margin-bottom: 20px;
-    border-bottom: 1px solid #eee;
-    p {
-        i {
-            margin-right: 10px;
-            color: var(--main-color);
+.flight-card .row-one {
+    margin-bottom: 30px;
+    div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        span {
+            padding: 5px 10px;
+            font-size: 13px;
+            border-radius: 50px;
+            background-color: rgba(240, 237, 237, 0.986);
         }
-    }
-}
-.flights .wrapper  .price-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    p {
-        font-weight: 900;
-        color: #1877f2;
         .cls {
-            font-size: 12px;
+            border-radius: 50px;
+            font-size: 13px;
             border: 1px solid #ddd;
-            border-radius: 20px;
-            font-weight: 300;
-            padding: 2px 5px;
-            margin-left: 20px;
-            color: #333;
-        }
-        .price {
-            font-size: 1.3em;
-        }
-    }
-    .book-now {
-        padding: 10px 20px;
-        color: #fff;
-        background: rgb(47, 214, 47);
-        border: 0;
-        outline: 0;
-        border-radius: var(--border-5);
-        font-weight: 600;
-        font-size: .9em;
-        cursor: pointer;
-        i {
-            margin-right: 10px;
-            font-weight: bold;
+            padding: 5px 10px;
         }
     }
 }
+.flight-card .row-two {
+    align-items: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    p {
+        font-size: 14px;
+        color: #777;
+        span {
+            font-size: 18px;
+            color: #222;
+            font-weight: 600;
+        }
+    }
+    i {
+        color: #00bfff;
+    }
+    #to {
+        text-align: right;
+    }
+}
+.row-three {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+}
+.row-three > div {
+    flex: 4;
+    display: flex;
+    align-items: center;
+    i {
+        margin-right: 10px;
+        color: #888;
+    }
+    p {
+        font-size: 11px;
+        color: #888;
+        span {
+            font-size: 15px;
+            color: #222;
+        }
+    }
+    .time {
+        font-size: 11px;
+        color: #888;
+    }
+}
+.row-three .time-div {
+    flex: 1;
+}
+.row-four {
+    margin-bottom: 0;
+    h3 {
+        font-size: 12px;
+        color: #888;
+        span {
+            font-size: 15px;
+            color: #222;
+        }
+    }
+    .price,.dollar {
+        font-size: 22px;
+        color: var(--main-color);
+    }
+}
+.book {
+    display: block;
+    width:100%;
+    margin: 20px auto;
+    padding: 10px 25px;
+    border:none;
+    background-color:#00bfff;
+    color:#fff;
+    font-weight: bold;
+    border-radius:5px;
+    font-size: 1.2rem;
+}
+/* why me */
 .why-me {
     width: fit-content;
     text-align: center;
     padding: 20px ;
-    margin: 0 auto;
+    margin: 15px auto;
     background: #fff;
     border-radius: var(--border-5);
     box-shadow: 1px 1px 5px rgba(0, 0, 0, .05);
@@ -304,7 +344,7 @@ header nav ul li a:hover  {
     color: #fff;
     border-radius: var(--border-5);
     cursor: pointer;
-    background-color: rgb(47, 214, 47);
+    background-color: #00bfff;
     i{
         margin-right: 10px;
         font-weight: bold;
@@ -312,14 +352,12 @@ header nav ul li a:hover  {
 }
 /* popular */
 .popular {
-    margin: 0;
-    padding: 60px 40px;
+    padding: 60px 30px;
 }
 .popular .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
-    padding: 10px;
 }
 .container .box {
     background: #fff;
@@ -366,7 +404,7 @@ header nav ul li a:hover  {
         font-size: 1.3em;
         i {
             margin-right: 10px;
-            color: #50c878;
+            color: #00bfff;
         }
     }
     span {
@@ -386,7 +424,7 @@ header nav ul li a:hover  {
         span {
             font-size: 1.7em;
             font-weight: bold;
-            color:#50c878;
+            color:#00bfff;
         }
     }
     button {
@@ -410,10 +448,9 @@ header nav ul li a:hover  {
 }
 /* choose me  */
 .choose-me {
-    padding: 0 40px;
+    padding:60px 30px;
 }
 .choose-me .parent {
-    margin: 40px 20px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
@@ -436,7 +473,7 @@ header nav ul li a:hover  {
         font-weight: 600;
         margin-bottom: 10px;
         font-size: 1.4em;
-        color: #50c878;
+        color: #00bfff;
     }
     p {
         font-weight: 400;
@@ -462,18 +499,23 @@ ul li {
     margin-bottom: 15px;
     cursor: pointer;
     font-size: 14px;
+    transition: .4s;
+}
+footer ul li:hover {
+    color:#00bfff;
 }
 footer .one{
     h3 {
-        font-size: 1.8em;    
+        display: flex;
+        align-items: center;
+        font-size: 1.2em;    
         margin:0 0 10px ;
-        color: #50c878;
-        i {
-            padding: 10px;
-            margin-right: 10px;
-            border-radius: var(--border-5);
+        color: #00bfff;
+       img {
+            width:30px;
         }
     }
+     
     p{
         margin-bottom: 20px;
         line-height: 1.4;
@@ -525,11 +567,35 @@ footer .two h4 ,.three h4, .four h4 {
     padding: 15px 0 0 ;
     .skyWing {
         font-size: 1.3em;
-        color: #50c878;
+        color: #00bfff;
         font-weight: 600;
     }
     ul {
         display: flex;
         gap: 20px;
+    }
+}
+
+@media (max-width:350px) {
+    .flights,
+    .choose-me,
+    .popular {
+        padding:40px 15px;
+    }
+    .flights .wrapper,
+    .choose-me .parent,
+    .popular .container  {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap:10px;
+    }
+}
+
+@media (max-width:768px) {
+    .landing h1 {
+        font-size: 2.2rem;
+    }
+    .landing p{
+        font-size: 1.1rem;
+        padding:5px;
     }
 }

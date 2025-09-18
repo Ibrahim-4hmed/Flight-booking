@@ -12,12 +12,24 @@ flightsData.forEach(flight => {
     clone.querySelector(".to").textContent = flight.to;
     clone.querySelector(".airline").textContent = flight.airline;
     clone.querySelector(".date").textContent = flight.date;
-    clone.querySelector(".time").textContent = flight.time;
+    clone.querySelector(".move-time").textContent = flight.time;
     clone.querySelector(".duration").textContent = flight.duration;
     clone.querySelector(".price").textContent = flight.price;
-    clone.querySelector(".cls").textContent = flight.cls;
     clone.querySelector(".flight-number").textContent = flight.flightNumber;
+    clone.querySelector(".cls").textContent = flight.cls;
     wrapper.appendChild(clone);
+
+    // const clone = template.content.cloneNode(true);
+    // clone.querySelector(".from").textContent = flightArray.from;
+    // clone.querySelector(".to").textContent = flightArray.to;
+    // clone.querySelector(".airline").textContent = flightArray.airline;
+    // clone.querySelector(".date").textContent = flightArray.date;
+    // clone.querySelector(".move-time").textContent = flightArray.time;
+    // clone.querySelector(".duration").textContent = flightArray.duration;
+    // clone.querySelector(".price").textContent = flightArray.price; 
+    // clone.querySelector(".flight-number").textContent = flightArray.flightNumber;
+    // wrapper.appendChild(clone);
+    // }
 });
 document.querySelector(".cards").appendChild(wrapper);
 

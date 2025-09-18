@@ -74,7 +74,7 @@ document.getElementById("addFlightForm").addEventListener("submit", function (ev
         left: "25 left",
         flightNumber: form.flightNumber.value
     }
-    displayFlight(newFlight)
+    displayFlight(newFlight)// show the flight on page
     flights.push(newFlight); // Add flight to the array
 
     form.reset(); // Clear the form fields
