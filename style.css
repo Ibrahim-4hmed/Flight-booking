@@ -3,6 +3,9 @@
     margin: 0;
     padding: 0;
 }
+*{
+    scroll-behavior: smooth;
+}
 :root {
     --main-color : #00bfff;
     --border-5:5px;
@@ -35,27 +38,21 @@ button:hover {
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
-    position: relative;
+    transition: .4s ;
 }
-.section-head h2::after {
-    content:"";
-    position: absolute;
-    background-color: #00bfff;
-    width:100%;
-    height: 2px;
-    border-radius: 2px;
-    top: 50%;
-    left: 0;
+.section-head  h2:hover{
+    font-size: 2.2rem;
 }
 .section-head p {
     margin: 20px 0 30px;
     font-size: 14px;
-    color: #222;
+    color: #777;
 }
+
 header{
     width: 100%;
     height: 68px;
-    padding: 20px;
+    padding: 20px 50px;
     background: #f9f9f9;
     display: flex;
     justify-content: space-between;
@@ -577,6 +574,13 @@ footer .two h4 ,.three h4, .four h4 {
 }
 
 @media (max-width:350px) {
+    .landing h1 {
+        font-size: 1rem;
+    }
+    .landing p{
+        font-size: .2rem;
+        padding:5px;
+    }
     .flights,
     .choose-me,
     .popular {
@@ -585,7 +589,7 @@ footer .two h4 ,.three h4, .four h4 {
     .flights .wrapper,
     .choose-me .parent,
     .popular .container  {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap:10px;
     }
 }
@@ -598,4 +602,76 @@ footer .two h4 ,.three h4, .four h4 {
         font-size: 1.1rem;
         padding:5px;
     }
+}
+
+/* about page  */
+.about{
+    padding-top: 68px;
+    text-align: center;
+}
+.special-landing{
+    padding: 50px 0;
+    background-color :#00bfff28;
+    h1{
+        font-size: 3rem;
+        margin-bottom: 20px;
+    }
+    p{
+        font-size: 1rem;
+        color: #666;
+    }
+}
+
+.about-our-story{
+    margin:50px auto;
+    width: 70%;
+    h2{
+        margin-bottom: 20px;
+    }
+    p{
+        line-height: 1.6;
+        color: #666;
+        font-size: 1rem;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+}
+.about-values{
+    margin: 70px 0;
+   h2 { margin-bottom: 30px;}
+}
+.about-values .wrapper {
+    display: flex;
+    gap: 10px;
+    padding: 30px;
+}
+.box{
+    border: 1px solid #ddd;
+    padding: 25px;
+    border-radius: var(--border-rad-10);
+    transition: background-color 1s ;
+    i{
+        margin-bottom: 15px;
+        background-color: #00bfff2a;
+        padding: 15px;
+        border-radius: 50%;
+        color: var(--main-color);
+    }
+    h3{
+        font-weight: normal;
+        margin-bottom: 15px;
+    }
+    p{
+        color: #777;
+        font-size: 13px;
+    }
+}
+.box:hover{
+    background-color: #eee;
+}
+
+/* contact us page  */
+.contact{
+    padding-top: 68px;
+    text-align: center;
 }
