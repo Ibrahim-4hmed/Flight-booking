@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>All Flights</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
 </head>
@@ -19,7 +19,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="all-flights.html">Flights</a></li>
+                <li><a href="about.html">Flights</a></li>
             </ul>
             <div class="bargar">
                 <span></span>
@@ -29,61 +29,65 @@
         </nav>
     </header> 
 
-    <main class="contact">
+    <main class="all-flights">
         <section class="special-landing">
-            <h1>Get In Touch</h1>
+            <h1>All Flights</h1>
             <p>Your trusted partner for affordable flights worldwide.</p>
         </section>
 
-        <section class="wrapper">
-            <div class="form">
-                <h3>Send us a message</h3>
-                <form>
-                    <label for="name">Name <br>
-                        <input placeholder="Your Name" type="text" name="name" id="name">
-                    </label>
-                    <label for="email">Email <br>
-                        <input placeholder="you@email.com" type="email" name="email" id="email">
-                    </label>
-                    <label for="text">Message</label>
-                    <textarea placeholder="Your message..." name="text-area" id="text-area"></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-            <div class="info">
-                <h3>Contact Information</h3>
-                <div class="box">
-                    <!-- <i class="fa-solid fa-envelope"> -->
-                    <div class="text">
-                        <h4>Email</h4>
-                        <p>hello@wingfly.com</p>
+        <section id="flights" class="flights">
+        <div class="all-head">
+            <h2>Available Flights This Week</h2>
+            <p>Exclusive deals from your trusted airline agent. Contact me on Whatsapp for instant booking!</p>
+        </div>
+        <div class="filter">
+            <h4><i class="fa-solid fa-filter"></i>Filter Flights</h4>
+            <ul class="filter-nav">
+                <li data-filter="all" class="active">All</li>
+                <li data-filter="Tarco">Tarco</li>
+                <li data-filter="Badr">Badr</li>
+                <li data-filter="Sudaner">Sudaner</li>
+            </ul>
+        </div>
+         <div class="cards">
+         <template id="template">
+            <article class="flight-card">
+                <div class="row-one">
+                    <div>
+                    <i class="fa-solid fa-plane-departure" ></i>
+                        <span class="flight-number">BA117</span>
+                    </div>
+                    <div>
+                        <div class="cls"></div>
                     </div>
                 </div>
-
-                <div class="box">
-                    <!-- <i class="fa-solid fa-phone"> -->
-                    <div class="text">
-                        <h4>Phone</h4>
-                        <p>+(249) 123 456 78</p>
+                <div class="row-two">
+                    <p><span class="from">New York (JFK)</span><br>From</p>
+                    <i class="fa-solid fa-plane-up fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i>
+                    <p id="to"><span class="to">London (LHR)</span><br>To</p>
+                </div>
+                <div class="row-three">
+                    <div>
+                        <i class="fa-regular fa-calendar"></i>
+                        <p><span class="date">Thu, Feb 15</span><br>Date</p>
+                    </div>
+                    <div class="time-div">
+                        <i class="fa-regular fa-clock"></i>
+                        <p><span class="move-time">21:30</span><br><span class="time duration">7h 20m</span></p>
                     </div>
                 </div>
-
-                <div class="box">
-                    <!-- <i class="fa-solid fa-location-dot"> -->
-                    <div class="text">
-                        <h4>Address</h4>
-                        <p>123 Al-kdro Street, Khartoum, NY 10001</p>
-                    </div>
+                <div class="row-four">
+                    <h3><span class="airline">British Airways</span><br>Airline</h3>
+                    <h3><span class="dollar">$</span><span class="price">$899</span><br>Total Price</h3>
                 </div>
-                <div class="work-time">
-                    <h4>Business Hours</h4>
-                    <p>Saturday: 10:00AM-4:00PM</p>
-                    <p>Sunday - Thirsday 9:00AM-6:00PM</p>
-                    <p>Friday: closed</p>
-                </div>
-            </div>
-        </section>
+                <button class="book">Book Now</button>
+            </article>
+            </template>
+        </div>
+    </section>
     </main>
+
+
      <footer>
         <div class="content">
             <div class="one">
@@ -134,5 +138,7 @@
             </ul>
         </div>
     </footer>
+    
+    <script type="module" src="all-flights.js"></script>
 </body>
 </html>

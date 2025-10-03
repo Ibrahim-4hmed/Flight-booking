@@ -1,17 +1,4 @@
 
-// navbar 
-const navbarBtns = document.querySelectorAll(".nav-links a");
-
-navbarBtns.forEach(link => {
-    link.addEventListener("click", (e) => {
-        navbarBtns.forEach(li => {
-            li.classList.remove("active")
-        })
-        e.target.classList.add("active")
-    })
-})
-
-
 
 const flightPromise = await fetch("data.json")
 const flightsData = await flightPromise.json();
@@ -20,7 +7,7 @@ const flightsData = await flightPromise.json();
 const template = document.getElementById("template")
 const wrapper = document.createElement("div");
 wrapper.className = "wrapper";
-flightsData.slice(0,6).forEach(flight => {
+flightsData.forEach(flight => {
     const clone = template.content.cloneNode(true);
     clone.querySelector(".from").textContent = flight.from;
     clone.querySelector(".to").textContent = flight.to;
@@ -34,6 +21,7 @@ flightsData.slice(0,6).forEach(flight => {
     wrapper.appendChild(clone);
 });
 document.querySelector(".cards").appendChild(wrapper);
+
 
 let filterBtns = document.querySelectorAll(".filter-nav li");
 
@@ -72,13 +60,6 @@ function filterFlights(flight){
 }
 
 
-
-
 // footer with current time
 const copyRight = new Date(); 
 document.querySelector(".cRight").textContent = copyRight.getFullYear()
-
-
-
-
-

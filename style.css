@@ -84,6 +84,11 @@ header nav ul {
             font-weight: 600;
         }
     }
+    
+}
+header  ul li a.active {
+    color: var(--main-color);
+    background-color: #00bfff3d;
 }
 header nav .bargar {
     width: 30px;
@@ -212,8 +217,8 @@ header nav ul li a:hover  {
 .flight-card {
     padding: 20px;
     background-color: #fff;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, .01);
-    border-radius: var(--border-5);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .1);
+    border-radius: var(--border-rad-10);
     > div {
         display: flex;
         justify-content: space-between;
@@ -254,7 +259,7 @@ header nav ul li a:hover  {
         }
     }
     i {
-        color: #00bfff;
+        color: var(--main-color);
     }
     #to {
         text-align: right;
@@ -315,6 +320,26 @@ header nav ul li a:hover  {
     font-weight: bold;
     border-radius:5px;
     font-size: 1.2rem;
+}
+.see-all{
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    background-color: #fff;
+    padding: 10px 20px;
+    width: 150px;
+    margin: 70px auto 0;
+    border-radius: var(--border-5);
+    cursor: pointer;
+    text-align: center;
+    transition: background-col0r .4s ease;
+    text-decoration: none;
+}
+.see-all:hover{
+    background-color: #00bfff1c;
 }
 /* why me */
 .why-me {
@@ -682,7 +707,7 @@ footer .two h4 ,.three h4, .four h4 {
 
 
 /* contact us page  */
-.contact{
+.contact {
     padding-top: 68px;
     text-align: center;
 }
@@ -758,6 +783,20 @@ footer .two h4 ,.three h4, .four h4 {
     }
     p{
         margin-bottom: 5px;
+        color: #666;
+    }
+}
+
+/* all flights page  */
+.all-flights{
+    padding-top: 68px;
+    text-align: center;
+}
+.all-flights .all-head{
+    h2{
+        margin-bottom: 20px;
+    }
+    p{
         color: #666;
     }
 }
