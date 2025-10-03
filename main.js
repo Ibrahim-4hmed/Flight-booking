@@ -1,7 +1,8 @@
+//fetching the flights data from js file
 const flightPromise = await fetch("data.json")
 const flightsData = await flightPromise.json();
 
-// console.log(flightsData)
+
 
 const template = document.getElementById("template")
 const wrapper = document.createElement("div");
@@ -18,18 +19,6 @@ flightsData.forEach(flight => {
     clone.querySelector(".flight-number").textContent = flight.flightNumber;
     clone.querySelector(".cls").textContent = flight.cls;
     wrapper.appendChild(clone);
-
-    // const clone = template.content.cloneNode(true);
-    // clone.querySelector(".from").textContent = flightArray.from;
-    // clone.querySelector(".to").textContent = flightArray.to;
-    // clone.querySelector(".airline").textContent = flightArray.airline;
-    // clone.querySelector(".date").textContent = flightArray.date;
-    // clone.querySelector(".move-time").textContent = flightArray.time;
-    // clone.querySelector(".duration").textContent = flightArray.duration;
-    // clone.querySelector(".price").textContent = flightArray.price; 
-    // clone.querySelector(".flight-number").textContent = flightArray.flightNumber;
-    // wrapper.appendChild(clone);
-    // }
 });
 document.querySelector(".cards").appendChild(wrapper);
 
@@ -40,6 +29,7 @@ filterBtns.forEach(e => {
     e.addEventListener("click", e => handleFilterClick(e))
 })
 
+//function to handle filters
 function handleFilterClick(e) {
     let target = e.target;
     e.preventDefault();
@@ -51,10 +41,10 @@ function handleFilterClick(e) {
 
     filterFlights(target.dataset.filter);
 }
-
+// filter flights
 function filterFlights(flight){
-    const allFlights = document.querySelectorAll(".card")
-    if (flight == "all") {
+    const allFlights = document.querySelectorAll(".flight-card")
+    if (flight == "all") {// if no filter applyed
         allFlights.forEach(el => {
             el.style.display = ""
         })
@@ -72,7 +62,7 @@ function filterFlights(flight){
 
 
 
-// footer
+// footer with currant time
 const copyRight = new Date(); 
 document.querySelector(".cRight").textContent = copyRight.getFullYear()
 
