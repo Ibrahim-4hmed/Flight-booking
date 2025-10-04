@@ -16,16 +16,16 @@
             </a>
         </div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+            <ul class="nav-links" id="small-sc">
+                <li><a  href="index.html">Home</a></li>
+                <li><a class="active" href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
                 <li><a href="all-flights.html">Flights</a></li>
             </ul>
-            <div class="bargar">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div class="borgar-icon">
+                <span class="sp-borgar"></span>
+                <span class="sp-borgar"></span>
+                <span class="sp-borgar"></span>
             </div>
         </nav>
     </header> 
@@ -129,5 +129,19 @@
             </ul>
         </div>
     </footer>
+    <script>
+        //////////// Borgar Menu /////////////
+        const ulNav = document.getElementById("small-sc");
+        const links = document.querySelector(".nav-links a")
+
+        document.body.addEventListener("click", (e) => {
+            if (e.target.className === "sp-borgar"){
+                ulNav.classList.toggle("sm-sc")
+            } else {
+                if (ulNav.classList.contains("sm-sc"))
+                    ulNav.classList.toggle("sm-sc")
+            }
+        })
+    </script>
 </body>
 </html>

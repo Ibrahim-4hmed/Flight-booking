@@ -1,18 +1,17 @@
+//////////// Borgar Menu /////////////
+const ulNav = document.getElementById("small-sc");
+const links = document.querySelector(".nav-links a")
 
-// navbar 
-const navbarBtns = document.querySelectorAll(".nav-links a");
-
-navbarBtns.forEach(link => {
-    link.addEventListener("click", (e) => {
-        navbarBtns.forEach(li => {
-            li.classList.remove("active")
-        })
-        e.target.classList.add("active")
-    })
+document.body.addEventListener("click", (e) => {
+    if (e.target.className === "sp-borgar"){
+        ulNav.classList.toggle("sm-sc")
+    } else {
+        if (ulNav.classList.contains("sm-sc"))
+            ulNav.classList.toggle("sm-sc")
+    }
 })
 
-
-
+// fetch data
 const flightPromise = await fetch("data.json")
 const flightsData = await flightPromise.json();
 
