@@ -848,3 +848,9 @@ footer .two h4 ,.three h4, .four h4 {
         color: #666;
     }
 }
+@media (max-width:768px) {
+    .contact .wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+}
