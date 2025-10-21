@@ -7,7 +7,7 @@
     scroll-behavior: smooth;
 }
 :root {
-    --main-color : #00bfff;
+    --main-color : #0077b6;
     --border-5:5px;
     --border-rad-10:10px;
     --transition:.4s;
@@ -34,7 +34,7 @@ button:hover {
     margin:0 auto 30px;
     width:fit-content;
     font-weight: 700;
-    background: linear-gradient(135deg, #2ecc71, #3498db); /* green + blue */
+    background: linear-gradient(135deg,#03045e, #0077b6); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -163,7 +163,7 @@ header nav ul li a:hover  {
     text-align:center;
 
     /* Background image settings */
-    background-image: url("./flights-imges/flight-on04.jpeg"); /* Replace with your image path */
+    background-image: url("./flights-imges/landing4.jpg"); /* Replace with your image path */
     background-size: cover;   /* Cover the entire section */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating */
@@ -172,17 +172,17 @@ header nav ul li a:hover  {
 .landing h1 {
     font-size: 3em;
     margin-bottom: 10px;
-    background: linear-gradient(135deg, #2ecc71, #3498db); /* green + blue */
+    background: linear-gradient(135deg, #03045e); /* green + blue */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
     color: transparent;
 }
-.landing p:first-of-type {
+.landing p{
     font-size: 1em;
     max-width:700px;
     text-align: center;
-    color: #eee;
+    color: #03055ee7;
 }
 .landing button {
     padding: 10px 25px;
@@ -246,101 +246,112 @@ header nav ul li a:hover  {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
-.flight-card {
+.card {
+    width: 400px;
     padding: 20px;
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
     border-radius: var(--border-5);
 }
-.flight-card > div {
+.card .row-1 {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.card .row-1 .city h2{
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.card .row-1 .city span{
+    font-size: .675rem;
+    color: var(--p-color);
+}
+.card .row-1 .duration-text{
+    position: relative;
+    text-align: center;
+}
+.card .row-1 .duration-text::before{
+    content: "";
+    position: absolute;
+    left: -23px;
+    top: 25px;
+    width: 140px;
+    height: 1px;
+    background-color: #ddd;
+}
+.card .row-1 .duration-text i{
+    display: block;
+    margin: 10px 30px;
+    background-color: #0077b6;
+    color: #fff;
+    padding: 7px;
+    border-radius: 50%;
+    transition: var(--transition);
+    transform: translateY(50px);
+    animation: logo-spin 2s ease-in-out infinite forwards alternate;
+}
+@keyframes logo-spin {
+  from {
+    transform: translateY(-5px)
+  }
+  to {
+    transform: translateY(5px)
+  }
+}
+.card .row-1 .duration-text span{
+    font-size: .675rem;
+    color: var(--p-color);
+}
+.card .row-2{
+    margin: 30px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    font-size: .9rem;
+    color: var(--p-color);
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+.card .row-2 > div{
+    display: flex;
+    gap: 5px;
+}
+.card .row-2 .date-text{
+    padding-left: 15px;
+    border-left: 1px solid #ccc ;
+}
+.card .row-3{
     display: flex;
     justify-content: space-between;
-}
-.flight-card .row-one {
-    margin-bottom: 30px;
-    div {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        span {
-            padding: 5px 10px;
-            font-size: 13px;
-            border-radius: 50px;
-            background-color: rgba(240, 237, 237, 0.986);
-        }
-        .cls {
-            border-radius: 50px;
-            font-size: 13px;
-            border: 1px solid #ddd;
-            padding: 5px 10px;
-        }
-    }
-}
-.flight-card .row-two {
     align-items: center;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
-    p {
-        font-size: 14px;
-        color: #777;
-        span {
-            font-size: 18px;
-            color: #222;
-            font-weight: 600;
-        }
-    }
-    i {
-        color: var(--main-color);
-    }
-    #to {
-        text-align: right;
-    }
 }
-.row-three {
-    border-bottom: 1px solid #eee;
-    padding-bottom: 20px;
-    margin-bottom: 30px;
+.card .row-3 span{
+    display: inline-block;
+    margin-bottom: 5px;
+    font-size: .875rem;
+    color: var(--p-color);
 }
-.row-three > div {
-    flex: 4;
-    display: flex;
-    align-items: center;
-    i {
-        margin-right: 10px;
-        color: #888;
-    }
-    p {
-        font-size: 11px;
-        color: #888;
-        span {
-            font-size: 15px;
-            color: #222;
-        }
-    }
-    .time {
-        font-size: 11px;
-        color: #888;
-    }
+.card .row-3 p{
+    color: var(--main-color);
+    font-weight: 700;
+    font-size: 1.4rem;
 }
-.row-three .time-div {
-    flex: 1;
+.card .row-3 button{
+    padding: 10px 20px ;
+    font-weight: bold;
+    font-size: 1rem;
+    background-color: var(--main-color);
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--border-5);
 }
-.row-four {
-    margin-bottom: 0;
-    h3 {
-        font-size: 12px;
-        color: #888;
-        span {
-            font-size: 15px;
-            color: #222;
-        }
-    }
-    .price,.dollar {
-        font-size: 22px;
-        color: var(--main-color);
-    }
+.card .row-3 button i {
+    margin-right: 5px;
+    font-weight: bold;
 }
+
+
 .book {
     display: block;
     width:100%;
@@ -401,7 +412,7 @@ header nav ul li a:hover  {
     color: #fff;
     border-radius: var(--border-5);
     cursor: pointer;
-    background-color: #00bfff;
+    background-color: var(--main-color);
     i{
         margin-right: 10px;
         font-weight: bold;
@@ -432,11 +443,9 @@ header nav ul li a:hover  {
         height: 250px;
         border-radius: var(--border-5) var(--border-5) 0 0;
         transition: var(--transition) ease;
-        filter: grayscale(70%);
     }
     img:hover {
         transform: scale(1.05);
-        filter: grayscale(0%);
     }
     span {
         position: absolute;
@@ -456,7 +465,7 @@ header nav ul li a:hover  {
     padding: 0 15px;
     margin-bottom: 15px;
     h3 {
-        font-weight: normal;
+        font-weight: 700;
         margin-bottom: 5px;
         font-size: 1.1em;
         i {
@@ -481,7 +490,7 @@ header nav ul li a:hover  {
         span {
             font-size: 1.7em;
             font-weight: bold;
-            color:#00bfff;
+            color:var(--main-color);
         }
     }
     button {
@@ -527,7 +536,7 @@ header nav ul li a:hover  {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        background-color: var(--main-color);
+        background-color:#003459;
         color: #fff;
         font-weight: bold;
         border-radius: 30%;
@@ -538,7 +547,7 @@ header nav ul li a:hover  {
         font-weight: normal;
         margin-bottom: 7px;
         font-size: 1.4em;
-        color: var(--main-color);
+        color: #03045e;
     }
     p {
         font-weight: 400;
@@ -549,8 +558,8 @@ header nav ul li a:hover  {
 }
 .choose-me .parent .child:hover{
     transform: translateY(-5px);
-    background-color: rgba(0, 0, 0, 0.712);
-    p{
+    background-color: #00171f;
+    p,h3{
         color: #fff;
     }
 }
@@ -687,7 +696,7 @@ footer .two h4 ,.three h4, .four h4 {
 }
 .special-landing{
     padding: 60px 0;
-    background-color :#00bfff28;
+    background-color :#0076b648;
     h1{
         font-size: 3rem;
         margin-bottom: 20px;

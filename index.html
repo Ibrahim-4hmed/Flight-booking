@@ -54,36 +54,38 @@
         </div>
          <div class="cards">
          <template id="template">
-            <article class="flight-card">
-                <div class="row-one">
-                    <div>
-                    <i class="fa-solid fa-plane-departure" ></i>
-                        <span class="flight-number">BA117</span>
+            <article class="card">
+                <div class="row-1">
+                    <div class="from-text city">
+                        <h2 class="from">NYC</h2>
+                        <span class="dep-time">08:30 AM</span>
                     </div>
-                    <div>
-                        <div class="cls"></div>
+                    <div class="duration-text">
+                    <i class="fa-solid fa-plane-up fa-spin fa-spin-reverse"></i>
+                    <span class="duration">5h 15m</span>
+                    </div>
+                    <div class="to-text city">
+                        <h2 class="to">LAX</h2>
+                        <span class="ariv-time">11:45 AM</span>
                     </div>
                 </div>
-                <div class="row-two">
-                    <p><span class="from">New York (JFK)</span><br>From</p>
-                    <i class="fa-solid fa-plane-up fa-rotate-by" style="--fa-rotate-angle: 45deg;"></i>
-                    <p id="to"><span class="to">London (LHR)</span><br>To</p>
-                </div>
-                <div class="row-three">
-                    <div>
+                <div class="row-2">
+                    <div class="airline-text">
+                        <i class="fa-brands fa-magento"></i>
+                        <p class="airline">Sky airlines</p>
+                    </div>
+                    <div class="date-text">
                         <i class="fa-regular fa-calendar"></i>
-                        <p><span class="date">Thu, Feb 15</span><br>Date</p>
-                    </div>
-                    <div class="time-div">
-                        <i class="fa-regular fa-clock"></i>
-                        <p><span class="move-time">21:30</span><br><span class="time duration">7h 20m</span></p>
+                        <p class="date">March 25,2025</p>
                     </div>
                 </div>
-                <div class="row-four">
-                    <h3><span class="airline">British Airways</span><br>Airline</h3>
-                    <h3><span class="dollar">$</span><span class="price">$899</span><br>Total Price</h3>
+                <div class="row-3">
+                    <div class="price-text">
+                        <span>Total price</span>
+                        <p class="price">$ 300</p>
+                    </div>
+                    <button><i class="fa-brands fa-whatsapp"></i>Book on WhatsApp</button>
                 </div>
-                <button class="book"><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
             </article>
             </template>
         </div>
@@ -106,12 +108,12 @@
         <div class="container">
             <div class="box">
                 <div class="img">
-                    <img src="./flights-imges/cities2.jpeg" alt="AL Dender">
+                    <img src="./flights-imges/cairo.jpg" alt="AL Dender">
                     <span><i class="fa-solid fa-star"></i>5.0</span>
                 </div>
                 <div class="text">
-                    <h3><i class="fa-solid fa-location-dot"></i>Al Dender</h3>
-                    <span>Sudan</span>
+                    <h3><i class="fa-solid fa-location-dot"></i>Cairo</h3>
+                    <span>Egypt</span>
                 </div>
                 <div class="prise-book">
                     <p><span>$720</span> <br>from</p>
@@ -119,53 +121,38 @@
                 </div>
             </div>
             <div class="box">
-                <div class="img"><img src="./flights-imges/cities3.jpeg" alt="Shandi">
-                    <span><i class="fa-solid fa-star"></i>4.7</span>
-                </div>
-                <div class="text">
-                    <h3><i class="fa-solid fa-location-dot"></i>Shandi</h3>
-                    <span>Sudan</span>
-                </div>
-                <div class="prise-book">
-                    <p><span>$720</span> <br>from</p>
-                    <button><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
-                </div>
-            </div>
-            <div class="box">
-                <div class="img"><img src="./flights-imges/cities5.jpeg" alt="AL Jenana">
-                    <span><i class="fa-solid fa-star"></i>4.8</span>
-                </div>
-                <div class="text">
-                    <h3><i class="fa-solid fa-location-dot"></i>Al Jenana</h3>
-                    <span>Sudan</span>
-                </div>
-                <div class="prise-book">
-                    <p><span>$720</span> <br>from</p>
-                    <button><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="img"><img src="./flights-imges/cities6.jpeg" alt="Jabl Mara">
-                    <span><i class="fa-solid fa-star"></i>4.9</span>
-                </div>
-                <div class="text">
-                    <h3><i class="fa-solid fa-location-dot"></i>Jabl Mara</h3>
-                    <span>Sudan</span>
-                </div>
-                <div class="prise-book">
-                    <p><span>$720</span> <br>from</p>
-                    <button><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
-                </div>
-            </div>
-
-            <div class="box">
-                <div class="img"><img src="./flights-imges/cities7.jpeg" alt="Khartoum">
+                <div class="img"><img src="./flights-imges/ebb.jpeg" alt="Khartoum">
                     <span><i class="fa-solid fa-star"></i>4.6</span>
                 </div>
                 <div class="text">
-                    <h3><i class="fa-solid fa-location-dot"></i>Khartoum</h3>
-                    <span>Sudan</span>
+                    <h3><i class="fa-solid fa-location-dot"></i>Entebbe</h3>
+                    <span>Uaganda</span>
+                </div>
+                <div class="prise-book">
+                    <p><span>$720</span> <br>from</p>
+                    <button><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="./flights-imges/istanbal.jpeg" alt="Shandi">
+                    <span><i class="fa-solid fa-star"></i>4.7</span>
+                </div>
+                <div class="text">
+                    <h3><i class="fa-solid fa-location-dot"></i>Istanbul</h3>
+                    <span>Turkiye</span>
+                </div>
+                <div class="prise-book">
+                    <p><span>$720</span> <br>from</p>
+                    <button><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
+                </div>
+            </div>
+            <div class="box">
+                <div class="img"><img src="./flights-imges/doha.jpeg" alt="AL Jenana">
+                    <span><i class="fa-solid fa-star"></i>4.8</span>
+                </div>
+                <div class="text">
+                    <h3><i class="fa-solid fa-location-dot"></i>Doha</h3>
+                    <span>Qatar</span>
                 </div>
                 <div class="prise-book">
                     <p><span>$720</span> <br>from</p>
@@ -174,12 +161,26 @@
             </div>
 
             <div class="box">
-                <div class="img"><img src="./flights-imges/cities8.jpeg" alt="Port sudan">
+                <div class="img"><img src="./flights-imges/dubai.jpeg" alt="Jabl Mara">
+                    <span><i class="fa-solid fa-star"></i>4.9</span>
+                </div>
+                <div class="text">
+                    <h3><i class="fa-solid fa-location-dot"></i>Dubai</h3>
+                    <span>UAE</span>
+                </div>
+                <div class="prise-book">
+                    <p><span>$720</span> <br>from</p>
+                    <button><i class="fa-brands fa-whatsapp" style="margin-right: 5px; font-weight: bold;"></i>Book Now</button>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="img"><img src="./flights-imges/nairobi.jpeg" alt="Port sudan">
                     <span><i class="fa-solid fa-star"></i>4.8</span>
                 </div>
                 <div class="text">
-                    <h3><i class="fa-solid fa-location-dot"></i>Port sudan</h3>
-                    <span>Sudan</span>
+                    <h3><i class="fa-solid fa-location-dot"></i>Nairobi</h3>
+                    <span>Kenya</span>
                 </div>
                 <div class="prise-book">
                     <p><span>$720</span> <br>from</p>

@@ -14,7 +14,7 @@ document.body.addEventListener("click", (e) => {
 // fetch data
 const flightPromise = await fetch("data.json")
 const flightsData = await flightPromise.json();
-
+console.log(flightsData)
 
 const template = document.getElementById("template")
 const wrapper = document.createElement("div");
@@ -25,11 +25,10 @@ flightsData.slice(0,6).forEach(flight => {
     clone.querySelector(".to").textContent = flight.to;
     clone.querySelector(".airline").textContent = flight.airline;
     clone.querySelector(".date").textContent = flight.date;
-    clone.querySelector(".move-time").textContent = flight.time;
+    clone.querySelector(".ariv-time").textContent = flight.arivTime;
+    clone.querySelector(".dep-time").textContent = flight.depTime;
     clone.querySelector(".duration").textContent = flight.duration;
     clone.querySelector(".price").textContent = flight.price;
-    clone.querySelector(".flight-number").textContent = flight.flightNumber;
-    clone.querySelector(".cls").textContent = flight.cls;
     wrapper.appendChild(clone);
 });
 document.querySelector(".cards").appendChild(wrapper);
