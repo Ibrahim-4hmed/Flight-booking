@@ -53,7 +53,7 @@ function handleFilterClick(e) {
 }
 // filter flights
 function filterFlights(flight){
-    const allFlights = document.querySelectorAll(".flight-card")
+    const allFlights = document.querySelectorAll(".card")
     if (flight == "all") {
         allFlights.forEach(el => {
             el.style.display = ""

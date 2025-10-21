@@ -47,6 +47,9 @@
                 <li data-filter="Tarco">Tarco</li>
                 <li data-filter="Badr">Badr</li>
                 <li data-filter="Sudaner">Sudaner</li>
+                <li data-filter="EgyptAir">EgyptAir</li>
+                <li data-filter="Qatar Airways">Qatar Airways</li>
+                <li data-filter="Turkish Airlines">Turkish Airlines</li>
             </ul>
         </div>
          <div class="cards">
@@ -197,7 +200,7 @@
         }
         // filter flights
         function filterFlights(flight){
-            const allFlights = document.querySelectorAll(".flight-card")
+            const allFlights = document.querySelectorAll(".card")
             if (flight == "all") {
                 allFlights.forEach(el => {
                     el.style.display = ""
