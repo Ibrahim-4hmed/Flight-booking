@@ -123,7 +123,7 @@ header nav ul li a {
 
 header ul li a.active {
     color: var(--main-color);
-    background-color: #00bfff3d;
+    background-color: #0076b656;
 }
 /* borgar icon */
 @media (max-width:767px){
@@ -152,7 +152,7 @@ header ul li a.active {
 }
 header nav ul li a:hover  {
     color: var(--main-color);
-    background-color: #00bfff3d;
+    background-color: #0076b650;
 }
  .landing {
     height: 100vh; /* full viewport height */
@@ -163,7 +163,7 @@ header nav ul li a:hover  {
     text-align:center;
 
     /* Background image settings */
-    background-image: url("./flights-imges/landing4.jpg"); /* Replace with your image path */
+    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
     background-size: cover;   /* Cover the entire section */
     background-position: center; /* Center the image */
     background-repeat: no-repeat; /* Prevent repeating */
