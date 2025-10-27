@@ -16,6 +16,12 @@
 body{
     font-family:Arial, Helvetica, sans-serif;
 }
+html[lang="ar"] body {
+    direction: rtl;
+    text-align: right;
+    font-family:'Cairo', sans-serif;
+}
+
 button{
     transition: transform var(--transition);
 }
@@ -154,6 +160,22 @@ header nav ul li a:hover  {
     color: var(--main-color);
     background-color: #0076b650;
 }
+.lang-toggle {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+  margin-left: 10px;
+}
+
+.lang-toggle:hover {
+  background-color: #0056b3;
+}
+
  .landing {
     height: 100vh; /* full viewport height */
     display: flex;
@@ -313,6 +335,7 @@ header nav ul li a:hover  {
 }
 .card .row-2 > div{
     display: flex;
+    align-items: center;
     gap: 5px;
 }
 .card .row-2 .date-text{
@@ -372,7 +395,7 @@ header nav ul li a:hover  {
     color: var(--main-color);
     background-color: #fff;
     padding: 10px 20px;
-    width: 150px;
+    width: fit-content;
     margin: 70px auto 0;
     border-radius: var(--border-5);
     cursor: pointer;
@@ -629,6 +652,9 @@ footer .two h4 ,.three h4, .four h4 {
     margin-bottom: 20px;
     font-size: 1.3em;
 }
+.three .text-sm p{
+    margin-bottom: 10px;
+}
 .four h5 , .four p {
     margin-bottom: 15px;
     i {
@@ -641,10 +667,7 @@ footer .two h4 ,.three h4, .four h4 {
 }
 .footer {
     border-top: 1px solid #ccc;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
+    text-align: center;
     padding: 15px 0 0 ;
     .skyWing {
         font-size: 1.2em;
@@ -860,5 +883,28 @@ footer .two h4 ,.three h4, .four h4 {
     .contact .wrapper{
         display: flex;
         flex-direction: column;
+    }
+}
+
+
+/* Arabic lang  */
+body:dir(rtl),body[lang="ar"]{
+    font-family: 'cairo',sans-serif;
+    button{
+        font-family: 'cairo',sans-serif;
+    }
+    .popular .box .text h3 i {
+        margin-left: 10px;
+    }
+    .card .row-2 .date-text{
+        padding-right: 15px;
+        padding-left: 0;
+        border-right: 1px solid #ccc ;
+        border-left: 0;
+    }
+
+    /* contact us page  */
+    .contact .wrapper{
+        text-align: right;
     }
 }

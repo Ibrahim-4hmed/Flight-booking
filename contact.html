@@ -6,12 +6,13 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
      <header>
         <div class="logo">
             <a href="index.html">
-             <img src="./flights-imges/shaar1.png" alt="">
+             <img src="./flights-imges/shaar1.webp" alt="">
             </a>
         </div>
         <nav>
@@ -27,6 +28,7 @@
                 <span class="sp-borgar"></span>
             </div>
         </nav>
+        <button id="lang-btn" class="lang-toggle">عربي</button>
     </header> 
 
     <main class="contact">
@@ -39,28 +41,26 @@
             <div class="form">
                 <h3>Send us a message</h3>
                 <form>
-                    <label for="name">Name <br>
+                    <label class="name" for="name">Name </label> <br>
                         <input placeholder="Your Name" type="text" name="name" id="name">
-                    </label>
-                    <label for="email">Email <br>
+                    <label class="email" for="email">Email </label> <br>
                         <input placeholder="you@email.com" type="email" name="email" id="email">
-                    </label>
-                    <label for="text">Message</label>
+                    <label class="text" for="text">Message</label>
                     <textarea placeholder="Your message..." name="text-area" id="text-area"></textarea>
-                    <button type="submit">Send Message</button>
+                    <button class="submit-btn" type="submit">Send Message</button>
                 </form>
             </div>
             <div class="info">
                 <h3>Contact Information</h3>
                 <div class="box">
                     <!-- <i class="fa-solid fa-envelope"> -->
-                    <div class="text">
+                    <div class="text email">
                         <h4>Email</h4>
                         <p>hello@wingfly.com</p>
                     </div>
                 </div>
 
-                <div class="box">
+                <div class="box phone">
                     <!-- <i class="fa-solid fa-phone"> -->
                     <div class="text">
                         <h4>Phone</h4>
@@ -68,14 +68,14 @@
                     </div>
                 </div>
 
-                <div class="box">
+                <div class="box address">
                     <!-- <i class="fa-solid fa-location-dot"> -->
                     <div class="text">
                         <h4>Address</h4>
                         <p>123 Al-kdro Street, Khartoum, NY 10001</p>
                     </div>
                 </div>
-                <div class="work-time">
+                <div class="work-time working-hours">
                     <h4>Business Hours</h4>
                     <p>Saturday: 10:00AM-4:00PM</p>
                     <p>Sunday - Thirsday 9:00AM-6:00PM</p>
@@ -84,10 +84,10 @@
             </div>
         </section>
     </main>
-     <footer>
+    <footer>
         <div class="content">
             <div class="one">
-            <h3><img src="./flights-imges/shaar.png" alt="">SkyWing</h3>
+            <h3><img src="./flights-imges/shaar1.png" alt="">SkyWing</h3>
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>
@@ -101,21 +101,17 @@
                 <h4>Quick Links</h4>
                 <ul>
                     <li>About Us</li>
-                    <li>Flight Status</li>
-                    <li>Baggage Info</li>
-                    <li>Check-in</li>
-                    <li>Travel Guides</li>
+                    <li>All Flight</li>
+                    <li>Contact us</li>
                 </ul>
             </div>
             <div class="three">
-                <h4>Support</h4>
-                <ul>
-                    <li>Help Center</li>
-                    <li>Contact Us</li>
-                    <li>Refund Policy</li>
-                    <li>Terms of Service</li>
-                    <li>Privacy Policy</li>
-                </ul>
+                <h4>Working Hours</h4>
+               <div class="text-sm">
+                <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+                <p>Saturday: 10:00 AM - 4:00 PM</p>
+                <p>Sunday: Closed</p>
+              </div>
             </div>
             <div class="four">
                 <h4>Contact Info</h4>
@@ -127,11 +123,6 @@
         
         <div class="footer">
             <p><span><i class="fa-regular fa-copyright"></i><span class="cRight"></span><span class="skyWing">SkyWing</span>.All rights reserved.</p>
-            <ul>
-                <li>Privacy Policy</li>
-                <li>Terms of Service</li>
-                <li>Cookie Policy</li>
-            </ul>
         </div>
     </footer>
     <script>
@@ -147,6 +138,140 @@
                     ulNav.classList.toggle("sm-sc")
             }
         })
+
+        //current language
+        let currentLang = "en";
+
+        //set lang
+        const langBtn = document.getElementById('lang-btn');
+
+        const texts = {
+        en:{
+            header: ["Home", "About Us", "Contact Us", "Flights"],
+            landing: {
+                h1 : "Get In Touch",
+                p :"Your trusted partner for affordable flights worldwide."
+            },
+            form: {
+                title : "Send us a message",
+                name : "Name",
+                namePlace : "Your Name",
+                email : "Email",
+                emailPlace : "Your Email",
+                message : "Message",
+                messagePlace : "Your Message...",
+                btn : "Send Message"
+            },
+            contactInfo : {
+                title : "Contact Infomation",
+                phone : "Phone",
+                phonePlace : "+(249) 123 456 78",
+                email : "Email",
+                emailPlace : "hello@SkyWing.com",
+                address : "Address",
+                addressPlace : "123 Al-kdro Street, Khartoum, NY 10001",
+                Business : "Business Hours",
+                BusinessHours : ["Sunday - Thirsday 9:00AM-6:00PM","Saturday: 10:00AM-4:00PM","Friday: closed"]
+            }
+            },
+        ar: {
+            header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
+            landing: {
+                h1: "ابقَ على تواصل معنا",
+                p: "شريكك الموثوق للرحلات الجوية بأسعار تنافسية حول العالم."
+            },
+            form: {
+                title: "أرسل لنا رسالة",
+                name: "الاسم",
+                namePlace: "اكتب اسمك",
+                email: "البريد الإلكتروني",
+                emailPlace: "اكتب بريدك الإلكتروني",
+                message: "الرسالة",
+                messagePlace: "اكتب رسالتك هنا...",
+                btn: "إرسال"
+            },
+            info: {
+                title: "معلومات التواصل",
+                phone: "الهاتف",
+                email: "البريد الإلكتروني",
+                address: "العنوان",
+                addressPlace: "شارع القدرو 123، الخرطوم",
+                Business: "ساعات العمل",
+                BusinessHours: [
+                    "الأحد - الخميس: 9:00 ص - 6:00 م",
+                    "السبت: 10:00 ص - 4:00 م",
+                    "الجمعة: عطلة"
+                ]
+            },
+            footer: {
+                logoText: "سكاي وينج",
+                desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
+                quickLinksTitle:["روابط سريعة"],
+                quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
+                workingHoursTitle: ['ساعات العمل'],
+                workingHours: [" الاثنين-الخميس :9:00 ص-6:00م", "السبت:1:00ص-4:00م", "الاحد:مغلق"],
+                contactTitle:['معلومات الاتصال'],
+                contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 عمارة صندل,  كمبالا KM" },
+                copyright: "سكاي وينج. جميع الحقوق محفوظة.",
+                }
+        }
+
+    }
+
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            //header
+            document.querySelectorAll('ul.nav-links li a').forEach((link, i) => link.textContent = texts[lang].header[i]);
+            // Landing section
+            document.querySelector('.special-landing h1').textContent = texts[lang].landing.h1;
+            document.querySelector('.special-landing p').textContent = texts[lang].landing.p;
+            //form 
+            document.querySelector('.form h3').textContent = texts[lang].form.title
+            document.querySelector('.form .name').textContent = texts[lang].form.name;
+            document.querySelector('.form .email').textContent = texts[lang].form.email;
+            document.querySelector('.form .text').textContent = texts[lang].form.message;
+            document.querySelector('.form .submit-btn').textContent = texts[lang].form.btn;
+            //Contact info
+            document.querySelector('.info h3').textContent = texts[lang].info.title
+            document.querySelector('.info .email h4').textContent = texts[lang].info.email
+            document.querySelector('.info .phone h4').textContent = texts[lang].info.phone
+            document.querySelector('.info .address h4').textContent = texts[lang].info.address
+            document.querySelector('.info .address p').textContent = texts[lang].info.addressPlace
+            document.querySelector('.info .working-hours h4').textContent = texts[lang].info.Business
+            document.querySelectorAll('.info .working-hours p').forEach((p,i) => p.textContent = texts[lang].info.BusinessHours[i])
+            
+            // Footer
+            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.png" alt="">${texts[lang].footer.logoText}`;
+            document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
+            document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
+            document.querySelectorAll('.two ul li').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
+            document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
+            document.querySelectorAll('.three .text-sm p').forEach((p, i) => p.textContent = texts[lang].footer.workingHours[i]);
+            document.querySelector('.four h4').textContent = texts[lang].footer.contactTitle
+            document.querySelector('.four h5:nth-child(2)').textContent = texts[lang].footer.contact.phone;
+            document.querySelector('.four h5:nth-child(3)').textContent = texts[lang].footer.contact.email;
+            document.querySelector('.four p').textContent = texts[lang].footer.contact.address;
+            document.querySelector('.footer p .skyWing').textContent = texts[lang].footer.copyright;
+
+
+            // Direction
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            langBtn.textContent = lang === "ar" ? "English" : "عربي";
+
+        }
+        langBtn.addEventListener('click', () => {
+            changeLanguage(currentLang === "en" ? "ar" : "en");
+        })
+
+
+
+
+
+
+
+
+
     </script>
 </body>
 </html>
