@@ -87,7 +87,7 @@
     <footer>
         <div class="content">
             <div class="one">
-            <h3><img src="./flights-imges/shaar1.png" alt="">SkyWing</h3>
+            <h3><img src="./flights-imges/shaar1.webp" alt="">SkyWing</h3>
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>
@@ -122,7 +122,11 @@
         </div>
         
         <div class="footer">
-            <p><span><i class="fa-regular fa-copyright"></i><span class="cRight"></span><span class="skyWing">SkyWing</span>.All rights reserved.</p>
+            <p>
+                <span><i class="fa-regular fa-copyright"></i></span>
+                <span class="cRight"></span>
+                <span class="skyWing">SkyWing.
+                All rights reserved.</span></p>
         </div>
     </footer>
     <script>
@@ -162,7 +166,7 @@
                 messagePlace : "Your Message...",
                 btn : "Send Message"
             },
-            contactInfo : {
+            info : {
                 title : "Contact Infomation",
                 phone : "Phone",
                 phonePlace : "+(249) 123 456 78",
@@ -172,6 +176,17 @@
                 addressPlace : "123 Al-kdro Street, Khartoum, NY 10001",
                 Business : "Business Hours",
                 BusinessHours : ["Sunday - Thirsday 9:00AM-6:00PM","Saturday: 10:00AM-4:00PM","Friday: closed"]
+            },
+             footer: {
+                logoText: "SkyWing",
+                desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
+                quickLinksTitle:['Quick Links'],
+                quickLinks: ["About Us", "All Flights", "Contact Us"],
+                workingHoursTitle:['Working Hours'],
+                workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
+                contactTitle:["Contact Info"],
+                contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 Travel Avenue, New York, NY" },
+                copyright: "SkyWing. All rights reserved.",
             }
             },
         ar: {
@@ -213,7 +228,7 @@
                 contactTitle:['معلومات الاتصال'],
                 contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 عمارة صندل,  كمبالا KM" },
                 copyright: "سكاي وينج. جميع الحقوق محفوظة.",
-                }
+            }
         }
 
     }
@@ -242,7 +257,7 @@
             document.querySelectorAll('.info .working-hours p').forEach((p,i) => p.textContent = texts[lang].info.BusinessHours[i])
             
             // Footer
-            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.png" alt="">${texts[lang].footer.logoText}`;
+            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
             document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
             document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
             document.querySelectorAll('.two ul li').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
@@ -263,15 +278,6 @@
         langBtn.addEventListener('click', () => {
             changeLanguage(currentLang === "en" ? "ar" : "en");
         })
-
-
-
-
-
-
-
-
-
     </script>
 </body>
 </html>

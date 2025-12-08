@@ -15,7 +15,6 @@ document.body.addEventListener("click", (e) => {
 let currentLang = "en";
 
 //set lang
-
 const langBtn = document.getElementById('lang-btn');
 
 const texts = {
@@ -50,7 +49,8 @@ const texts = {
         { city: "Mecca", country: "Saudi Arabia" },
         { city: "Riyadh", country: "Saudi Arabia" }
       ],
-      bookBtn: "Reserve Now"
+      bookBtn: "Reserve Now",
+      startFrom: "from"
     },
     choose: {
       title: "Why Choose SkyWing?",
@@ -109,7 +109,8 @@ const texts = {
         { city: "مكة", country: "المملكة العربية السعودية" },
         { city: "الرياض", country: "المملكة العربية السعودية" }
       ],
-      bookBtn: "احجز الآن"
+      bookBtn: "احجز الآن",
+      startFrom: "تبدأ من"
     },
     choose: {
       title: "لماذا تختار سكاي وينج؟",
@@ -166,6 +167,7 @@ function changeLanguage(lang) {
     box.querySelector('.text h3').innerHTML = `<i class="fa-solid fa-location-dot"></i>${texts[lang].popular.cities[i].city}`;
     box.querySelector('.text span').textContent = texts[lang].popular.cities[i].country;
     box.querySelector('.prise-book button').textContent = texts[lang].popular.bookBtn;
+    box.querySelector('.prise-book .start-from').textContent = texts[lang].popular.startFrom;
   });
 
   // Why Book section
@@ -182,7 +184,7 @@ function changeLanguage(lang) {
   });
 
   // Footer
-  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.png" alt="">${texts[lang].footer.logoText}`;
+  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
   document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
   document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
   document.querySelectorAll('.two ul li').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
@@ -199,20 +201,30 @@ function changeLanguage(lang) {
   langBtn.textContent = lang === "ar" ? "English" : "عربي";
 }
 
+//Switch between languages
+// langBtn.addEventListener('click', () => {
+//   changeLanguage(currentLang === "en" ? "ar" : "en");
+//   let cLang = currentLang === "en" ? "ar" : "en";
+//   fetchData(cLang)
+// });
 
+//Switch between languages
 langBtn.addEventListener('click', () => {
-  changeLanguage(currentLang === "en" ? "ar" : "en");
-  let cLang = currentLang === "en" ? "ar" : "en";
-  fetchData(cLang)
+  const newLang = currentLang === "en" ? "ar" : "en";
+  changeLanguage(newLang);
+  const temp = document.getElementById("template");
+  document.querySelector(".cards").innerHTML = null;
+  document.querySelector(".cards").appendChild(temp);
+  fetchData(newLang)
 });
 
 
 
-async function fetchData(language) {
-    
+async function fetchData(language) {    
   // fetch data
   const response = await fetch(`data-en.json?nocache=${Date.now()}`)
 
+  // english and arabic data
   const allData = await response.json();
 
   const flightsData = allData[currentLang]
@@ -230,13 +242,16 @@ async function fetchData(language) {
       clone.querySelector(".dep-time").textContent = flight.depTime;
       clone.querySelector(".duration").textContent = flight.duration;
       clone.querySelector(".price").textContent = flight.price;
+      clone.querySelector('.row-3 span').textContent =flight.totalPrice;
+      clone.querySelector('.row-3 button').textContent =flight.bookBtn;
+      
       wrapper.appendChild(clone);
   });
   document.querySelector(".cards").appendChild(wrapper);
 }
 fetchData(currentLang)
 
-
+// filter
 let filterBtns = document.querySelectorAll(".filter-nav li");
 
 filterBtns.forEach(e => {
@@ -256,15 +271,15 @@ function handleFilterClick(e) {
     filterFlights(target.dataset.filter);
 }
 // filter flights
-function filterFlights(flight){
+function filterFlights(airline){
     const allFlights = document.querySelectorAll(".card")
-    if (flight == "all") {
+    if (airline == "all") {
         allFlights.forEach(el => {
             el.style.display = ""
         })
     } else {
         allFlights.forEach(el => {
-            if (el.querySelector(".airline").textContent == flight) {
+            if (el.querySelector(".airline").textContent == airline ) {
                 el.style.display = ""
             } else {
                 el.style.display = "none"

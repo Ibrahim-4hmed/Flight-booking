@@ -9,7 +9,9 @@
       "depTime": "08:00 AM",
       "arivTime": "10:30 AM",
       "duration": "2h 30m",
-      "price": "$350"
+      "price": "$350",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501001,
@@ -20,7 +22,9 @@
       "depTime": "09:45 AM",
       "arivTime": "01:15 PM",
       "duration": "3h 30m",
-      "price": "$720"
+      "price": "$720",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501002,
@@ -31,7 +35,9 @@
       "depTime": "07:00 PM",
       "arivTime": "07:30 AM",
       "duration": "7h 30m",
-      "price": "$980"
+      "price": "$980",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501003,
@@ -42,7 +48,9 @@
       "depTime": "11:15 AM",
       "arivTime": "05:00 PM",
       "duration": "3h 45m",
-      "price": "$410"
+      "price": "$410",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501004,
@@ -53,7 +61,9 @@
       "depTime": "10:00 PM",
       "arivTime": "07:10 AM",
       "duration": "6h 10m",
-      "price": "$870"
+      "price": "$870",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501005,
@@ -64,7 +74,9 @@
       "depTime": "01:30 PM",
       "arivTime": "03:45 PM",
       "duration": "2h 15m",
-      "price": "$250"
+      "price": "$250",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501006,
@@ -75,7 +87,9 @@
       "depTime": "11:00 PM",
       "arivTime": "08:30 PM",
       "duration": "14h 30m",
-      "price": "1$250"
+      "price": "$250",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501007,
@@ -86,7 +100,9 @@
       "depTime": "06:15 AM",
       "arivTime": "08:45 AM",
       "duration": "2h 30m",
-      "price": "$300"
+      "price": "$300",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501008,
@@ -97,7 +113,9 @@
       "depTime": "04:00 PM",
       "arivTime": "06:20 PM",
       "duration": "2h 20m",
-      "price": "$430"
+      "price": "$430",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501009,
@@ -108,7 +126,9 @@
       "depTime": "12:45 PM",
       "arivTime": "01:35 PM",
       "duration": "0h 50m",
-      "price": "$180"
+      "price": "$180",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501010,
@@ -119,7 +139,9 @@
       "depTime": "09:00 AM",
       "arivTime": "11:00 AM",
       "duration": "2h 00m",
-      "price": "$420"
+      "price": "$420",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501011,
@@ -130,7 +152,9 @@
       "depTime": "02:00 PM",
       "arivTime": "06:30 PM",
       "duration": "4h 30m",
-      "price": "$560"
+      "price": "$560",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501012,
@@ -141,7 +165,9 @@
       "depTime": "08:15 AM",
       "arivTime": "09:25 AM",
       "duration": "1h 10m",
-      "price": "$220"
+      "price": "$220",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     },
     {
       "id": 1754567501013,
@@ -152,7 +178,9 @@
       "depTime": "06:45 AM",
       "arivTime": "08:10 AM",
       "duration": "1h 25m",
-      "price": "$180"
+      "price": "$180",
+      "totalPrice": "Total Price",
+      "bookBtn": "Reserve on WhatsApp"
     }
   ],
   "ar" :[
@@ -165,7 +193,9 @@
       "depTime": "08:00 ص",
       "arivTime": "10:30 ص",
       "duration": "2 ساعة 30 دقيقة",
-      "price": "350$"
+      "price": "$350",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501001,
@@ -176,7 +206,9 @@
       "depTime": "09:45 ص",
       "arivTime": "01:15 م",
       "duration": "3 ساعة 30 دقيقة",
-      "price": "720$"
+      "price": "$720",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501002,
@@ -187,7 +219,9 @@
       "depTime": "07:00 م",
       "arivTime": "07:30 ص",
       "duration": "7 ساعة 30 دقيقة",
-      "price": "980$"
+      "price": "$980",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501003,
@@ -198,7 +232,9 @@
       "depTime": "11:15 ص",
       "arivTime": "05:00 م",
       "duration": "3 ساعة 45 دقيقة",
-      "price": "410$"
+      "price": "$410",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501004,
@@ -209,7 +245,9 @@
       "depTime": "10:00 م",
       "arivTime": "07:10 ص",
       "duration": "6 ساعة 10 دقيقة",
-      "price": "870$"
+      "price": "$870",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501005,
@@ -220,7 +258,9 @@
       "depTime": "01:30 م",
       "arivTime": "03:45 م",
       "duration": "2 ساعة 15 دقيقة",
-      "price": "250$"
+      "price": "$250",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501006,
@@ -231,7 +271,9 @@
       "depTime": "11:00 م",
       "arivTime": "08:30 م",
       "duration": "14 ساعة 30 دقيقة",
-      "price": "1250$"
+      "price": "$1250",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501007,
@@ -242,7 +284,9 @@
       "depTime": "06:15 ص",
       "arivTime": "08:45 ص",
       "duration": "2 ساعة 30 دقيقة",
-      "price": "300$"
+      "price": "$300",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501008,
@@ -253,7 +297,9 @@
       "depTime": "04:00 م",
       "arivTime": "06:20 م",
       "duration": "2 ساعة 20 دقيقة",
-      "price": "430$"
+      "price": "$430",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501009,
@@ -264,7 +310,9 @@
       "depTime": "12:45 م",
       "arivTime": "01:35 م",
       "duration": "50 دقيقة",
-      "price": "180$"
+      "price": "$180",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501010,
@@ -275,7 +323,9 @@
       "depTime": "09:00 ص",
       "arivTime": "11:00 ص",
       "duration": "2 ساعة",
-      "price": "420$"
+      "price": "$420",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501011,
@@ -286,7 +336,9 @@
       "depTime": "02:00 م",
       "arivTime": "06:30 م",
       "duration": "4 ساعة 30 دقيقة",
-      "price": "560$"
+      "price": "$560",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501012,
@@ -297,7 +349,9 @@
       "depTime": "08:15 ص",
       "arivTime": "09:25 ص",
       "duration": "1 ساعة 10 دقيقة",
-      "price": "220$"
+      "price": "$220",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     },
     {
       "id": 1754567501013,
@@ -308,7 +362,9 @@
       "depTime": "06:45 ص",
       "arivTime": "08:10 ص",
       "duration": "1 ساعة 25 دقيقة",
-      "price": "180$"
+      "price": "$180",
+    "totalPrice": "المبلغ الكلي",
+    "bookBtn": "احجز الآن على واتساب"
     }
   ]
 }

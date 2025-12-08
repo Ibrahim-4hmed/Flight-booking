@@ -6,9 +6,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body>
-
+<body dir="auto">
      <header>
         <div class="logo">
             <a href="index.html">
@@ -38,40 +38,41 @@
 
         <section class="about-our-story">
             <h2>Our Story</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores officia 
-                dicta eum omnis fugit hic numquam est quod? Veniam 
-                eum omnis fugit hic numquam est quod? Veniam 
-                perspiciatis dolore voluptatum nulla laudantium dolor nam officia esse
-                perspiciatis dolore voluptatum nulla laudantium .</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores officia 
-                dicta eum omnis fugit hic numquam est quod? Veniam 
-                eum omnis fugit hic numquam est quod? Veniam 
-                perspiciatis dolore voluptatum nulla laudantium dolor nam officia esse
-                perspiciatis dolore voluptatum nulla laudantium .</p>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores officia 
-                dicta eum omnis fugit hic numquam est quod? Veniam 
-                eum omnis fugit hic numquam est quod? Veniam 
-                perspiciatis dolore voluptatum nulla laudantium dolor nam officia esse
-                perspiciatis dolore voluptatum nulla laudantium .</p>
+            <p>At Wing Fly, we strive to provide a unique, easy, and fast travel experience for all our customers around the world.
+                We began our journey with the goal of simplifying the process of booking flights and making it accessible to everyone with just one click.
+                We work daily to secure the best prices and offers from hundreds of local and international airlines.
+                We believe that traveling should be enjoyable from the moment you start booking, so we design our platform to be clear, comfortable, and easy to use.
+                Our team includes experts in aviation and travel who work around the clock to answer all your inquiries.
+                We are committed to complete transparency, with no hidden fees or complications during the booking process.
+                We offer a variety of options that suit all categories, whether you are looking for affordable flights or luxury travel.
+                We also help you choose the best travel route based on your time, budget, and destination.
+                Our goal is to be your preferred partner for all your future trips.
+                We constantly strive to innovate and develop our services to give you a better experience every day.
+                We work with a wide network of airlines to ensure the greatest possible diversity in destinations and schedules.
+                At Wing Fly, we place customer satisfaction at the top of our priorities and consider it the foundation of our success.
+                We guarantee a fully secure booking process following the latest cybersecurity standards.
+                We are here to offer you a service you can rely on and trust every time you plan to travel.
+                With Wing Fly… we take you to the sky with confidence and ease.
+            </p>
         </section>
 
         <section class="about-values">
             <h2>Our Value</h2>
             <div class="wrapper">
-                <div class="box">
+                <div class="box box1">
                     <i class="fa-solid fa-medal"></i>
                     <h3>Quality First</h3>
                     <p>We carefully select each product to ensure the highest quality</p>
                 </div>
-                <div class="box">
+                <div class="box box2">
                     <i class="fa-solid fa-users"></i>
                     <h3>Quality First</h3>
                     <p>We carefully select each product to ensure the highest quality</p>
-                </div><div class="box">
+                </div><div class="box box3">
                     <i class="fa-brands fa-web-awesome"></i>
                     <h3>Quality First</h3>
                     <p>We carefully select each product to ensure the highest quality</p>
-                </div><div class="box">
+                </div><div class="box box4">
                     <i class="fa-regular fa-heart"></i>
                     <h3>Quality First</h3>
                     <p>We carefully select each product to ensure the highest quality</p>
@@ -83,7 +84,7 @@
    <footer>
         <div class="content">
             <div class="one">
-            <h3><img src="./flights-imges/shaar1.png" alt="">SkyWing</h3>
+            <h3><img src="./flights-imges/shaar1.webp" alt="">SkyWing</h3>
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>
@@ -118,7 +119,11 @@
         </div>
         
         <div class="footer">
-            <p><span><i class="fa-regular fa-copyright"></i><span class="cRight"></span><span class="skyWing">SkyWing</span>.All rights reserved.</p>
+            <p>
+                <span><i class="fa-regular fa-copyright"></i></span>
+                <span class="cRight"></span>
+                <span class="skyWing">SkyWing.
+                All rights reserved.</span></p>
         </div>
     </footer>
     <script>
@@ -134,6 +139,171 @@
                     ulNav.classList.toggle("sm-sc")
             }
         })
+
+
+        //current language
+        let currentLang = "en";
+
+        //set lang
+        const langBtn = document.getElementById('lang-btn');
+
+        const texts = {
+            en:{
+                header: ["Home", "About Us", "Contact Us", "Flights"],
+                landing: {
+                    h1 : "About WingFly",
+                    p :"Your trusted partner for affordable flights worldwide."
+                },
+                story: {
+                    title: "Our Story",
+                    story: `At Wing Fly, we strive to provide a unique, easy, and fast travel experience for all our customers around the world.
+                    We began our journey with the goal of simplifying the process of booking flights and making it accessible to everyone with just one click.
+                    We work daily to secure the best prices and offers from hundreds of local and international airlines.
+                    We believe that traveling should be enjoyable from the moment you start booking, so we design our platform to be clear, comfortable, and easy to use.
+                    Our team includes experts in aviation and travel who work around the clock to answer all your inquiries.
+                    We are committed to complete transparency, with no hidden fees or complications during the booking process.
+                    We offer a variety of options that suit all categories, whether you are looking for affordable flights or luxury travel.
+                    We also help you choose the best travel route based on your time, budget, and destination.
+                    Our goal is to be your preferred partner for all your future trips.
+                    We constantly strive to innovate and develop our services to give you a better experience every day.
+                    We work with a wide network of airlines to ensure the greatest possible diversity in destinations and schedules.
+                    At Wing Fly, we place customer satisfaction at the top of our priorities and consider it the foundation of our success.
+                    We guarantee a fully secure booking process following the latest cybersecurity standards.
+                    We are here to offer you a service you can rely on and trust every time you plan to travel.
+                    With Wing Fly… we take you to the sky with confidence and ease.`,
+                },
+                value: {
+                    val1: {
+                        title: "Quality First",
+                        desc: "We carefully select each product to ensure the highest quality"
+                    },
+                    val2: {
+                        title: "Quality First",
+                        desc: "We carefully select each product to ensure the highest quality"
+                    },
+                    val3: {
+                        title: "Quality First",
+                        desc: "We carefully select each product to ensure the highest quality"
+                    },
+                    val4: {
+                        title: "Quality First",
+                        desc: "We carefully select each product to ensure the highest quality"
+                    }
+                },
+                 footer: {
+                    logoText: "SkyWing",
+                    desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
+                    quickLinksTitle:['Quick Links'],
+                    quickLinks: ["About Us", "All Flights", "Contact Us"],
+                    workingHoursTitle:['Working Hours'],
+                    workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
+                    contactTitle:["Contact Info"],
+                    contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 Travel Avenue, New York, NY" },
+                    copyright: "SkyWing. All rights reserved.",
+                }
+            },
+            ar:{
+                header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
+                landing: {
+                        h1: "عن وينغ فلاي",
+                        p: "شريكك الموثوق للرحلات الجوية بأسعار تنافسية حول العالم."
+                },
+                story: {
+                    title: "قصة كفاحنا",
+                    story:`نحن في وينغ فلاي نسعى لتقديم تجربة سفر مختلفة، سهلة، وسريعة لكل عملائنا حول العالم.
+                    بدأنا رحلتنا بهدف تبسيط عملية حجز الرحلات الجوية وجعلها متاحة للجميع بضغطة زر واحدة فقط.
+                    نعمل يوميًا على توفير أفضل الأسعار والعروض لأكثر من مئات شركات الطيران المحلية والدولية.
+                    نؤمن بأن السفر يجب أن يكون ممتعًا منذ لحظة الحجز، لذلك نصمم منصتنا لتكون واضحة، مريحة، وسهلة الاستخدام.
+                    يضم فريقنا خبراء في مجال الطيران والسفر يعملون على مدار الساعة للإجابة عن جميع استفساراتك.
+                    نحن ملتزمون بالشفافية التامة، فلا توجد رسوم مخفية أو تعقيدات أثناء عملية الحجز.
+                    نقدم خيارات متنوعة تناسب جميع الفئات، سواء كنت تبحث عن أسعار اقتصادية أو رحلات فاخرة.
+                    ونساعدك في اختيار أفضل خط سير للسفر بناءً على وقتك وميزانيتك ووجهتك.
+                    هدفنا أن نكون شريكك المفضل في جميع رحلاتك المقبلة.
+                    ونسعى دائمًا للابتكار وتطوير خدماتنا لنقدم لك تجربة أفضل كل يوم.
+                    نتعاون مع شبكة واسعة من شركات الطيران لضمان أكبر تنوع ممكن في الوجهات والمواعيد.
+                    في وينغ فلاي نضع رضا العميل في مقدمة أولوياتنا ونعتبره أساس نجاحنا.
+                    نضمن لك عملية حجز آمنة بالكامل وفق أحدث معايير الحماية الإلكترونية.
+                    نحن هنا لنقدم لك خدمة تعتمد عليها وتثق بها في كل مرة تخطط للسفر.
+                    مع وينغ فلاي… نأخذك إلى السماء بكل ثقة وسهولة.`,
+                },
+                value: {
+                    title: "قيمنا",
+                    val1: {
+                        title: "الجودة أولاً",
+                        desc: "نحن نختار كل منتج بعناية فائقة واهتمام دقيق لضمان أعلى مستويات الجودة والتميز لعملائنا."
+                    },
+                    val2: {
+                        title: "الجودة أولاً",
+                        desc: "نحن نختار كل منتج بعناية فائقة واهتمام دقيق لضمان أعلى مستويات الجودة والتميز لعملائنا."
+                    },
+                    val3: {
+                        title: "الجودة أولاً",
+                        desc: "نحن نختار كل منتج بعناية فائقة واهتمام دقيق لضمان أعلى مستويات الجودة والتميز لعملائنا."
+                    },
+                    val4: {
+                        title: "الجودة أولاً",
+                        desc: "نحن نختار كل منتج بعناية فائقة واهتمام دقيق لضمان أعلى مستويات الجودة والتميز لعملائنا."
+                    }
+                },
+                footer: {
+                    logoText: "سكاي وينج",
+                    desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
+                    quickLinksTitle:["روابط سريعة"],
+                    quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
+                    workingHoursTitle: ['ساعات العمل'],
+                    workingHours: [" الاثنين-الخميس :9:00 ص-6:00م", "السبت:1:00ص-4:00م", "الاحد:مغلق"],
+                    contactTitle:['معلومات الاتصال'],
+                    contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 عمارة صندل,  كمبالا KM" },
+                    copyright: "سكاي وينج. جميع الحقوق محفوظة.",
+                }
+            }
+        }
+
+
+        function changeLanguage(lang) {
+            currentLang = lang;
+            //header
+            document.querySelectorAll('ul.nav-links li a').forEach((link, i) => link.textContent = texts[lang].header[i]);
+            // Landing section
+            document.querySelector('.special-landing h1').textContent = texts[lang].landing.h1;
+            document.querySelector('.special-landing p').textContent = texts[lang].landing.p;
+            //our story
+            document.querySelector('.about-our-story h2').textContent = texts[lang].story.title
+            document.querySelector('.about-our-story p').textContent = texts[lang].story.story
+            //our values
+            document.querySelector('.about-values h2').textContent = texts[lang].value.title;
+            document.querySelector('.about-values .box1 h3').textContent = texts[lang].value.val1.title;
+            document.querySelector('.about-values .box1 p').textContent = texts[lang].value.val1.desc;
+            document.querySelector('.about-values .box2 h3').textContent = texts[lang].value.val2.title;
+            document.querySelector('.about-values .box2 p').textContent = texts[lang].value.val2.desc;
+            document.querySelector('.about-values .box3 h3').textContent = texts[lang].value.val1.title;
+            document.querySelector('.about-values .box3 p').textContent = texts[lang].value.val1.desc;
+            document.querySelector('.about-values .box4 h3').textContent = texts[lang].value.val2.title;
+            document.querySelector('.about-values .box4 p').textContent = texts[lang].value.val2.desc;
+            //Footer
+            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
+            document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
+            document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
+            document.querySelectorAll('.two ul li').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
+            document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
+            document.querySelectorAll('.three .text-sm p').forEach((p, i) => p.textContent = texts[lang].footer.workingHours[i]);
+            document.querySelector('.four h4').textContent = texts[lang].footer.contactTitle
+            document.querySelector('.four h5:nth-child(2)').textContent = texts[lang].footer.contact.phone;
+            document.querySelector('.four h5:nth-child(3)').textContent = texts[lang].footer.contact.email;
+            document.querySelector('.four p').textContent = texts[lang].footer.contact.address;
+            document.querySelector('.footer p .skyWing').textContent = texts[lang].footer.copyright;
+
+            // Direction
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            langBtn.textContent = lang === "ar" ? "English" : "عربي";
+        }
+
+        langBtn.addEventListener('click', () => {
+            const newLang = currentLang === "en" ? "ar" : "en";
+            changeLanguage(newLang);
+        })
+
+
     </script>
 </body>
 </html>
