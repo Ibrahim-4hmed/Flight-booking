@@ -6,6 +6,7 @@
     <title>All Flights</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -44,13 +45,13 @@
         <div class="filter">
             <h4><i class="fa-solid fa-filter"></i>Filter Flights</h4>
             <ul class="filter-nav">
-                <li data-filter="all" class="active">All</li>
-                <li data-filter="Tarco">Tarco</li>
-                <li data-filter="Badr">Badr</li>
-                <li data-filter="Sudaner">Sudaner</li>
-                <li data-filter="EgyptAir">EgyptAir</li>
-                <li data-filter="Qatar Airways">Qatar Airways</li>
-                <li data-filter="Turkish Airlines">Turkish Airlines</li>
+                <li data-ar="all" data-en="all" class="active">All</li>
+                <li data-ar="تاركو" data-en="Tarco">Tarco</li>
+                <li data-ar="بدر للطيران" data-en="Badr">Badr</li>
+                <li data-ar="سودانير" data-en="Sudaner">Sudaner</li>
+                <li data-ar="مصر للطيران" data-en="EgyptAir">EgyptAir</li>
+                <li data-ar="الخطوط القطرية" data-en="Qatar Airways">Qatar Airways</li>
+                <li data-ar="الخطوط التركية" data-en="Turkish Airlines">Turkish Airlines</li>
             </ul>
         </div>
          <div class="cards">
@@ -85,7 +86,7 @@
                         <span>Total price</span>
                         <p class="price">$ 300</p>
                     </div>
-                    <button><i class="fa-brands fa-whatsapp"></i>Book on WhatsApp</button>
+                    <button><i class="fa-brands fa-whatsapp"></i>Reserve on WhatsApp</button>
                 </div>
             </article>
             </template>
@@ -97,7 +98,7 @@
      <footer>
         <div class="content">
             <div class="one">
-            <h3><img src="./flights-imges/shaar1.png" alt="">SkyWing</h3>
+            <h3><img src="./flights-imges/shaar1.webp" alt="">SkyWing</h3>
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>
@@ -110,9 +111,9 @@
             <div class="two">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li>About Us</li>
-                    <li>All Flight</li>
-                    <li>Contact us</li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="all-flights.html">All Flight</a></li>
                 </ul>
             </div>
             <div class="three">
@@ -132,7 +133,11 @@
         </div>
         
         <div class="footer">
-            <p><span><i class="fa-regular fa-copyright"></i><span class="cRight"></span><span class="skyWing">SkyWing</span>.All rights reserved.</p>
+            <p>
+                <span><i class="fa-regular fa-copyright"></i></span>
+                <span class="cRight"></span>
+                <span class="skyWing">SkyWing.
+                All rights reserved.</span></p>
         </div>
     </footer>
     
@@ -140,7 +145,6 @@
         //////////// Borgar Menu /////////////
         const ulNav = document.getElementById("small-sc");
         const links = document.querySelector(".nav-links a")
-
         document.body.addEventListener("click", (e) => {
             if (e.target.className === "sp-borgar"){
                 ulNav.classList.toggle("sm-sc")
@@ -149,10 +153,125 @@
                     ulNav.classList.toggle("sm-sc")
             }
         })
-        //fetch data from json file
-        const flightPromise = await fetch("data.json")
-        const flightsData = await flightPromise.json();
 
+        //Texts 
+        const texts = {
+            en:{
+                header: ["Home", "About Us", "Contact Us", "Flights"],
+                landing: {
+                    h1 : "All Flights",
+                    p :"Your trusted partner for affordable flights worldwide."
+                },
+                flights: {
+                    title: "Top Flights",
+                    desc: "Grab the best deals from your personal travel agent. Quick booking via WhatsApp available!",
+                    filterTitle: "Filter",
+                    filters: ["All", "Tarco Airlines", "Badr Airlines", "Sudan Airlines", "EgyptAir", "Qatar Airways", "Turkish Airlines"],
+                },
+                 footer: {
+                    logoText: "SkyWing",
+                    desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
+                    quickLinksTitle:['Quick Links'],
+                    quickLinks: ["About Us", "Contact Us","All Flights"],
+                    workingHoursTitle:['Working Hours'],
+                    workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
+                    contactTitle:["Contact Info"],
+                    contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 Travel Avenue, New York, NY" },
+                    copyright: "SkyWing. All rights reserved.",
+                }
+            },
+            ar:{
+                header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
+                landing: {
+                    h1: "جميع الرحلات",
+                    p: "شريكك الموثوق للرحلات الجوية بأسعار تنافسية حول العالم."
+                },
+                flights: {
+                    title: "أفضل الرحلات",
+                    desc: "احصل على أفضل العروض من وكيلك الشخصي. الحجز السريع متاح عبر واتساب!",
+                    filterTitle:"تخصيص",
+                    filters: ["الكل", "تاركو", "بدر", "الخطوط السودانية", "مصر للطيران", "الخطوط القطرية", "الخطوط التركية"],
+                },
+                footer: {
+                    logoText: "سكاي وينج",
+                    desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
+                    quickLinksTitle:["روابط سريعة"],
+                    quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
+                    workingHoursTitle: ['ساعات العمل'],
+                    workingHours: [" الاثنين-الخميس :9:00 ص-6:00م", "السبت:1:00ص-4:00م", "الاحد:مغلق"],
+                    contactTitle:['معلومات الاتصال'],
+                    contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 عمارة صندل,  كمبالا KM" },
+                    copyright: "سكاي وينج. جميع الحقوق محفوظة.",
+                }
+            }
+        }
+        
+        //current language
+        let currentLang = localStorage.getItem("lang") || "en";
+
+        //language button
+        const langBtn = document.getElementById('lang-btn');
+
+        // Apply saved language on page load
+        changeLanguage(currentLang);
+
+        // Fetch flights for saved language
+        fetchData(currentLang);
+
+        //Switch between languages
+        langBtn.addEventListener('click', () => {
+        const newLang = currentLang === "en" ? "ar" : "en";
+        localStorage.setItem("lang",newLang);
+        changeLanguage(newLang);
+        const temp = document.getElementById("template");
+        document.querySelector(".cards").innerHTML = null;
+        document.querySelector(".cards").appendChild(temp);
+        fetchData(newLang)
+        });
+
+
+        //Chang Language 
+        function changeLanguage(lang) {
+            currentLang = lang;
+
+            // Header
+            document.querySelectorAll('ul.nav-links li a').forEach((link, i) => link.textContent = texts[lang].header[i]);
+             // Landing section
+            document.querySelector('.special-landing h1').textContent = texts[lang].landing.h1;
+            document.querySelector('.special-landing p').textContent = texts[lang].landing.p;
+            // Flights section
+            document.querySelector('#flights .all-head h2').textContent = texts[lang].flights.title;
+            document.querySelector('#flights .all-head p').textContent = texts[lang].flights.desc;
+            document.querySelector(".filter h4").textContent = texts[lang].flights.filterTitle;
+            document.querySelectorAll('.filter-nav li').forEach((item, i) => item.textContent = texts[lang].flights.filters[i]);
+
+            // Footer
+            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
+            document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
+            document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
+            document.querySelectorAll('.two ul li a').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
+            document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
+            document.querySelectorAll('.three .text-sm p').forEach((p, i) => p.textContent = texts[lang].footer.workingHours[i]);
+            document.querySelector('.four h4').textContent = texts[lang].footer.contactTitle
+            document.querySelector('.four h5:nth-child(2)').textContent = texts[lang].footer.contact.phone;
+            document.querySelector('.four h5:nth-child(3)').textContent = texts[lang].footer.contact.email;
+            document.querySelector('.four p').textContent = texts[lang].footer.contact.address;
+            document.querySelector('.footer p .skyWing').textContent = texts[lang].footer.copyright;
+
+            // Direction
+            document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+            langBtn.textContent = lang === "ar" ? "English" : "عربي";
+        }
+
+        //fetch data from json file
+        async function fetchData(language) {    
+        // fetch data
+        const response = await fetch(`data-en.json?nocache=${Date.now()}`)
+
+        // english and arabic data
+        const allData = await response.json();
+
+        const flightsData = allData[language]
 
         const template = document.getElementById("template")
         const wrapper = document.createElement("div");
@@ -167,11 +286,15 @@
             clone.querySelector(".dep-time").textContent = flight.depTime;
             clone.querySelector(".duration").textContent = flight.duration;
             clone.querySelector(".price").textContent = flight.price;
+            clone.querySelector('.row-3 span').textContent =flight.totalPrice;
+            clone.querySelector('.row-3 button').textContent =flight.bookBtn;
+            
             wrapper.appendChild(clone);
         });
         document.querySelector(".cards").appendChild(wrapper);
+        }
 
-
+       
         let filterBtns = document.querySelectorAll(".filter-nav li");
 
         filterBtns.forEach(e => {
@@ -188,18 +311,22 @@
             })
             target.classList.add("active")
 
-            filterFlights(target.dataset.filter);
+            if (currentLang === "en") {
+                filterFlights(target.dataset.en);
+            } else {
+                filterFlights(target.dataset.ar);
+            }
         }
         // filter flights
-        function filterFlights(flight){
+        function filterFlights(airline){
             const allFlights = document.querySelectorAll(".card")
-            if (flight == "all") {
+            if (airline == "all") {
                 allFlights.forEach(el => {
                     el.style.display = ""
                 })
             } else {
                 allFlights.forEach(el => {
-                    if (el.querySelector(".airline").textContent == flight) {
+                    if (el.querySelector(".airline").textContent == airline) {
                         el.style.display = ""
                     } else {
                         el.style.display = "none"

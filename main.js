@@ -10,13 +10,7 @@ document.body.addEventListener("click", (e) => {
             ulNav.classList.toggle("sm-sc")
     }
 })
-
-//current language
-let currentLang = "en";
-
-//set lang
-const langBtn = document.getElementById('lang-btn');
-
+// Texts in English and Arabic
 const texts = {
   en: {
     header: ["Home", "About Us", "Contact Us", "Flights"],
@@ -28,8 +22,8 @@ const texts = {
     flights: {
       title: "This Week's Top Flights",
       desc: "Grab the best deals from your personal travel agent. Quick booking via WhatsApp available!",
-      filters: ["All", "Tarco Airlines", "Badr Airlines", "Sudan Airlines", "EgyptAir", "Qatar Airways", "Turkish Airlines"],
-      cardBtn: "Reserve on WhatsApp",
+      // filters: ["All", "Tarco Airlines", "Badr Airlines", "Sudan Airlines", "EgyptAir", "Qatar Airways", "Turkish Airlines"],
+      // cardBtn: "Reserve on WhatsApp",
       // cardLabels: { from: "Departure", to: "Arrival", depTime: "Leave", arivTime: "Reach", duration: "Flight Time", airline: "Airline", date: "Travel Date", price: "Ticket Price" },
       seeAll: "Explore More"
     },
@@ -49,7 +43,7 @@ const texts = {
         { city: "Mecca", country: "Saudi Arabia" },
         { city: "Riyadh", country: "Saudi Arabia" }
       ],
-      bookBtn: "Reserve Now",
+      bookBtn: `Reserve Now`,
       startFrom: "from"
     },
     choose: {
@@ -68,7 +62,7 @@ const texts = {
       logoText: "SkyWing",
       desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
       quickLinksTitle:['Quick Links'],
-      quickLinks: ["About Us", "All Flights", "Contact Us"],
+      quickLinks: ["About Us","Contact Us", "All Flights"],
       workingHoursTitle:['Working Hours'],
       workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
       contactTitle:["Contact Info"],
@@ -77,7 +71,7 @@ const texts = {
     }
   },
   ar: {
-    header: ["الرئيسية", "من نحن", "اتصل بنا", "الرحلات"],
+    header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
     landing: {
       h1: "سافر بذكاء مع سكاي وينج",
       p: "استمتع بأفضل عروض الرحلات وخدمة شخصية متميزة. تواصل معنا على واتساب للحجز الفوري!",
@@ -138,6 +132,18 @@ const texts = {
   }
 };
 
+//current language
+let currentLang = localStorage.getItem("lang") || "en";
+
+//language button
+const langBtn = document.getElementById('lang-btn');
+
+// Apply saved language on page load
+changeLanguage(currentLang);
+
+// Fetch flights for saved language
+fetchData(currentLang);
+
 
 function changeLanguage(lang) {
   currentLang = lang;
@@ -154,10 +160,10 @@ function changeLanguage(lang) {
   document.querySelector('#flights .section-head h2').textContent = texts[lang].flights.title;
   document.querySelector('#flights .section-head p').textContent = texts[lang].flights.desc;
 
-  document.querySelector(".filter-title").textContent = texts[lang].flights.filterTitle;
-  document.querySelectorAll('.filter-nav li').forEach((item, i) => item.textContent = texts[lang].flights.filters[i]);
-  document.querySelectorAll('.card .row-3 span').forEach((item,i) => item.textContent = texts[lang].flights.price);
-  document.querySelectorAll('.cards button').forEach(btn => btn.textContent = texts[lang].flights.cardBtn);
+  // document.querySelector(".filter-title").textContent = texts[lang].flights.filterTitle;
+  // document.querySelectorAll('.filter-nav li').forEach((item, i) => item.textContent = texts[lang].flights.filters[i]);
+  // document.querySelectorAll('.card .row-3 span').forEach((item,i) => item.textContent = texts[lang].flights.price);
+  // document.querySelectorAll('.cards button').forEach(btn => btn.textContent = texts[lang].flights.cardBtn);
   document.querySelector('.see-all').textContent = texts[lang].flights.seeAll;
 
   // Popular Destinations
@@ -187,7 +193,7 @@ function changeLanguage(lang) {
   document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
   document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
   document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
-  document.querySelectorAll('.two ul li').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
+  document.querySelectorAll('.two ul li a').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
   document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
   document.querySelectorAll('.three .text-sm p').forEach((p, i) => p.textContent = texts[lang].footer.workingHours[i]);
   document.querySelector('.four h4').textContent = texts[lang].footer.contactTitle
@@ -201,16 +207,13 @@ function changeLanguage(lang) {
   langBtn.textContent = lang === "ar" ? "English" : "عربي";
 }
 
-//Switch between languages
-// langBtn.addEventListener('click', () => {
-//   changeLanguage(currentLang === "en" ? "ar" : "en");
-//   let cLang = currentLang === "en" ? "ar" : "en";
-//   fetchData(cLang)
-// });
+// localStorage.clear();
+
 
 //Switch between languages
 langBtn.addEventListener('click', () => {
   const newLang = currentLang === "en" ? "ar" : "en";
+  localStorage.setItem("lang",newLang);
   changeLanguage(newLang);
   const temp = document.getElementById("template");
   document.querySelector(".cards").innerHTML = null;
@@ -227,7 +230,7 @@ async function fetchData(language) {
   // english and arabic data
   const allData = await response.json();
 
-  const flightsData = allData[currentLang]
+  const flightsData = allData[language]
 
   const template = document.getElementById("template")
   const wrapper = document.createElement("div");
@@ -249,44 +252,43 @@ async function fetchData(language) {
   });
   document.querySelector(".cards").appendChild(wrapper);
 }
-fetchData(currentLang)
 
-// filter
-let filterBtns = document.querySelectorAll(".filter-nav li");
+// // filter
+// let filterBtns = document.querySelectorAll(".filter-nav li");
 
-filterBtns.forEach(e => {
-    e.addEventListener("click", e => handleFilterClick(e))
-})
+// filterBtns.forEach(e => {
+//     e.addEventListener("click", e => handleFilterClick(e))
+// })
 
-//function to handle filters
-function handleFilterClick(e) {
-    let target = e.target;
-    e.preventDefault();
+// //function to handle filters
+// function handleFilterClick(e) {
+//     let target = e.target;
+//     e.preventDefault();
 
-    filterBtns.forEach(e => {
-        e.classList.remove("active")
-    })
-    target.classList.add("active")
+//     filterBtns.forEach(e => {
+//         e.classList.remove("active")
+//     })
+//     target.classList.add("active")
 
-    filterFlights(target.dataset.filter);
-}
-// filter flights
-function filterFlights(airline){
-    const allFlights = document.querySelectorAll(".card")
-    if (airline == "all") {
-        allFlights.forEach(el => {
-            el.style.display = ""
-        })
-    } else {
-        allFlights.forEach(el => {
-            if (el.querySelector(".airline").textContent == airline ) {
-                el.style.display = ""
-            } else {
-                el.style.display = "none"
-            }
-        })
-    }
-}
+//     filterFlights(target.dataset.filter);
+// }
+// // filter flights
+// function filterFlights(airline){
+//     const allFlights = document.querySelectorAll(".card")
+//     if (airline == "all") {
+//         allFlights.forEach(el => {
+//             el.style.display = ""
+//         })
+//     } else {
+//         allFlights.forEach(el => {
+//             if (el.querySelector(".airline").textContent == airline ) {
+//                 el.style.display = ""
+//             } else {
+//                 el.style.display = "none"
+//             }
+//         })
+//     }
+// }
 
 
 

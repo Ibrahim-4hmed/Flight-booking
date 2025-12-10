@@ -34,7 +34,7 @@
     <main class="contact">
         <section class="special-landing">
             <h1>Get In Touch</h1>
-            <p>Your trusted partner for affordable flights worldwide.</p>
+            <p>Fly smart and stress-free—get in touch for instant bookings anywhere.</p>
         </section>
 
         <section class="wrapper">
@@ -53,7 +53,6 @@
             <div class="info">
                 <h3>Contact Information</h3>
                 <div class="box">
-                    <!-- <i class="fa-solid fa-envelope"> -->
                     <div class="text email">
                         <h4>Email</h4>
                         <p>hello@wingfly.com</p>
@@ -61,7 +60,6 @@
                 </div>
 
                 <div class="box phone">
-                    <!-- <i class="fa-solid fa-phone"> -->
                     <div class="text">
                         <h4>Phone</h4>
                         <p>+(249) 123 456 78</p>
@@ -69,7 +67,6 @@
                 </div>
 
                 <div class="box address">
-                    <!-- <i class="fa-solid fa-location-dot"> -->
                     <div class="text">
                         <h4>Address</h4>
                         <p>123 Al-kdro Street, Khartoum, NY 10001</p>
@@ -100,9 +97,9 @@
             <div class="two">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li>About Us</li>
-                    <li>All Flight</li>
-                    <li>Contact us</li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="all-flights.html">All Flight</a></li>
                 </ul>
             </div>
             <div class="three">
@@ -143,18 +140,12 @@
             }
         })
 
-        //current language
-        let currentLang = "en";
-
-        //set lang
-        const langBtn = document.getElementById('lang-btn');
-
         const texts = {
         en:{
             header: ["Home", "About Us", "Contact Us", "Flights"],
             landing: {
                 h1 : "Get In Touch",
-                p :"Your trusted partner for affordable flights worldwide."
+                p :"Fly smart and stress-free—get in touch for instant bookings anywhere."
             },
             form: {
                 title : "Send us a message",
@@ -181,7 +172,7 @@
                 logoText: "SkyWing",
                 desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
                 quickLinksTitle:['Quick Links'],
-                quickLinks: ["About Us", "All Flights", "Contact Us"],
+                quickLinks: ["About Us","Contact Us", "All Flights"],
                 workingHoursTitle:['Working Hours'],
                 workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
                 contactTitle:["Contact Info"],
@@ -193,7 +184,7 @@
             header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
             landing: {
                 h1: "ابقَ على تواصل معنا",
-                p: "شريكك الموثوق للرحلات الجوية بأسعار تنافسية حول العالم."
+                p: "سافر بذكاء وراحة—تواصل معنا للحجز الفوري في أي مكان."
             },
             form: {
                 title: "أرسل لنا رسالة",
@@ -210,7 +201,7 @@
                 phone: "الهاتف",
                 email: "البريد الإلكتروني",
                 address: "العنوان",
-                addressPlace: "شارع القدرو 123، الخرطوم",
+                addressPlace: "شارع الكدرو 123، الخرطوم",
                 Business: "ساعات العمل",
                 BusinessHours: [
                     "الأحد - الخميس: 9:00 ص - 6:00 م",
@@ -230,9 +221,15 @@
                 copyright: "سكاي وينج. جميع الحقوق محفوظة.",
             }
         }
-
     }
 
+        //current language
+        let currentLang = localStorage.getItem("lang") || "en";
+
+        //set lang
+        const langBtn = document.getElementById('lang-btn');
+
+        changeLanguage(currentLang);
 
         function changeLanguage(lang) {
             currentLang = lang;
@@ -244,8 +241,11 @@
             //form 
             document.querySelector('.form h3').textContent = texts[lang].form.title
             document.querySelector('.form .name').textContent = texts[lang].form.name;
+            document.querySelector('.form #name').placeholder = texts[lang].form.namePlace;
             document.querySelector('.form .email').textContent = texts[lang].form.email;
+            document.querySelector('.form #email').placeholder = texts[lang].form.emailPlace;
             document.querySelector('.form .text').textContent = texts[lang].form.message;
+            document.querySelector('.form #text-area').placeholder = texts[lang].form.messagePlace;
             document.querySelector('.form .submit-btn').textContent = texts[lang].form.btn;
             //Contact info
             document.querySelector('.info h3').textContent = texts[lang].info.title
@@ -260,7 +260,7 @@
             document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
             document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
             document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
-            document.querySelectorAll('.two ul li').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
+            document.querySelectorAll('.two ul li a').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
             document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
             document.querySelectorAll('.three .text-sm p').forEach((p, i) => p.textContent = texts[lang].footer.workingHours[i]);
             document.querySelector('.four h4').textContent = texts[lang].footer.contactTitle
@@ -275,8 +275,11 @@
             langBtn.textContent = lang === "ar" ? "English" : "عربي";
 
         }
+        
         langBtn.addEventListener('click', () => {
-            changeLanguage(currentLang === "en" ? "ar" : "en");
+            const newLang = currentLang === "en" ? "ar" : "en";
+            localStorage.setItem("lang",newLang)
+            changeLanguage(newLang);
         })
     </script>
 </body>
