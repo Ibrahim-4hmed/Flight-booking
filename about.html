@@ -5,15 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About SkyWing | سكاي وينج - معلومات عنا</title>
     <!-- Favicon -->
-    <link rel="icon" href="./flights-imges/shaar1.webp" type="image/webp">
-    <meta name="description" content="Learn about SkyWing—our mission, values, and commitment to making travel easy. | تعرف على سكاي وينج—مهمتنا وقيمنا والتزامنا بجعل السفر سهلاً.">
+    <link rel="icon" href="./flights-imges/shaar1.webp" type="image/webp" />
+    <meta
+      name="description"
+      content="Learn about SkyWing—our mission, values, and commitment to making travel easy. | تعرف على سكاي وينج—مهمتنا وقيمنا والتزامنا بجعل السفر سهلاً."
+    />
     <script
-    src="https://kit.fontawesome.com/3d59e7110b.js"
-    crossorigin="anonymous"
+      src="https://kit.fontawesome.com/3d59e7110b.js"
+      crossorigin="anonymous"
     ></script>
     <link
-    href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
-    rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -200,27 +209,26 @@
                     With Wing Fly… we take you to the sky with confidence and ease.`,
           },
           value: {
-            title:"Our Value",
+            title: "Our Value",
             val1: {
-                title: "Premium Quality",
-                desc: "Every product is hand-selected to meet the highest standards.",
-                },
+              title: "Premium Quality",
+              desc: "Every product is hand-selected to meet the highest standards.",
+            },
 
             val2: {
-                title: "Customer First",
-                desc: "We listen to your needs and deliver solutions tailored for you.",
+              title: "Customer First",
+              desc: "We listen to your needs and deliver solutions tailored for you.",
             },
 
             val3: {
-                title: "Modern Technology",
-                desc: "We use advanced systems to provide a fast and seamless experience.",
+              title: "Modern Technology",
+              desc: "We use advanced systems to provide a fast and seamless experience.",
             },
 
             val4: {
-                title: "Trusted Service",
-                desc: "Our commitment and transparency build long-lasting trust.",
+              title: "Trusted Service",
+              desc: "Our commitment and transparency build long-lasting trust.",
             },
-
           },
           footer: {
             logoText: "SkyWing",
@@ -247,7 +255,7 @@
           landing: {
             h1: "عن سكاي وينغ ",
             p: "اكتشف رحلات مميزة بأسعار تنافسية وخدمة متميزة تجعل سفرك حول العالم تجربة لا تُنسى.",
-        },
+          },
           story: {
             title: "قصة كفاحنا",
             story: `نحن في وينغ فلاي نسعى لتقديم تجربة سفر مختلفة، سهلة، وسريعة لكل عملائنا حول العالم.
@@ -269,23 +277,23 @@
           value: {
             title: "قيمنا",
             val1: {
-                title: "جودة مميزة",
-                desc: "نختار كل منتج بعناية لضمان أعلى مستويات الجودة.",
+              title: "جودة مميزة",
+              desc: "نختار كل منتج بعناية لضمان أعلى مستويات الجودة.",
             },
 
             val2: {
-                title: "العميل أولاً",
-                desc: "نستمع لاحتياجاتك ونوفر حلولاً مصممة خصيصًا لك.",
+              title: "العميل أولاً",
+              desc: "نستمع لاحتياجاتك ونوفر حلولاً مصممة خصيصًا لك.",
             },
 
             val3: {
-                title: "تقنيات حديثة",
-                desc: "نستخدم أحدث الأنظمة لتقديم تجربة أسرع وأكثر سهولة.",
+              title: "تقنيات حديثة",
+              desc: "نستخدم أحدث الأنظمة لتقديم تجربة أسرع وأكثر سهولة.",
             },
 
             val4: {
-                title: "خدمة موثوقة",
-                desc: "نلتزم بالشفافية والاحترافية لبناء ثقة طويلة المدى.",
+              title: "خدمة موثوقة",
+              desc: "نلتزم بالشفافية والاحترافية لبناء ثقة طويلة المدى.",
             },
           },
           footer: {
@@ -316,7 +324,7 @@
       //set lang
       const langBtn = document.getElementById("lang-btn");
 
-    changeLanguage(currentLang);
+      changeLanguage(currentLang);
 
       function changeLanguage(lang) {
         currentLang = lang;
@@ -391,8 +399,8 @@
 
       langBtn.addEventListener("click", () => {
         const newLang = currentLang === "en" ? "ar" : "en";
-            localStorage.setItem("lang",newLang)
-            changeLanguage(newLang);
+        localStorage.setItem("lang", newLang);
+        changeLanguage(newLang);
       });
     </script>
   </body>

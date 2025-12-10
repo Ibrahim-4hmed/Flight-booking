@@ -14,7 +14,8 @@
     --p-color:#777;
 }
 body{
-    font-family:Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
+  /* font-family: "Inter", sans-serif; */
 }
 html[lang="ar"] body {
     direction: rtl;
@@ -125,10 +126,12 @@ header nav ul li a {
     padding: 7px 20px;
     border-radius: var(--border-5);
     font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 header ul li a.active {
-    color: var(--main-color);
+    color: #03045e;
     background-color: #0076b656;
 }
 /* borgar icon */
@@ -157,7 +160,7 @@ header ul li a.active {
     } 
 }
 header nav ul li a:hover  {
-    color: var(--main-color);
+    color: #03045e;
     background-color: #0076b650;
 }
 .lang-toggle {
@@ -732,6 +735,7 @@ footer .two h4 ,.three h4, .four h4 {
     h1{
         font-size: 3rem;
         margin-bottom: 20px;
+        color: #03045e;
     }
     p{
         font-size: 1rem;
@@ -745,7 +749,8 @@ footer .two h4 ,.three h4, .four h4 {
     padding: 0 30px;
 }
 .about-our-story h2 , 
-.about-values h2 {
+.about-values h2, 
+.all-flights .all-head h2 {
     letter-spacing: 1px;
     line-height: 2;
     font-size: 2rem;
@@ -762,13 +767,16 @@ footer .two h4 ,.three h4, .four h4 {
 .about-our-story h2::before,
 .about-our-story h2::after , 
 .about-values h2::before, 
-.about-values h2::after {
+.about-values h2::after,
+.all-flights .all-head h2::before,
+.all-flights .all-head h2::after {
     content: "";
     position: absolute;
     background-color: var(--main-color);
 }
 .about-our-story h2::before, 
-.about-values h2::before {
+.about-values h2::before,
+.all-flights .all-head h2::before {
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -776,7 +784,8 @@ footer .two h4 ,.three h4, .four h4 {
     bottom: -15px;
 }
 .about-our-story h2::after, 
-.about-values h2::after {
+.about-values h2::after,
+.all-flights .all-head h2::after {
     width: 200px;
     height: 3px;
     bottom: -7px;
@@ -934,13 +943,8 @@ footer .two h4 ,.three h4, .four h4 {
     padding-top: 68px;
     text-align: center;
 }
-.all-flights .all-head{
-    h2{
-        margin-bottom: 20px;
-    }
-    p{
-        color: #666;
-    }
+.all-flights .all-head p {
+    color: #666;
 }
 @media (max-width:768px) {
     .contact .wrapper{
