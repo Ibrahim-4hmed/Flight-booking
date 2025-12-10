@@ -3,7 +3,7 @@ const ulNav = document.getElementById("small-sc");
 const links = document.querySelector(".nav-links a")
 
 document.body.addEventListener("click", (e) => {
-    if (e.target.className === "sp-borgar"){
+    if (e.target.className === "borgar-icon"){
         ulNav.classList.toggle("sm-sc")
     } else {
         if (ulNav.classList.contains("sm-sc"))
@@ -22,9 +22,6 @@ const texts = {
     flights: {
       title: "This Week's Top Flights",
       desc: "Grab the best deals from your personal travel agent. Quick booking via WhatsApp available!",
-      // filters: ["All", "Tarco Airlines", "Badr Airlines", "Sudan Airlines", "EgyptAir", "Qatar Airways", "Turkish Airlines"],
-      // cardBtn: "Reserve on WhatsApp",
-      // cardLabels: { from: "Departure", to: "Arrival", depTime: "Leave", arivTime: "Reach", duration: "Flight Time", airline: "Airline", date: "Travel Date", price: "Ticket Price" },
       seeAll: "Explore More"
     },
     why: {
@@ -61,6 +58,7 @@ const texts = {
     footer: {
       logoText: "SkyWing",
       desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
+      follow:"Follow Us",
       quickLinksTitle:['Quick Links'],
       quickLinks: ["About Us","Contact Us", "All Flights"],
       workingHoursTitle:['Working Hours'],
@@ -121,6 +119,7 @@ const texts = {
     footer: {
       logoText: "سكاي وينج",
       desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
+      follow:"تابعنا",
       quickLinksTitle:["روابط سريعة"],
       quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
       workingHoursTitle: ['ساعات العمل'],
@@ -159,11 +158,6 @@ function changeLanguage(lang) {
   // Flights section
   document.querySelector('#flights .section-head h2').textContent = texts[lang].flights.title;
   document.querySelector('#flights .section-head p').textContent = texts[lang].flights.desc;
-
-  // document.querySelector(".filter-title").textContent = texts[lang].flights.filterTitle;
-  // document.querySelectorAll('.filter-nav li').forEach((item, i) => item.textContent = texts[lang].flights.filters[i]);
-  // document.querySelectorAll('.card .row-3 span').forEach((item,i) => item.textContent = texts[lang].flights.price);
-  // document.querySelectorAll('.cards button').forEach(btn => btn.textContent = texts[lang].flights.cardBtn);
   document.querySelector('.see-all').textContent = texts[lang].flights.seeAll;
 
   // Popular Destinations
@@ -192,6 +186,7 @@ function changeLanguage(lang) {
   // Footer
   document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
   document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
+  document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
   document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
   document.querySelectorAll('.two ul li a').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
   document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
@@ -206,9 +201,6 @@ function changeLanguage(lang) {
   document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
   langBtn.textContent = lang === "ar" ? "English" : "عربي";
 }
-
-// localStorage.clear();
-
 
 //Switch between languages
 langBtn.addEventListener('click', () => {
@@ -225,7 +217,7 @@ langBtn.addEventListener('click', () => {
 
 async function fetchData(language) {    
   // fetch data
-  const response = await fetch(`data-en.json?nocache=${Date.now()}`)
+  const response = await fetch(`data.json?nocache=${Date.now()}`)
 
   // english and arabic data
   const allData = await response.json();
@@ -252,46 +244,6 @@ async function fetchData(language) {
   });
   document.querySelector(".cards").appendChild(wrapper);
 }
-
-// // filter
-// let filterBtns = document.querySelectorAll(".filter-nav li");
-
-// filterBtns.forEach(e => {
-//     e.addEventListener("click", e => handleFilterClick(e))
-// })
-
-// //function to handle filters
-// function handleFilterClick(e) {
-//     let target = e.target;
-//     e.preventDefault();
-
-//     filterBtns.forEach(e => {
-//         e.classList.remove("active")
-//     })
-//     target.classList.add("active")
-
-//     filterFlights(target.dataset.filter);
-// }
-// // filter flights
-// function filterFlights(airline){
-//     const allFlights = document.querySelectorAll(".card")
-//     if (airline == "all") {
-//         allFlights.forEach(el => {
-//             el.style.display = ""
-//         })
-//     } else {
-//         allFlights.forEach(el => {
-//             if (el.querySelector(".airline").textContent == airline ) {
-//                 el.style.display = ""
-//             } else {
-//                 el.style.display = "none"
-//             }
-//         })
-//     }
-// }
-
-
-
 
 // footer with current time
 const copyRight = new Date(); 

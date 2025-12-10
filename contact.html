@@ -44,9 +44,9 @@
             <div class="form">
                 <h3>Send us a message</h3>
                 <form>
-                    <label class="name" for="name">Name </label> <br>
+                    <label class="name" for="name">Name </label>
                         <input placeholder="Your Name" type="text" name="name" id="name">
-                    <label class="email" for="email">Email </label> <br>
+                    <label class="email" for="email">Email </label>
                         <input placeholder="you@email.com" type="email" name="email" id="email">
                     <label class="text" for="text">Message</label>
                     <textarea placeholder="Your message..." name="text-area" id="text-area"></textarea>
@@ -91,6 +91,7 @@
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>
+            <h4>Follow Us </h4>
             <div class="social">
                 <i class="fa-brands fa-facebook-f"></i>
                 <i class="fa-brands fa-square-x-twitter"></i>
@@ -174,6 +175,7 @@
              footer: {
                 logoText: "SkyWing",
                 desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
+                follow:"Follow Us",
                 quickLinksTitle:['Quick Links'],
                 quickLinks: ["About Us","Contact Us", "All Flights"],
                 workingHoursTitle:['Working Hours'],
@@ -215,6 +217,7 @@
             footer: {
                 logoText: "سكاي وينج",
                 desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
+                follow:"تابعنا",
                 quickLinksTitle:["روابط سريعة"],
                 quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
                 workingHoursTitle: ['ساعات العمل'],
@@ -262,6 +265,7 @@
             // Footer
             document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
             document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
+            document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
             document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
             document.querySelectorAll('.two ul li a').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
             document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
