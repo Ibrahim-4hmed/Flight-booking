@@ -136,11 +136,11 @@
         </div>
         <div class="two">
           <h4>Quick Links</h4>
-          <ul>
-            <li><a href="about.html">About Us</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <li><a href="all-flights.html">All Flight</a></li>
-          </ul>
+           <ul>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact us</a></li>
+                <li><a href="all-flights.html">All Flight</a></li>
+            </ul>
         </div>
         <div class="three">
           <h4>Working Hours</h4>
@@ -234,7 +234,7 @@
             logoText: "SkyWing",
             desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
             quickLinksTitle: ["Quick Links"],
-            quickLinks: ["About Us", "All Flights", "Contact Us"],
+            quickLinks: ["About Us","Contact Us", "All Flights"],
             workingHoursTitle: ["Working Hours"],
             workingHours: [
               "Monday-Friday:9:00AM-6:00PM",
@@ -370,7 +370,7 @@
         document.querySelector(".two h4").textContent =
           texts[lang].footer.quickLinksTitle;
         document
-          .querySelectorAll(".two ul li")
+          .querySelectorAll(".two ul li a")
           .forEach(
             (li, i) => (li.textContent = texts[lang].footer.quickLinks[i])
           );
