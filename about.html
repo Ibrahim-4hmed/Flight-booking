@@ -41,9 +41,7 @@
           <li><a href="all-flights.html">Flights</a></li>
         </ul>
         <div class="borgar-icon">
-          <span class="sp-borgar"></span>
-          <span class="sp-borgar"></span>
-          <span class="sp-borgar"></span>
+          <i class="fa-solid fa-bars menu-icon"></i>
         </div>
       </nav>
       <button id="lang-btn" class="lang-toggle">عربي</button>
@@ -175,14 +173,10 @@
       const ulNav = document.getElementById("small-sc");
       const links = document.querySelector(".nav-links a");
 
-      document.body.addEventListener("click", (e) => {
-        if (e.target.className === "sp-borgar") {
-          ulNav.classList.toggle("sm-sc");
-        } else {
-          if (ulNav.classList.contains("sm-sc"))
-            ulNav.classList.toggle("sm-sc");
-        }
-      });
+     
+      document.querySelector(".menu-icon").addEventListener("click", () => {
+          ulNav.classList.toggle("sm-sc")
+      })
 
       const texts = {
         en: {

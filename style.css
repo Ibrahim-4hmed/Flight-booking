@@ -75,23 +75,9 @@ button:hover {
 .body-home{
     background: #f6f6f6;
 }
-.borgar-icon {
-    width: 40px;
-    padding: 10px ;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    cursor: pointer;
-    align-items: flex-end;
-    opacity: 0;
-}
-.borgar-icon span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    margin-bottom: 3px;
-    background-color:#333;
-    font-weight: bold;
+.borgar-icon i {
+   font-weight: 600;
+   font-size: 24px;
 }
 header{
     width: 100%;
@@ -104,28 +90,26 @@ header{
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);
     position: fixed;
     z-index: 100;
+    backdrop-filter: blur(2px);
 }
 header .logo img {
     width:60px;
 }
-
-header nav ul {
-    text-align: right;
-}
-
 header nav ul li {
     display: inline-block;
     margin: 20px 10px 0;
 }
 
 header nav ul li a {
+    display: inline-block;
     text-decoration: none;
     color: #333;
     font-size: 1.1em;
     transition: var(--transition);
-    padding: 7px 20px;
+    padding: 10px 20px;
+    width: 100%;
     border-radius: var(--border-5);
-    font-weight: 600;
+    font-weight: 700;
     font-size: 16px;
     text-transform: uppercase;
 }
@@ -133,6 +117,9 @@ header nav ul li a {
 header ul li a.active {
     color: #03045e;
     background-color: #0076b656;
+}
+header nav .borgar-icon {
+    opacity: 0;
 }
 /* borgar icon */
 @media (max-width:767px){
@@ -143,16 +130,17 @@ header ul li a.active {
         display: flex;
         flex-direction: column;
         position: fixed;
-        right: 60px;
-        top: 50px;
-        border-radius: 10px;
+        right: 0;
+        top: 66px;
+        width: 100%;
         background-color: #f6f6f6;
         color: #333;
         padding: 10px 0;
-        text-align: left; 
         display: none;
     }
     header  nav  ul li{
+        width: 100%;
+        text-align: center;
         margin-bottom: 20px;
     }
     header nav .borgar-icon {
@@ -200,7 +188,7 @@ header nav ul li a:hover  {
 .landing h1 {
     font-size: 3em;
     margin-bottom: 10px;
-    background: linear-gradient(135deg, #03045e); /* green + blue */
+    background: linear-gradient(135deg, #03045e); /* blue */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -210,7 +198,7 @@ header nav ul li a:hover  {
     font-size: 1em;
     max-width:700px;
     text-align: center;
-    color: #03055ee7;
+    color: #04043fe7;
 }
 .landing button {
     padding: 10px 25px;
@@ -739,12 +727,12 @@ footer .two h4 ,.three h4, .four h4 {
     padding: 60px 0;
     background-color :#0076b648;
     h1{
-        font-size: 3rem;
+        font-size: 2.6rem;
         margin-bottom: 20px;
         color: #03045e;
     }
     p{
-        font-size: 1rem;
+        font-size: .95rem;
         color: #666;
     }
 }
@@ -819,6 +807,7 @@ footer .two h4 ,.three h4, .four h4 {
     border-radius: var(--border-5);
     transition: var(--transition);
     border: 1px solid #ddd;
+    border-top: 0;
     i {
         width: 50px;
         height: 50px;

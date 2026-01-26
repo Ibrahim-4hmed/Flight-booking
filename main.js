@@ -2,14 +2,20 @@
 const ulNav = document.getElementById("small-sc");
 const links = document.querySelector(".nav-links a")
 
-document.body.addEventListener("click", (e) => {
-    if (e.target.className === "borgar-icon"){
-        ulNav.classList.toggle("sm-sc")
-    } else {
-        if (ulNav.classList.contains("sm-sc"))
-            ulNav.classList.toggle("sm-sc")
-    }
+document.querySelector(".menu-icon").addEventListener("click", () => {
+    ulNav.classList.toggle("sm-sc")
 })
+
+// Close menu when clicking outside 
+// document.addEventListener("click", (event) => {
+//     const isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
+
+//     if (!isClickInside) {
+//         ulNav.classList.remove("sm-sc");
+//     }
+// });
+
+
 // Texts in English and Arabic
 const texts = {
   en: {
