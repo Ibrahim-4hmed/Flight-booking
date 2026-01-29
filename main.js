@@ -172,14 +172,14 @@ function changeLanguage(lang) {
   document.querySelectorAll('.popular .container .box').forEach((box, i) => {
     box.querySelector('.text h3').innerHTML = `<i class="fa-solid fa-location-dot"></i>${texts[lang].popular.cities[i].city}`;
     box.querySelector('.text span').textContent = texts[lang].popular.cities[i].country;
-    box.querySelector('.prise-book button').textContent = texts[lang].popular.bookBtn;
+    box.querySelector('.prise-book a').textContent = texts[lang].popular.bookBtn;
     box.querySelector('.prise-book .start-from').textContent = texts[lang].popular.startFrom;
   });
 
   // Why Book section
   document.querySelector('.why-me h2').textContent = texts[lang].why.title;
   document.querySelector('.why-me p').textContent = texts[lang].why.desc;
-  document.querySelector('.why-me button').textContent = texts[lang].why.btn;
+  document.querySelector('.why-me a').textContent = texts[lang].why.btn;
 
   // Choose Me section
   document.querySelector('.choose-me .section-head h2').textContent = texts[lang].choose.title;
@@ -244,7 +244,7 @@ async function fetchData(language) {
       clone.querySelector(".duration").textContent = flight.duration;
       clone.querySelector(".price").textContent = flight.price;
       clone.querySelector('.row-3 span').textContent =flight.totalPrice;
-      clone.querySelector('.row-3 button').textContent =flight.bookBtn;
+      clone.querySelector('.row-3 a').textContent =flight.bookBtn;
       
       wrapper.appendChild(clone);
   });

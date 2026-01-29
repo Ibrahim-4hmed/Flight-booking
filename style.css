@@ -22,11 +22,16 @@ html[lang="ar"] body {
     text-align: right;
     font-family:'Cairo', sans-serif;
 }
-
-button{
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+button,
+a {
     transition: transform var(--transition);
 }
-button:hover {
+button:hover,
+a:hover {
     transform: scale(1.02);
 }
 .section-head {
@@ -352,7 +357,7 @@ header nav ul li a:hover  {
     font-weight: 700;
     font-size: 1.4rem;
 }
-.card .row-3 button{
+.card .row-3 a{
     padding: 10px 20px ;
     font-weight: bold;
     font-size: 1rem;
@@ -362,7 +367,7 @@ header nav ul li a:hover  {
     border: none;
     border-radius: var(--border-5);
 }
-.card .row-3 button i {
+.card .row-3 a i {
     margin-right: 5px;
     font-weight: bold;
 }
@@ -396,6 +401,7 @@ header nav ul li a:hover  {
     text-align: center;
     transition: background-color var(--transition) ease;
     text-decoration: none;
+    transition: var(--transition);
 }
 .see-all:hover{
     background-color: #00bfff1c;
@@ -419,7 +425,7 @@ header nav ul li a:hover  {
     margin-bottom: 20px;
     font-size: .975rem;
 }
-.why-me button {
+.why-me .book-now {
     border: 0;
     outline: 0;
     padding: 10px 20px;
@@ -509,7 +515,7 @@ header nav ul li a:hover  {
             color:var(--main-color);
         }
     }
-    button {
+    a {
         border: 0;
         outline: 0;
         border-radius: var(--border-5);
@@ -522,7 +528,7 @@ header nav ul li a:hover  {
         border: 1px solid #ddd;
         transition: var(--transition);
     }
-    button:hover {
+    a:hover {
         background-color: var(--main-color);
         color: #fff;
         border: 0;

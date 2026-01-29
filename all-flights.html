@@ -3,19 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Flights & Destinations | جميع الرحلات والوجهات العالمية</title>
+    <meta name="title" content="Global Flights & Destinations | جميع الرحلات والوجهات العالمية" />
+    <meta
+    name="description"
+    content="Explore worldwide flight routes to Khartoum, Cairo, Dubai, and more. | تصفح أفضل وجهات الطيران العالمية للخرطوم، بورتسودان، القاهرة، دبي، والرياض بأفضل الأسعار."
+    />
+    <meta
+    name="keywords"
+    content="All flights, Badr Airlines tickets, Tarco Aviation booking, flights to Khartoum, flights to Port Sudan, cheap international flights 2026, حجز طيران بدر, حجز طيران تاركو, رحلات السودان, رحلات القاهرة, رحلات دبي, أرخص تذاكر طيران عالمية"
+    />
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Explore All Flight Deals - SkyWing" />
+    <meta property="og:description" content="Best rates for Badr, Tarco, and international airlines. | أفضل الأسعار على طيران بدر وتاركو والخطوط العالمية." />
+    <meta property="og:url" content="https://skywingagent.netlify.app/all-flights" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://skywingagent.netlify.app/all-flights" />
+    <meta name="twitter:title" content="SkyWing Flights | عروض رحلات سكاي وينج العالمية" />
+    <meta
+    name="twitter:description"
+    content="Book Badr, Tarco, and international flights to Cairo, Dubai, and Khartoum. | احجز رحلات بدر وتاركو والخطوط العالمية إلى القاهرة، دبي، والخرطوم."
+    />
+    <meta
+    name="twitter:image"
+    content="https://skywingagent.netlify.app/flights-imges/shaar1.webp"
+    />
     <!-- Favicon -->
     <link rel="icon" href="./flights-imges/shaar1.webp" type="image/webp">
-    <title>All Flights | جميع الرحلات - سكاي وينج</title>
-    <meta name="description" content="Explore all available flights with SkyWing. Book instantly via WhatsApp. | استعرض جميع الرحلات المتاحة مع سكاي وينج. احجز فوراً عبر واتساب.">
     <script src="https://kit.fontawesome.com/3d59e7110b.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    <!-- MY CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="logo">
             <a href="index.html">
-             <img src="./flights-imges/shaar1.webp" alt="">
+             <img src="./flights-imges/skywing-logo.webp" alt="skyWing logo">
             </a>
         </div>
         <nav>
@@ -43,6 +69,7 @@
             <h2>Available Flights This Week</h2>
             <p>Exclusive deals from your trusted airline agent. Contact me on Whatsapp for instant booking!</p>
         </div>
+        <!-- Filter Section -->
         <div class="filter">
             <h4><i class="fa-solid fa-filter"></i>Filter Flights</h4>
             <ul class="filter-nav">
@@ -56,7 +83,8 @@
             </ul>
         </div>
          <div class="cards">
-         <template id="template">
+        <!-- Flight Card Template -->
+        <template id="template">
             <article class="card">
                 <div class="row-1">
                     <div class="from-text city">
@@ -87,10 +115,10 @@
                         <span>Total price</span>
                         <p class="price">$ 300</p>
                     </div>
-                    <button><i class="fa-brands fa-whatsapp"></i>Reserve on WhatsApp</button>
+                    <a><i class="fa-brands fa-whatsapp"></i>Reserve on WhatsApp</a>
                 </div>
             </article>
-            </template>
+        </template>
         </div>
     </section>
     </main>
@@ -99,7 +127,7 @@
      <footer>
         <div class="content">
             <div class="one">
-            <h3><img src="./flights-imges/shaar1.webp" alt="">SkyWing</h3>
+            <h3><img src="./flights-imges/skywing-logo.webp" alt="skyWing logo">SkyWing</h3>
             <p>Your trusted partner for affordable flights worldwide. We make travel 
             dreams come true with the best deals and customer service.
             </p>
@@ -289,7 +317,7 @@
             clone.querySelector(".duration").textContent = flight.duration;
             clone.querySelector(".price").textContent = flight.price;
             clone.querySelector('.row-3 span').textContent =flight.totalPrice;
-            clone.querySelector('.row-3 button').textContent =flight.bookBtn;
+            clone.querySelector('.row-3 a').textContent =flight.bookBtn;
             
             wrapper.appendChild(clone);
         });

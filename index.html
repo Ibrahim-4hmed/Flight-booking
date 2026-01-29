@@ -1,55 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SkyWing - Affordable Flights Worldwide</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="robots" content="index, follow">
 
-    <!-- Primary Meta Tags -->
-    <meta name="title" content="SkyWing - Affordable Flights Worldwide" />
+    <title>SkyWing - Affordable Flights Worldwide | سكاي وينج - رحلات جوية اقتصادية عالمية</title>
+    
+    <meta name="title" content="SkyWing - Affordable Flights Worldwide | سكاي وينج - رحلات جوية اقتصادية عالمية" />
     <meta
       name="description"
-      content="Fly smart and stress-free with SkyWing. Instant bookings via WhatsApp for your favorite destinations worldwide."
+      content="Fly smart with SkyWing. Affordable flights worldwide & instant WhatsApp bookings. | سافر بذكاء مع سكاي وينج. رحلات جوية بأسعار معقولة في جميع أنحاء العالم. حجز فوري وسهل عبر الواتساب."
     />
+
     <meta
       name="keywords"
-      content="SkyWing, flights, affordable flights, book flights online, instant flight booking, travel, airline deals, Arabic flights, English flights"
+      content="
+      SkyWing, Affordable flights worldwide, Book flights online, Cheap airline tickets, Global travel agency, Instant flight booking WhatsApp,
+      سكاي وينج, رحلات جوية بأسعار معقولة, حجز طيران عالمي, أرخص تذاكر طيران, مكتب سفريات أونلاين,
+      Flights to Khartoum, Flights to Port Sudan, Badr Airlines, Tarco Aviation, Sudan flight deals,
+      حجز طيران للسودان, طيران الخرطوم, طيران بورتسودان, طيران بدر, طيران تاركو, عروض طيران 2026,
+      Dubai flights, Cairo flights, Jeddah flights, Istanbul flights, Riyadh flights, Doha flights,
+      حجز طيران دبي, حجز طيران القاهرة, حجز طيران جدة, حجز طيران اسطنبول, حجز طيران الرياض
+      "
     />
-    <meta name="author" content="SkyWing" />
+    
+    <meta name="author" content="SkyWing - سكاي وينج" />
 
-    <!-- Canonical URL -->
     <link rel="canonical" href="https://skywingagent.netlify.app/" />
 
-    <!-- Language versions -->
-    <link
-      rel="alternate"
-      href="https://skywingagent.netlify.app/"
-      hreflang="en"
-    />
-    <link
-      rel="alternate"
-      href="https://skywingagent.netlify.app/ar/"
-      hreflang="ar"
-    />
-
-    <!-- Favicon -->
     <link rel="icon" href="./flights-imges/shaar1.webp" type="image/webp" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://skywingagent.netlify.app/" />
-    <meta
-      property="og:title"
-      content="SkyWing - Affordable Flights Worldwide"
-    />
+    <meta property="og:site_name" content="SkyWing Travel" />
+    
+    <meta property="og:title" content="SkyWing - Affordable Flights Worldwide ✈️" />
+    
     <meta
       property="og:description"
-      content="Fly smart and stress-free with SkyWing. Instant bookings via WhatsApp for your favorite destinations worldwide."
+      content="Book your flight instantly via WhatsApp. Best rates for worldwide destinations. | احجز رحلتك الآن عبر الواتساب بأفضل الأسعار لأي مكان في العالم."
     />
+    
     <meta
       property="og:image"
       content="https://skywingagent.netlify.app/flights-imges/shaar1.webp"
     />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -60,7 +60,7 @@
     />
     <meta
       name="twitter:description"
-      content="Fly smart and stress-free with SkyWing. Instant bookings via WhatsApp for your favorite destinations worldwide."
+      content="Fly smart via WhatsApp. Best flight deals worldwide. | سافر بذكاء. أفضل عروض الطيران العالمية عبر الواتساب."
     />
     <meta
       name="twitter:image"
@@ -90,7 +90,7 @@
     <header>
       <div class="logo">
         <a href="index.html">
-          <img src="./flights-imges/shaar1.webp" alt="" />
+          <img src="./flights-imges/skywing-logo.webp" alt="SkyWing Logo" />
         </a>
       </div>
       <nav>
@@ -106,7 +106,7 @@
         </nav>
         <button id="lang-btn" class="lang-toggle">عربي</button>
     </header>
-
+    <!-- Landing section -->
     <section class="landing">
       <h1>Fly Smarter with SkyWing</h1>
       <p>
@@ -119,8 +119,10 @@
           >Chat on WhatsApp</a
         >
       </button>
+
     </section>
 
+    <!-- flights section -->
     <section id="flights" class="flights">
       <div class="section-head">
         <h2>This Week's Top Flights</h2>
@@ -131,6 +133,7 @@
       </div>
       <div class="cards">
         <template id="template">
+          <!-- flight card -->
           <article class="card">
             <div class="row-1">
               <div class="from-text city">
@@ -161,9 +164,9 @@
                 <span>Total price</span>
                 <p class="price">$ 300</p>
               </div>
-              <button>
+              <a href=" https://wa.me/249912345678" target="_blank">
                 <i class="fa-brands fa-whatsapp"></i>Reserve on WhatsApp
-              </button>
+              </a>
             </div>
           </article>
         </template>
@@ -171,6 +174,7 @@
       <a href="all-flights.html" class="see-all">Explore More</a>
     </section>
 
+    <!-- why me section -->
     <section class="why">
       <div class="why-me">
         <h2>Why Book With Us?</h2>
@@ -178,21 +182,23 @@
           We provide tailor-made service, exclusive deals, and 24/7 support to
           make your travel smooth and worry-free.
         </p>
-        <button class="book-now">
+        <a class="book-now">
           <i class="fa-brands fa-whatsapp"></i>Book Now on WhatsApp
-        </button>
+        </a>
       </div>
     </section>
 
+    <!-- popular destinations section -->
     <section class="popular">
       <div class="section-head">
         <h2>Hot Destinations</h2>
         <p>Travel the world and enjoy our specially curated flight deals.</p>
       </div>
       <div class="container">
+        <!-- cairo -->
         <div class="box">
           <div class="img">
-            <img src="./flights-imges/cairo-min.webp" alt="AL Dender" />
+            <img src="./flights-imges/cairo-city.webp" alt="Cairo City" />
             <span><i class="fa-solid fa-star"></i>5.0</span>
           </div>
           <div class="text">
@@ -203,18 +209,19 @@
             <p>
               <span>$250</span> <br /><small class="start-from">from</small>
             </p>
-            <button>
+            <a>
               <i
                 class="fa-brands fa-whatsapp"
                 style="margin-right: 5px; font-weight: bold"
               ></i
               >Reserve Now
-            </button>
+            </a>
           </div>
         </div>
+        <!-- Entebbe -->
         <div class="box">
           <div class="img">
-            <img src="./flights-imges/ebb.webp" alt="Khartoum" />
+            <img src="./flights-imges/entebbe-city.webp" alt="Entebbe city" />
             <span><i class="fa-solid fa-star"></i>4.6</span>
           </div>
           <div class="text">
@@ -225,18 +232,19 @@
             <p>
               <span>$550</span> <br /><small class="start-from">from</small>
             </p>
-            <button>
+            <a>
               <i
                 class="fa-brands fa-whatsapp"
                 style="margin-right: 5px; font-weight: bold"
               ></i
               >Reserve Now
-            </button>
+            </a>
           </div>
         </div>
+        <!-- Istanbul -->
         <div class="box">
           <div class="img">
-            <img src="./flights-imges/istanbul1.webp" alt="Shandi" />
+            <img src="./flights-imges/istanbul-city.webp" alt="Istanbul city" />
             <span><i class="fa-solid fa-star"></i>4.7</span>
           </div>
           <div class="text">
@@ -247,18 +255,19 @@
             <p>
               <span>$720</span> <br /><small class="start-from">from</small>
             </p>
-            <button>
+            <a>
               <i
                 class="fa-brands fa-whatsapp"
                 style="margin-right: 5px; font-weight: bold"
               ></i
               >Reserve Now
-            </button>
+            </a>
           </div>
         </div>
+        <!-- Doha -->
         <div class="box">
           <div class="img">
-            <img src="./flights-imges/doha1.webp" alt="AL Jenana" />
+            <img src="./flights-imges/doha-city.webp" alt="Doha city" />
             <span><i class="fa-solid fa-star"></i>4.8</span>
           </div>
           <div class="text">
@@ -269,19 +278,19 @@
             <p>
               <span>$320</span> <br /><small class="start-from">from</small>
             </p>
-            <button>
+            <a>
               <i
                 class="fa-brands fa-whatsapp"
                 style="margin-right: 5px; font-weight: bold"
               ></i
               >Reserve Now
-            </button>
+            </a>
           </div>
         </div>
-
+        <!-- Maka -->
         <div class="box">
           <div class="img">
-            <img src="./flights-imges/maka.webp" alt="Jabl Mara" />
+            <img src="./flights-imges/maka.webp" alt="Maka city" />
             <span><i class="fa-solid fa-star"></i>4.9</span>
           </div>
           <div class="text">
@@ -292,19 +301,19 @@
             <p>
               <span>$300</span> <br /><small class="start-from">from</small>
             </p>
-            <button>
+            <a>
               <i
                 class="fa-brands fa-whatsapp"
                 style="margin-right: 5px; font-weight: bold"
               ></i
               >Reserve Now
-            </button>
+            </a>
           </div>
         </div>
-
+        <!-- Riyadh -->
         <div class="box">
           <div class="img">
-            <img src="./flights-imges/riyd1.webp" alt="Port sudan" />
+            <img src="./flights-imges/riyadh-city.webp" alt="Riyadh" />
             <span><i class="fa-solid fa-star"></i>4.8</span>
           </div>
           <div class="text">
@@ -315,18 +324,19 @@
             <p>
               <span>$300</span> <br /><small class="start-from">from</small>
             </p>
-            <button>
+            <a>
               <i
                 class="fa-brands fa-whatsapp"
                 style="margin-right: 5px; font-weight: bold"
               ></i
               >Reserve Now
-            </button>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- choose me section -->
     <section class="choose-me">
       <div class="section-head">
         <h2>Why Choose SkyWing?</h2>
@@ -371,7 +381,7 @@
     <footer>
       <div class="content">
         <div class="one">
-          <h3><img src="./flights-imges/shaar1.webp" alt="" />SkyWing</h3>
+          <h3><img src="./flights-imges/skywing-logo.webp" alt="skyWing logo" />SkyWing</h3>
           <p>
             Your travel companion for affordable flights worldwide. Making
             travel dreams come true with exceptional deals.
