@@ -485,16 +485,14 @@ header nav ul li a:hover  {
     }
     span {
         position: absolute;
-        right: 20px;
-        top: 20px;
-        background: #fff;
-        border-radius: 30px;
+        top: 15px;
+        left: 15px;
+        background-color: var(--orange-primary);
+        color: #fff;
+        padding: 5px 10px;
+        border-radius: var(--border-rad-10);
         font-size: 12px;
-        padding: 2px 5px;
-        i {
-            color: var(--orange-primary);
-            margin-right: 3px;
-        }
+        font-weight: 600;
     } 
 }
 .container .box:hover .img img {
