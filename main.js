@@ -190,7 +190,7 @@ function changeLanguage(lang) {
   });
 
   // Footer
-  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/sudafly-logo4-Photoroom.png" alt="sudafly logo">${texts[lang].footer.logoText}`;
+  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/sudafly-logo.png" alt="sudafly logo">${texts[lang].footer.logoText}`;
   document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
   document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
   document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
@@ -251,10 +251,10 @@ async function fetchData(language) {
   document.querySelector(".cards").appendChild(wrapper);
 }
 
+
+
 // footer with current time
 const copyRight = new Date(); 
 document.querySelector(".cRight").textContent = copyRight.getFullYear()
-
-
 
 

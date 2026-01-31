@@ -41,7 +41,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-             <img src="./flights-imges/sudafly-logo4-Photoroom.png" alt="sudafly logo">
+             <img src="./flights-imges/sudafly-logo.png" alt="sudafly logo">
             </a>
         </div>
         <nav>
@@ -180,15 +180,21 @@
             ulNav.classList.toggle("sm-sc")
         })
 
+        // Close menu when clicking outside 
+        document.addEventListener("click", (event) => {
+            const isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
+
+            if (!isClickInside) {
+                ulNav.classList.remove("sm-sc");
+            }
+        });
+
+
         
         //Texts 
         const texts = {
             en:{
                 header: ["Home", "About Us", "Contact Us", "Flights"],
-                landing: {
-                    h1 : "All Flights",
-                    p :"Your trusted partner for affordable flights worldwide."
-                },
                 flights: {
                     title: "Top Flights",
                     desc: "Grab the best deals from your personal travel agent. Quick booking via WhatsApp available!",
@@ -210,10 +216,6 @@
             },
             ar:{
                 header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
-                landing: {
-                    h1: "جميع الرحلات",
-                    p: "شريكك الموثوق للرحلات الجوية بأسعار تنافسية حول العالم."
-                },
                 flights: {
                     title: "أفضل الرحلات",
                     desc: "احصل على أفضل العروض من وكيلك الشخصي. الحجز السريع متاح عبر واتساب!",
@@ -265,9 +267,6 @@
 
             // Header
             document.querySelectorAll('ul.nav-links li a').forEach((link, i) => link.textContent = texts[lang].header[i]);
-             // Landing section
-            document.querySelector('.special-landing h1').textContent = texts[lang].landing.h1;
-            document.querySelector('.special-landing p').textContent = texts[lang].landing.p;
             // Flights section
             document.querySelector('#flights .all-head h2').textContent = texts[lang].flights.title;
             document.querySelector('#flights .all-head p').textContent = texts[lang].flights.desc;
@@ -275,7 +274,7 @@
             document.querySelectorAll('.filter-nav li').forEach((item, i) => item.textContent = texts[lang].flights.filters[i]);
 
             // Footer
-            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges//sudafly-logo4-Photoroom.png" alt="sudaflay logo">${texts[lang].footer.logoText}`;
+            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges//sudafly-logo.png" alt="sudaflay logo">${texts[lang].footer.logoText}`;
             document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
             document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
             document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
@@ -363,7 +362,7 @@
                     }
                 })
             }
-        }
+        } 
 
 
         // footer with current time
