@@ -122,7 +122,7 @@
     </section>
 
     <!-- flights section -->
-    <section id="flights" class="flights">
+    <section id="flights" class="flights main-container">
       <div class="section-head">
         <h2>This Week's Top Flights</h2>
         <p>
@@ -134,10 +134,18 @@
         <template id="template">
           <!-- flight card -->
           <article class="card">
+            
             <div class="row-1">
+              <div class="airline-text">
+                <i class="fa-brands fa-magento"></i>
+                <p class="airline">Sky airlines</p>
+              </div>
+            </div>
+            
+            <div class="row-2">
               <div class="from-text city">
                 <h2 class="from">NYC</h2>
-                <span class="dep-time">08:30 AM</span>
+                <span class="from-country">Sudan</span>
               </div>
               <div class="duration-text">
                 <i class="fa-solid fa-plane-up fa-spin fa-spin-reverse"></i>
@@ -145,19 +153,11 @@
               </div>
               <div class="to-text city">
                 <h2 class="to">LAX</h2>
-                <span class="ariv-time">11:45 AM</span>
+                <span class="to-country">Egypt</span>
               </div>
             </div>
-            <div class="row-2">
-              <div class="airline-text">
-                <i class="fa-brands fa-magento"></i>
-                <p class="airline">Sky airlines</p>
-              </div>
-              <div class="date-text">
-                <i class="fa-regular fa-calendar"></i>
-                <p class="date">March 25,2025</p>
-              </div>
-            </div>
+
+
             <div class="row-3">
               <div class="price-text">
                 <span>Total price</span>
@@ -188,7 +188,7 @@
     </section>
 
     <!-- popular destinations section -->
-    <section class="popular">
+    <section class="popular main-container">
       <div class="section-head">
         <h2>Hot Destinations</h2>
         <p>Travel the world and enjoy our specially curated flight deals.</p>
@@ -198,15 +198,16 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/cairo-city.webp" alt="Cairo City"  loading="lazy"/>
-            <span><i class="fa-solid fa-star"></i>5.0</span>
+            <span>hot destination</span>
           </div>
           <div class="text">
-            <h3><i class="fa-solid fa-location-dot"></i>Cairo</h3>
+            <h3><i class="fa-solid fa-map-location-dot"></i>Cairo</h3>
             <span>Egypt</span>
           </div>
           <div class="prise-book">
             <p>
-              <span>$250</span> <br /><small class="start-from">from</small>
+              <small class="start-from">from</small><br />
+              <span>$250</span> 
             </p>
             <a>
               <i
@@ -221,15 +222,16 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/entebbe-city.webp" alt="Entebbe city" loading="lazy" />
-            <span><i class="fa-solid fa-star"></i>4.6</span>
+            <span >Hot Destination</span>
           </div>
           <div class="text">
-            <h3><i class="fa-solid fa-location-dot"></i>Entebbe</h3>
-            <span>Uaganda</span>
+            <h3><i class="fa-solid fa-map-location-dot"></i>Entebbe</h3>
+            <span>Uganda</span>
           </div>
           <div class="prise-book">
             <p>
-              <span>$550</span> <br /><small class="start-from">from</small>
+              <small class="start-from">from</small> <br />
+              <span>$550</span> 
             </p>
             <a>
               <i
@@ -244,15 +246,16 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/istanbul-city.webp" alt="Istanbul city" loading="lazy" />
-            <span><i class="fa-solid fa-star"></i>4.7</span>
+            <span >Hot Destination</span>
           </div>
           <div class="text">
-            <h3><i class="fa-solid fa-location-dot"></i>Istanbul</h3>
+            <h3><i class="fa-solid fa-map-location-dot"></i>Istanbul</h3>
             <span>Turkiye</span>
           </div>
           <div class="prise-book">
             <p>
-              <span>$720</span> <br /><small class="start-from">from</small>
+              <small class="start-from">from</small> <br />
+              <span>$720</span>
             </p>
             <a>
               <i
@@ -267,15 +270,16 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/doha-city.webp" alt="Doha city" loading="lazy" />
-            <span><i class="fa-solid fa-star"></i>4.8</span>
+            <span >Hot Destination</span>
           </div>
           <div class="text">
-            <h3><i class="fa-solid fa-location-dot"></i>Doha</h3>
+            <h3><i class="fa-solid fa-map-location-dot"></i>Doha</h3>
             <span>Qatar</span>
           </div>
           <div class="prise-book">
             <p>
-              <span>$320</span> <br /><small class="start-from">from</small>
+              <small class="start-from">from</small> <br />
+              <span>$320</span> 
             </p>
             <a>
               <i
@@ -290,7 +294,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/maka.webp" alt="Maka city" loading="lazy" />
-            <span><i class="fa-solid fa-star"></i>4.9</span>
+            <span>Hot destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-location-dot"></i>Mecca</h3>
@@ -298,7 +302,8 @@
           </div>
           <div class="prise-book">
             <p>
-              <span>$300</span> <br /><small class="start-from">from</small>
+              <small class="start-from">from</small> <br />
+              <span>$300</span> 
             </p>
             <a>
               <i
@@ -313,15 +318,16 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/riyadh-city.webp" alt="Riyadh" loading="lazy" />
-            <span><i class="fa-solid fa-star"></i>4.8</span>
+            <span >Hot Destination</span>
           </div>
           <div class="text">
-            <h3><i class="fa-solid fa-location-dot"></i>Riyadh</h3>
+            <h3><i class="fa-solid fa-map-location-dot"></i></i>Riyadh</h3>
             <span>Sudai Arabia</span>
           </div>
           <div class="prise-book">
             <p>
-              <span>$300</span> <br /><small class="start-from">from</small>
+              <small class="start-from">from</small> <br />
+              <span>$300</span> 
             </p>
             <a>
               <i
@@ -336,7 +342,7 @@
     </section>
 
     <!-- choose me section -->
-    <section class="choose-me">
+    <section class="choose-me main-container">
       <div class="section-head">
         <h2>Why Choose SkyWing?</h2>
         <p>
@@ -377,10 +383,10 @@
       </div>
     </section>
 
-    <footer>
+    <footer class="main-container">
       <div class="content">
         <div class="one">
-          <h3><img src="./flights-imges/sudafly-logo4-Photoroom.png" alt="skyWing logo" />SkyWing</h3>
+          <h3><img src="./flights-imges/sudafly-logo.png" alt="skyWing logo" />SkyWing</h3>
           <p>
             Your travel companion for affordable flights worldwide. Making
             travel dreams come true with exceptional deals.

@@ -59,12 +59,12 @@
     </header> 
 
     <main class="all-flights">
-        <section class="special-landing">
+        <section class="special-landing landing-all-flights">
             <h1>All Flights</h1>
             <p>Your trusted partner for affordable flights worldwide.</p>
         </section>
 
-        <section id="flights" class="flights">
+        <section id="flights" class="flights main-container">
         <div class="all-head">
             <h2>Available Flights This Week</h2>
             <p>Exclusive deals from your trusted airline agent. Contact me on Whatsapp for instant booking!</p>
@@ -85,46 +85,49 @@
          <div class="cards">
         <!-- Flight Card Template -->
         <template id="template">
-            <article class="card">
-                <div class="row-1">
-                    <div class="from-text city">
-                        <h2 class="from">NYC</h2>
-                        <span class="dep-time">08:30 AM</span>
-                    </div>
-                    <div class="duration-text">
-                    <i class="fa-solid fa-plane-up fa-spin fa-spin-reverse"></i>
-                    <span class="duration">5h 15m</span>
-                    </div>
-                    <div class="to-text city">
-                        <h2 class="to">LAX</h2>
-                        <span class="ariv-time">11:45 AM</span>
-                    </div>
-                </div>
-                <div class="row-2">
-                    <div class="airline-text">
-                        <i class="fa-brands fa-magento"></i>
-                        <p class="airline">Sky airlines</p>
-                    </div>
-                    <div class="date-text">
-                        <i class="fa-regular fa-calendar"></i>
-                        <p class="date">March 25,2025</p>
-                    </div>
-                </div>
-                <div class="row-3">
-                    <div class="price-text">
-                        <span>Total price</span>
-                        <p class="price">$ 300</p>
-                    </div>
-                    <a><i class="fa-brands fa-whatsapp"></i>Reserve on WhatsApp</a>
-                </div>
-            </article>
+          <!-- flight card -->
+          <article class="card">
+            
+            <div class="row-1">
+              <div class="airline-text">
+                <i class="fa-brands fa-magento"></i>
+                <p class="airline">Sky airlines</p>
+              </div>
+            </div>
+            
+            <div class="row-2">
+              <div class="from-text city">
+                <h2 class="from">NYC</h2>
+                <span class="from-country">Sudan</span>
+              </div>
+              <div class="duration-text">
+                <i class="fa-solid fa-plane-up fa-spin fa-spin-reverse"></i>
+                <span class="duration">5h 15m</span>
+              </div>
+              <div class="to-text city">
+                <h2 class="to">LAX</h2>
+                <span class="to-country">Egypt</span>
+              </div>
+            </div>
+
+
+            <div class="row-3">
+              <div class="price-text">
+                <span>Total price</span>
+                <p class="price">$ 300</p>
+              </div>
+              <a href=" https://wa.me/249912345678" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>Reserve on WhatsApp
+              </a>
+            </div>
+          </article>
         </template>
         </div>
     </section>
     </main>
 
 
-     <footer>
+     <footer class="main-container">
         <div class="content">
             <div class="one">
             <h3><img src="./flights-imges/skywing-logo.webp" alt="skyWing logo">SkyWing</h3>
@@ -310,9 +313,8 @@
             clone.querySelector(".from").textContent = flight.from;
             clone.querySelector(".to").textContent = flight.to;
             clone.querySelector(".airline").textContent = flight.airline;
-            clone.querySelector(".date").textContent = flight.date;
-            clone.querySelector(".ariv-time").textContent = flight.arivTime;
-            clone.querySelector(".dep-time").textContent = flight.depTime;
+            clone.querySelector(".from-country").textContent = flight.fromCountry;
+            clone.querySelector(".to-country").textContent = flight.toCountry;
             clone.querySelector(".duration").textContent = flight.duration;
             clone.querySelector(".price").textContent = flight.price;
             clone.querySelector('.row-3 span').textContent =flight.totalPrice;

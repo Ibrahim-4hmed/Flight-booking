@@ -47,7 +47,7 @@ const texts = {
         { city: "Riyadh", country: "Saudi Arabia" }
       ],
       bookBtn: `Reserve Now`,
-      startFrom: "from"
+      startFrom: "starting from"
     },
     choose: {
       title: "Why Choose SudaFly ?",
@@ -170,9 +170,13 @@ function changeLanguage(lang) {
   document.querySelector('.popular .section-head h2').textContent = texts[lang].popular.title;
   document.querySelector('.popular .section-head p').textContent = texts[lang].popular.desc;
   document.querySelectorAll('.popular .container .box').forEach((box, i) => {
-    box.querySelector('.text h3').innerHTML = `<i class="fa-solid fa-location-dot"></i>${texts[lang].popular.cities[i].city}`;
+    box.querySelector('.text h3').innerHTML = `<i class="fa-solid fa-map-location-dot"></i>${texts[lang].popular.cities[i].city}`;
     box.querySelector('.text span').textContent = texts[lang].popular.cities[i].country;
-    box.querySelector('.prise-book a').textContent = texts[lang].popular.bookBtn;
+    box.querySelector('.prise-book a').innerHTML = `<i
+                class="fa-brands fa-whatsapp"
+                style="margin-right: 5px; font-weight: bold"
+              ></i
+              >${texts[lang].popular.bookBtn}`;
     box.querySelector('.prise-book .start-from').textContent = texts[lang].popular.startFrom;
   });
 
@@ -238,9 +242,8 @@ async function fetchData(language) {
       clone.querySelector(".from").textContent = flight.from;
       clone.querySelector(".to").textContent = flight.to;
       clone.querySelector(".airline").textContent = flight.airline;
-      clone.querySelector(".date").textContent = flight.date;
-      clone.querySelector(".ariv-time").textContent = flight.arivTime;
-      clone.querySelector(".dep-time").textContent = flight.depTime;
+      clone.querySelector(".from-country").textContent = flight.fromCountry;
+      clone.querySelector(".to-country").textContent = flight.toCountry;
       clone.querySelector(".duration").textContent = flight.duration;
       clone.querySelector(".price").textContent = flight.price;
       clone.querySelector('.row-3 span').textContent =flight.totalPrice;
@@ -250,6 +253,7 @@ async function fetchData(language) {
   });
   document.querySelector(".cards").appendChild(wrapper);
 }
+
 
 
 

@@ -24,6 +24,9 @@ body{
   font-family: "Poppins", sans-serif;
   /* font-family: "Inter", sans-serif; */
 }
+body .main-container {
+    padding: 60px;
+}
 html[lang="ar"] body {
     direction: rtl;
     text-align: right;
@@ -106,7 +109,7 @@ header::after {
     content: "";
     position: absolute;
     bottom: 0;
-    width: calc(100% - 10%);
+    width: calc(100% - 100px);
     height: 1px;
     background-color: #ccc;
 }
@@ -286,7 +289,7 @@ header nav ul li a:hover  {
 }
 .flights .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 20px;
 }
 .card {
@@ -295,37 +298,53 @@ header nav ul li a:hover  {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
     border-radius: var(--border-5);
     max-width: 600px;
+    overflow: hidden;
 }
 .card .row-1 {
-    margin-bottom: 30px;
+    font-size: .9rem;
+    color: var(--p-color);
+    margin-bottom: 25px;
+}
+.card .row-1 > div{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    gap: 5px;
 }
-.card .row-1 .city h2{
-    font-size: 1.3rem;
+.card .row-2 {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+.card .row-2 .city{
+    text-align: center;
+}
+.card .row-2 .city h2 {
+    font-size: 1.5rem;
     font-weight: 600;
+    text-transform: uppercase;
 }
-.card .row-1 .city span{
+.card .row-2 .city span {
     font-size: .675rem;
+    text-align: center;
     color: var(--p-color);
 }
-.card .row-1 .duration-text{
+.card .row-2 .duration-text{
     position: relative;
     text-align: center;
 }
-.card .row-1 .duration-text::before{
+.card .row-2 .duration-text::before{
     content: "";
     position: absolute;
     left: -23px;
     top: 25px;
     width: 140px;
-    height: 1px;
+    height: 2px;
     background-color: #ddd;
 }
-.card .row-1 .duration-text i{
+.card .row-2 .duration-text i {
     display: block;
     margin: 10px 30px;
-    background-color: #0077b6;
+    background-color: var(--blue-primary);
     color: #fff;
     padding: 7px;
     border-radius: 50%;
@@ -341,28 +360,9 @@ header nav ul li a:hover  {
     transform: translateY(5px)
   }
 }
-.card .row-1 .duration-text span{
+.card .row-2 .duration-text span{
     font-size: .675rem;
     color: var(--p-color);
-}
-.card .row-2{
-    margin: 30px 0;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    font-size: .9rem;
-    color: var(--p-color);
-    padding-bottom: 20px;
-    border-bottom: 1px solid #eee;
-}
-.card .row-2 > div{
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-.card .row-2 .date-text{
-    padding-left: 15px;
-    border-left: 1px solid #ccc ;
 }
 .card .row-3{
     display: flex;
@@ -372,7 +372,7 @@ header nav ul li a:hover  {
 .card .row-3 span{
     display: inline-block;
     margin-bottom: 5px;
-    font-size: .875rem;
+    font-size: .750rem;
     color: var(--p-color);
 }
 .card .row-3 p{
@@ -461,57 +461,54 @@ header nav ul li a:hover  {
     scale: 1.05;
 }
 /* popular */
-.popular {
-    padding: 60px 30px;
-}
 .popular .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    gap: 60px;
 }
 .container .box {
     background: #fff;
-    border-radius: var(--border-5);
-    padding-bottom: 20px; ;
+    border-radius: var(--border-rad-10);
+    padding-bottom: 20px; 
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
     overflow: hidden;
 }
 .container .box .img {
-    margin-bottom: 10px;
     overflow: hidden;
     border-radius: var(--border-5);
     position: relative;
-    img {
-        width: 100%;
-        height: 250px;
-        border-radius: var(--border-5) var(--border-5) 0 0;
-        transition: var(--transition) ease;
-    }
-    span {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        background: #fff;
-        border-radius: 30px;
-        font-size: 12px;
-        padding: 2px 5px;
-        i {
-            color: var(--orange-primary);
-            margin-right: 3px;
-        }
-    } 
+}
+.container .box .img  img {
+    width: 100%;
+    height: 250px;
+    border-radius: var(--border-5) var(--border-5) 0 0;
+    transition: var(--transition) ease;
+}
+.container .box .img span {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--orange-primary);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: var(--border-rad-10);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
 }
 .container .box:hover .img img {
     transform: scale(1.05);
 }
 .container .text {
-    padding: 0 15px;
-    margin-bottom: 15px;
+    padding:20px 20px;
+    margin-bottom: 25px;
+    position: relative;
     h3 {
-        font-weight: 700;
+        font-weight: 600;
         margin-bottom: 5px;
         font-size: 1.1em;
-        color: var(--blue-primary);
+        line-height: 1.8;
+        color: #222;
         i {
             margin-right: 5px;
             color: var(--orange-primary);
@@ -522,39 +519,50 @@ header nav ul li a:hover  {
         color: var(--p-color);
     }
 }
+.container .text::after {
+    content: "";
+    position: absolute;
+    left: 5%;
+    bottom: 0;
+    width: calc(100% - 10%);
+    height: 1px;
+    background-color: #ccc;
+}
 .container .prise-book {
-    padding: 0 15px;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
     margin-bottom: 0;
-    p {
-        font-size: 13px;
-        color: var(--p-color);
-        span {
-            font-size: 1.7em;
-            font-weight: bold;
-            color:var(--blue-primary);
-        }
+}
+.container .prise-book p {
+    font-size: 15px;
+    color: var(--p-color);
+    text-transform: uppercase;
+    span {
+        font-size: 1.7em;
+        font-weight: bold;
+        color:var(--orange-primary);
     }
-    a {
-        border: 0;
-        outline: 0;
-        border-radius: var(--border-5);
-        background-color: transparent;
-        color: #222;
-        font-weight: 600;
-        padding: 10px 20px;
-        font-size: .9rem;
-        cursor: pointer;
-        border: 1px solid #ddd;
-        transition: var(--transition);
-    }
-    a:hover {
-        background-color: var(--orange-primary);
-        color: #fff;
-        border: 0;
-    }
+}
+.container .prise-book a {
+    margin-top: 10px;
+    border: 0;
+    outline: 0;
+    border-radius: var(--border-rad-10);
+    background-color: var(--orange-primary);
+    color: #fff;
+    font-weight: bold;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    text-align: center;
+}
+.container .prise-book a:hover {
+    background-color: var(--orange-light);
+    color: #fff;
+    border: 0;
 }
 /* choose me  */
 .choose-me {
@@ -611,7 +619,7 @@ header nav ul li a:hover  {
 footer {
     background: #333;
     color: #fff;
-    padding: 50px 30px 20px;
+    padding-bottom: 30px !important;
 }
 footer .content{
     display: grid;
@@ -755,8 +763,16 @@ footer .two h4 ,.three h4, .four h4 {
     padding-top: 68px;
     text-align: center;
 }
+.about .landing-about {
+    /* Background image settings */
+    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
+    background-size: cover;   /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-attachment: fixed; /* Optional: makes background fixed on scroll */
+}
 .special-landing{
-    padding: 60px 0;
+    padding: 80px 0;
     background-color :#0076b648;
     h1{
         font-size: 2.6rem;
@@ -765,7 +781,7 @@ footer .two h4 ,.three h4, .four h4 {
     }
     p{
         font-size: .95rem;
-        color: var(--p-color);
+        color: var(--blue-secondary);
     }
 }
 
@@ -889,6 +905,14 @@ footer .two h4 ,.three h4, .four h4 {
     padding-top: 68px;
     text-align: center;
 }
+.contact .landing-contact {
+    /* Background image settings */
+    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
+    background-size: cover;   /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-attachment: fixed; /* Optional: makes background fixed on scroll */
+}
 .contact .wrapper{
     padding: 60px;
     text-align: left;
@@ -975,6 +999,14 @@ footer .two h4 ,.three h4, .four h4 {
     padding-top: 68px;
     text-align: center;
 }
+.all-flights .landing-all-flights {
+    /* Background image settings */
+    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
+    background-size: cover;   /* Cover the entire section */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+    background-attachment: fixed; /* Optional: makes background fixed on scroll */
+}
 .all-flights .all-head p {
     color: #666;
 }
@@ -1000,7 +1032,7 @@ body:dir(rtl),body[lang="ar"]{
     .popular .box .text h3 i {
         margin-left: 10px;
     }
-    .card .row-2 .date-text{
+    .card .row-1 .date-text{
         padding-right: 15px;
         padding-left: 0;
         border-right: 1px solid #ccc ;
