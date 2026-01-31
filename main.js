@@ -7,13 +7,13 @@ document.querySelector(".menu-icon").addEventListener("click", () => {
 })
 
 // Close menu when clicking outside 
-// document.addEventListener("click", (event) => {
-//     const isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
+document.addEventListener("click", (event) => {
+    const isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
 
-//     if (!isClickInside) {
-//         ulNav.classList.remove("sm-sc");
-//     }
-// });
+    if (!isClickInside) {
+        ulNav.classList.remove("sm-sc");
+    }
+});
 
 
 // Texts in English and Arabic
@@ -21,7 +21,7 @@ const texts = {
   en: {
     header: ["Home", "About Us", "Contact Us", "Flights"],
     landing: {
-      h1: "Fly Smarter with SkyWing",
+      h1: "Fly Smarter with SudaFly",
       p: "Unlock exclusive flight offers and enjoy personalized travel assistance. Chat with us on WhatsApp to book instantly!",
       btn: "Chat on WhatsApp"
     },
@@ -50,7 +50,7 @@ const texts = {
       startFrom: "from"
     },
     choose: {
-      title: "Why Choose SkyWing?",
+      title: "Why Choose SudaFly ?",
       desc: "Tailored travel, exclusive offers, and instant support via WhatsApp.",
       features: [
         { title: "Safe Payments", desc: "All transactions are secure, fast, and fully protected." },
@@ -62,7 +62,7 @@ const texts = {
       ]
     },
     footer: {
-      logoText: "SkyWing",
+      logoText: "SudaFly",
       desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
       follow:"Follow Us",
       quickLinksTitle:['Quick Links'],
@@ -70,14 +70,14 @@ const texts = {
       workingHoursTitle:['Working Hours'],
       workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
       contactTitle:["Contact Info"],
-      contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 Travel Avenue, New York, NY" },
-      copyright: "SkyWing. All rights reserved.",
+      contact: { phone: "+1-800-FLIGHT", email: "support@sudafly.com", address: "123 Travel Avenue, New York, NY" },
+      copyright: "SudaFly All rights reserved.",
     }
   },
   ar: {
     header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
     landing: {
-      h1: "سافر بذكاء مع سكاي وينج",
+      h1: "سافر بذكاء مع سودا فلاي",
       p: "استمتع بأفضل عروض الرحلات وخدمة شخصية متميزة. تواصل معنا على واتساب للحجز الفوري!",
       btn: "تواصل على واتساب"
     },
@@ -111,7 +111,7 @@ const texts = {
       startFrom: "تبدأ من"
     },
     choose: {
-      title: "لماذا تختار سكاي وينج؟",
+      title: "لماذا تختار سودا فلاي؟",
       desc: "سفر مخصص، عروض حصرية، ودعم فوري عبر واتساب.",
       features: [
         { title: "مدفوعات آمنة", desc: "جميع المعاملات آمنة وسريعة ومحمية بالكامل." },
@@ -123,7 +123,7 @@ const texts = {
       ]
     },
     footer: {
-      logoText: "سكاي وينج",
+      logoText: "سودا فلاي",
       desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
       follow:"تابعنا",
       quickLinksTitle:["روابط سريعة"],
@@ -131,8 +131,8 @@ const texts = {
       workingHoursTitle: ['ساعات العمل'],
       workingHours: [" الاثنين-الخميس :9:00 ص-6:00م", "السبت:1:00ص-4:00م", "الاحد:مغلق"],
       contactTitle:['معلومات الاتصال'],
-      contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 عمارة صندل,  كمبالا KM" },
-      copyright: "سكاي وينج. جميع الحقوق محفوظة.",
+      contact: { phone: "+1-800-FLIGHT", email: "support@sudafly.com", address: "123 عمارة صندل,  كمبالا KM" },
+      copyright: "سودا فلاي. جميع الحقوق محفوظة.",
     }
   }
 };
@@ -190,7 +190,7 @@ function changeLanguage(lang) {
   });
 
   // Footer
-  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
+  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/sudafly-logo4-Photoroom.png" alt="sudafly logo">${texts[lang].footer.logoText}`;
   document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
   document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
   document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;

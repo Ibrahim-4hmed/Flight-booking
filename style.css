@@ -7,11 +7,18 @@
     scroll-behavior: smooth;
 }
 :root {
-    --main-color : #0077b6;
     --border-5:5px;
     --border-rad-10:10px;
     --transition:.4s;
     --p-color:#777;
+    /* blue */
+    --blue-primary: #0077b6;   /* Deep modern blue */
+    --blue-light:   #3B82F6;   /* Hover / accents */
+    --blue-secondary: #03045e; 
+    /* orange */
+    --orange-primary: #F97316;  /* Modern orange */
+    --orange-light:   #FDBA74;  /* Hover / soft accent */
+
 }
 body{
   font-family: "Poppins", sans-serif;
@@ -28,11 +35,8 @@ a {
 }
 button,
 a {
-    transition: transform var(--transition);
-}
-button:hover,
-a:hover {
-    transform: scale(1.02);
+    transition: var(--transition);
+
 }
 .section-head {
     width: fit-content;
@@ -46,7 +50,7 @@ a:hover {
     margin:0 auto 30px;
     width:fit-content;
     font-weight: 700;
-    background: linear-gradient(135deg,#03045e, #0077b6); 
+    background: linear-gradient(90deg, var(--blue-secondary),var(--orange-primary), var(--blue-primary)); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -57,7 +61,7 @@ a:hover {
 .section-head h2::after{
     content: "";
     position: absolute;
-    background-color: var(--main-color);
+    background-color: var(--blue-primary);
 }
 .section-head h2::before{
     width: 20px;
@@ -98,7 +102,8 @@ header{
     backdrop-filter: blur(2px);
 }
 header .logo img {
-    width:60px;
+    width:80px;
+    height: auto;
 }
 header nav ul li {
     display: inline-block;
@@ -119,10 +124,6 @@ header nav ul li a {
     text-transform: uppercase;
 }
 
-header ul li a.active {
-    color: #03045e;
-    background-color: #0076b656;
-}
 header nav .borgar-icon {
     opacity: 0;
 }
@@ -155,12 +156,16 @@ header nav .borgar-icon {
         display: flex;
     } 
 }
+header ul li a.active  {
+    color: var(--orange-primary);
+    background-color: transparent;
+}
 header nav ul li a:hover  {
-    color: #03045e;
-    background-color: #0076b650;
+    color: var(--orange-primary);
+    background-color: transparent;
 }
 .lang-toggle {
-  background-color: #007bff;
+  background-color: var(--orange-primary);
   color: white;
   border: none;
   padding: 8px 15px;
@@ -172,7 +177,7 @@ header nav ul li a:hover  {
 }
 
 .lang-toggle:hover {
-  background-color: #0056b3;
+  background-color: var(--orange-light);
 }
 
 .landing {
@@ -193,7 +198,7 @@ header nav ul li a:hover  {
 .landing h1 {
     font-size: 3em;
     margin-bottom: 10px;
-    background: linear-gradient(135deg, #03045e); /* blue */
+    background: linear-gradient(135deg, var(--blue-secondary)); /* blue */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -203,7 +208,7 @@ header nav ul li a:hover  {
     font-size: 1em;
     max-width:700px;
     text-align: center;
-    color: #04043fe7;
+    color: var(--blue-secondary);
 }
 .landing button {
     padding: 10px 25px;
@@ -211,18 +216,23 @@ header nav ul li a:hover  {
     outline: 0;
     border-radius: var(--border-5);
     color: #fff;
-    background:var(--main-color);
+    background:var(--orange-primary);
     font-size: 1em;
     font-weight: bold;
     cursor: pointer;
     margin-top: 50px;
 }
-.landing button a{
+.landing button a {
     text-decoration: none;
     color: #fff;
 }
+.landing button:hover {
+    color: var(--orange-light);
+    scale: 1.05;
+}
 .landing button i {
     margin-right: 10px;
+    color: #fff;
 }
 /* flights */
 .flights {
@@ -235,13 +245,16 @@ header nav ul li a:hover  {
     margin: 30px auto;
     padding: 20px;
 }
-.filter h4 {
-    text-align: center;
+.filter h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
     margin-bottom: 20px;
-    font-weight: normal;
+    font-weight: 500;
 }
-.filter h4 i {
-    margin-right: 10px;
+.filter h3 i {
+    color: var(--orange-primary);
 }
 .filter ul {
     display: flex;
@@ -253,14 +266,14 @@ header nav ul li a:hover  {
     padding: 7px 15px;
     border-radius: var(--border-5);
     font-weight: 500;
-    border: 1px solid var(--main-color);
+    border: 1px solid var(--orange-primary);
 }
 .active{
-    background-color: var(--main-color);
+    background-color: var(--orange-primary);
     color: #fff;
 }
 .filter ul li:not(.active):hover {
-    background-color: #50c8781e;
+    background-color: var(--orange-light);
 }
 .flights .wrapper {
     display: grid;
@@ -272,6 +285,7 @@ header nav ul li a:hover  {
     background-color: #fff;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, .05);
     border-radius: var(--border-5);
+    max-width: 600px;
 }
 .card .row-1 {
     margin-bottom: 30px;
@@ -353,45 +367,38 @@ header nav ul li a:hover  {
     color: var(--p-color);
 }
 .card .row-3 p{
-    color: var(--main-color);
+    color: var(--blue-primary);
     font-weight: 700;
     font-size: 1.4rem;
 }
-.card .row-3 a{
+.card .row-3 a {
     padding: 10px 20px ;
     font-weight: bold;
     font-size: 1rem;
-    background-color: var(--main-color);
+    background-color: var(--orange-primary);
     color: #fff;
     cursor: pointer;
     border: none;
     border-radius: var(--border-5);
 }
+.card .row-3 a:hover {
+    background-color: var(--orange-light);
+}
 .card .row-3 a i {
     margin-right: 5px;
     font-weight: bold;
 }
-
-
-.book {
-    display: block;
-    width:100%;
-    margin: 20px auto;
-    padding: 10px 25px;
-    border:none;
-    background-color:var(--main-color);
-    color:#fff;
-    font-weight: bold;
-    border-radius:5px;
-    font-size: 1.2rem;
+.book:hover {
+    background-color: var(--orange-light);
+    scale: 1.05;
 }
 .see-all{
     display: block;
     font-size: 1.2rem;
     font-weight: bold;
     border: none;
-    border: 1px solid var(--main-color);
-    color: var(--main-color);
+    border: 1px solid var(--orange-primary);
+    color: var(--orange-primary);
     background-color: #fff;
     padding: 10px 20px;
     width: fit-content;
@@ -404,7 +411,7 @@ header nav ul li a:hover  {
     transition: var(--transition);
 }
 .see-all:hover{
-    background-color: #00bfff1c;
+    background-color: var(--orange-light);
 }
 /* why me */
 .why-me {
@@ -434,11 +441,15 @@ header nav ul li a:hover  {
     color: #fff;
     border-radius: var(--border-5);
     cursor: pointer;
-    background-color: var(--main-color);
+    background-color: var(--orange-primary);
     i{
         margin-right: 10px;
         font-weight: bold;
     }
+}
+.why-me .book-now:hover {
+    background-color: var(--orange-light);
+    scale: 1.05;
 }
 /* popular */
 .popular {
@@ -454,6 +465,7 @@ header nav ul li a:hover  {
     border-radius: var(--border-5);
     padding-bottom: 20px; ;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+    overflow: hidden;
 }
 .container .box .img {
     margin-bottom: 10px;
@@ -466,9 +478,6 @@ header nav ul li a:hover  {
         border-radius: var(--border-5) var(--border-5) 0 0;
         transition: var(--transition) ease;
     }
-    img:hover {
-        transform: scale(1.05);
-    }
     span {
         position: absolute;
         right: 20px;
@@ -478,10 +487,13 @@ header nav ul li a:hover  {
         font-size: 12px;
         padding: 2px 5px;
         i {
-            color: gold;
+            color: var(--orange-primary);
             margin-right: 3px;
         }
     } 
+}
+.container .box:hover .img img {
+    transform: scale(1.05);
 }
 .container .text {
     padding: 0 15px;
@@ -490,9 +502,10 @@ header nav ul li a:hover  {
         font-weight: 700;
         margin-bottom: 5px;
         font-size: 1.1em;
+        color: var(--blue-primary);
         i {
             margin-right: 5px;
-            color: var(--main-color);
+            color: var(--orange-primary);
         }
     }
     span {
@@ -512,7 +525,7 @@ header nav ul li a:hover  {
         span {
             font-size: 1.7em;
             font-weight: bold;
-            color:var(--main-color);
+            color:var(--blue-primary);
         }
     }
     a {
@@ -529,7 +542,7 @@ header nav ul li a:hover  {
         transition: var(--transition);
     }
     a:hover {
-        background-color: var(--main-color);
+        background-color: var(--orange-primary);
         color: #fff;
         border: 0;
     }
@@ -558,7 +571,7 @@ header nav ul li a:hover  {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        background-color:#003459;
+        background-color:var(--orange-primary);
         color: #fff;
         font-weight: bold;
         border-radius: 30%;
@@ -569,7 +582,7 @@ header nav ul li a:hover  {
         font-weight: normal;
         margin-bottom: 7px;
         font-size: 1.4em;
-        color: #03045e;
+        color: var(--blue-secondary);
     }
     p {
         font-weight: 400;
@@ -580,7 +593,7 @@ header nav ul li a:hover  {
 }
 .choose-me .parent .child:hover{
     transform: translateY(-5px);
-    background-color: #00171f;
+    background-color: #000b1f;
     p,h3{
         color: #fff;
     }
@@ -605,7 +618,7 @@ ul li {
     transition: var(--transition);
 }
 footer ul li:hover {
-    color:var(--main-color);
+    color:var(--blue-primary);
     transform: translateY(2px);
 }
 footer .one{
@@ -613,10 +626,11 @@ footer .one{
         display: flex;
         align-items: center;
         font-size: 1.2em;    
-        margin:0 0 10px ;
-        color: var(--main-color);
+        margin:0 ;
+        color: var(--blue-primary);
        img {
-            width:40px;
+            width:60px;
+            margin-top: -10px;
         }
     }
      
@@ -659,7 +673,7 @@ footer .two ul li a {
     margin: 0 5px;
 }
 footer .two ul li a:hover {
-    color: var(--main-color);
+    color: var(--blue-primary);
 }
 footer .two h4 ,.three h4, .four h4 {
     margin-bottom: 20px;
@@ -672,11 +686,14 @@ footer .two h4 ,.three h4, .four h4 {
     margin-bottom: 15px;
     i {
         margin-right: 10px;
-        color: var(--main-color);
+        color: var(--blue-primary);
     }
 }
 .four p {
     font-size: 14px;
+}
+.cRight{
+    color: var(--blue-primary);
 }
 .footer {
     border-top: 1px solid #ccc;
@@ -684,12 +701,8 @@ footer .two h4 ,.three h4, .four h4 {
     padding: 15px 0 0 ;
     .skyWing {
         font-size: 1.2em;
-        color: var(--main-color);
+        color: var(--orange-primary);
         font-weight: 500;
-    }
-    ul {
-        display: flex;
-        gap: 20px;
     }
 }
 
@@ -723,8 +736,12 @@ footer .two h4 ,.three h4, .four h4 {
         padding:5px;
     }
 }
+/* End of  Home page  */
 
-/* about page  */
+
+/*===========
+ about page 
+ ============ */
 .about{
     padding-top: 68px;
     text-align: center;
@@ -735,11 +752,11 @@ footer .two h4 ,.three h4, .four h4 {
     h1{
         font-size: 2.6rem;
         margin-bottom: 20px;
-        color: #03045e;
+        color: var(--blue-secondary);
     }
     p{
         font-size: .95rem;
-        color: #666;
+        color: var(--p-color);
     }
 }
 
@@ -756,8 +773,8 @@ footer .two h4 ,.three h4, .four h4 {
     font-size: 2rem;
     margin:0 auto 50px;
     width:fit-content;
-    font-weight: 700;
-    background: linear-gradient(135deg,#03045e, #0077b6); 
+    font-weight: 800;
+    background: linear-gradient(90deg, var(--blue-secondary),var(--orange-primary), var(--blue-primary)); 
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -772,7 +789,7 @@ footer .two h4 ,.three h4, .four h4 {
 .all-flights .all-head h2::after {
     content: "";
     position: absolute;
-    background-color: var(--main-color);
+    background-color: var(--blue-primary);
 }
 .about-our-story h2::before, 
 .about-values h2::before,
@@ -810,9 +827,8 @@ footer .two h4 ,.three h4, .four h4 {
     padding: 20px;
     background: #fff;
     text-align: center;
-    border-radius: var(--border-5);
     transition: var(--transition);
-    border: 1px solid #ddd;
+    border: 1px solid #eee;
     border-top: 0;
     i {
         width: 50px;
@@ -821,7 +837,7 @@ footer .two h4 ,.three h4, .four h4 {
         justify-content: center;
         align-items: center;
         margin: 0 auto;
-        background-color:#003459;
+        background-color:var(--orange-primary);
         color: #fff;
         font-weight: bold;
         border-radius: 30%;
@@ -857,7 +873,9 @@ footer .two h4 ,.three h4, .four h4 {
 }
 
 
-/* contact us page  */
+/* ==================
+ contact us page  
+ ====================*/
 .contact {
     padding-top: 68px;
     text-align: center;
@@ -905,16 +923,16 @@ footer .two h4 ,.three h4, .four h4 {
     padding: 15px;
     border: 0;
     outline: none;
-    background-color: var(--main-color);
+    background-color: var(--orange-primary);
     color: #fff;
     font-weight: bold;
     font-size: 1rem;
     border-radius: var(--border-5);
     cursor: pointer;
-    transition:.4s ease;
+    transition: var(--transition);
 }
 .contact form button:hover{
-    background-color: hsl(195, 100%, 40%);
+    background-color: var(--orange-light);
 }
 .contact .wrapper .box{
     background-color: #0076b625;
@@ -941,7 +959,9 @@ footer .two h4 ,.three h4, .four h4 {
     }
 }
 
-/* all flights page  */
+/*===================
+ all flights page 
+ ==================== */
 .all-flights{
     padding-top: 68px;
     text-align: center;

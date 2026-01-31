@@ -16,19 +16,19 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:title" content="Explore All Flight Deals - SkyWing" />
     <meta property="og:description" content="Best rates for Badr, Tarco, and international airlines. | أفضل الأسعار على طيران بدر وتاركو والخطوط العالمية." />
-    <meta property="og:url" content="https://skywingagent.netlify.app/all-flights" />
+    <meta property="og:url" content="https://sudaflay.netlify.app/all-flights" />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://skywingagent.netlify.app/all-flights" />
-    <meta name="twitter:title" content="SkyWing Flights | عروض رحلات سكاي وينج العالمية" />
+    <meta name="twitter:url" content="https://sudaflay.netlify.app/all-flights" />
+    <meta name="twitter:title" content="SudaFly Flights | عروض رحلات سودا فلاي العالمية" />
     <meta
     name="twitter:description"
     content="Book Badr, Tarco, and international flights to Cairo, Dubai, and Khartoum. | احجز رحلات بدر وتاركو والخطوط العالمية إلى القاهرة، دبي، والخرطوم."
     />
     <meta
     name="twitter:image"
-    content="https://skywingagent.netlify.app/flights-imges/shaar1.webp"
+    content="https://sudaflay.netlify.app/flights-imges/shaar1.webp"
     />
     <!-- Favicon -->
     <link rel="icon" href="./flights-imges/shaar1.webp" type="image/webp">
@@ -41,7 +41,7 @@
     <header>
         <div class="logo">
             <a href="index.html">
-             <img src="./flights-imges/skywing-logo.webp" alt="skyWing logo">
+             <img src="./flights-imges/sudafly-logo4-Photoroom.png" alt="sudafly logo">
             </a>
         </div>
         <nav>
@@ -71,7 +71,7 @@
         </div>
         <!-- Filter Section -->
         <div class="filter">
-            <h4><i class="fa-solid fa-filter"></i>Filter Flights</h4>
+            <h3></i>Filter Flights</h3>
             <ul class="filter-nav">
                 <li data-ar="all" data-en="all" class="active">All</li>
                 <li data-ar="تاركو" data-en="Tarco">Tarco</li>
@@ -196,7 +196,7 @@
                     filters: ["All", "Tarco Airlines", "Badr Airlines", "Sudan Airlines", "EgyptAir", "Qatar Airways", "Turkish Airlines"],
                 },
                  footer: {
-                    logoText: "SkyWing",
+                    logoText: "SudaFly",
                     desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
                     follow:"Follow Us",
                     quickLinksTitle:['Quick Links'],
@@ -204,8 +204,8 @@
                     workingHoursTitle:['Working Hours'],
                     workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
                     contactTitle:["Contact Info"],
-                    contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 Travel Avenue, New York, NY" },
-                    copyright: "SkyWing. All rights reserved.",
+                    contact: { phone: "+1-800-FLIGHT", email: "support@sudafly.com", address: "123 Travel Avenue, New York, NY" },
+                    copyright: "SudaFly. All rights reserved.",
                 }
             },
             ar:{
@@ -221,7 +221,7 @@
                     filters: ["الكل", "تاركو", "بدر", "الخطوط السودانية", "مصر للطيران", "الخطوط القطرية", "الخطوط التركية"],
                 },
                 footer: {
-                    logoText: "سكاي وينج",
+                    logoText: "سودافلاي",
                     desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
                     follow:"تابعنا",
                     quickLinksTitle:["روابط سريعة"],
@@ -229,8 +229,8 @@
                     workingHoursTitle: ['ساعات العمل'],
                     workingHours: [" الاثنين-الخميس :9:00 ص-6:00م", "السبت:1:00ص-4:00م", "الاحد:مغلق"],
                     contactTitle:['معلومات الاتصال'],
-                    contact: { phone: "+1-800-FLIGHT", email: "support@skywing.com", address: "123 عمارة صندل,  كمبالا KM" },
-                    copyright: "سكاي وينج. جميع الحقوق محفوظة.",
+                    contact: { phone: "+1-800-FLIGHT", email: "support@sudafly.com", address: "123 عمارة صندل,  كمبالا KM" },
+                    copyright: "سودافلاي. جميع الحقوق محفوظة.",
                 }
             }
         }
@@ -271,11 +271,11 @@
             // Flights section
             document.querySelector('#flights .all-head h2').textContent = texts[lang].flights.title;
             document.querySelector('#flights .all-head p').textContent = texts[lang].flights.desc;
-            document.querySelector(".filter h4").textContent = texts[lang].flights.filterTitle;
+            document.querySelector(".filter h3").innerHTML = `<i class="fa-solid fa-filter"></i>${texts[lang].flights.filterTitle}`;
             document.querySelectorAll('.filter-nav li').forEach((item, i) => item.textContent = texts[lang].flights.filters[i]);
 
             // Footer
-            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/shaar1.webp" alt="">${texts[lang].footer.logoText}`;
+            document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges//sudafly-logo4-Photoroom.png" alt="sudaflay logo">${texts[lang].footer.logoText}`;
             document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
             document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
             document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
