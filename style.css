@@ -24,9 +24,6 @@ body{
   font-family: "Poppins", sans-serif;
   /* font-family: "Inter", sans-serif; */
 }
-body .main-container {
-    padding: 60px;
-}
 html[lang="ar"] body {
     direction: rtl;
     text-align: right;
@@ -109,7 +106,7 @@ header::after {
     content: "";
     position: absolute;
     bottom: 0;
-    width: calc(100% - 100px);
+    width: calc(100% - 10%);
     height: 1px;
     background-color: #ccc;
 }
@@ -289,8 +286,8 @@ header nav ul li a:hover  {
 }
 .flights .wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10px;
 }
 .card {
     padding: 20px;
@@ -461,6 +458,9 @@ header nav ul li a:hover  {
     scale: 1.05;
 }
 /* popular */
+.popular {
+    padding: 60px 30px;
+}
 .popular .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -477,24 +477,25 @@ header nav ul li a:hover  {
     overflow: hidden;
     border-radius: var(--border-5);
     position: relative;
-}
-.container .box .img  img {
-    width: 100%;
-    height: 250px;
-    border-radius: var(--border-5) var(--border-5) 0 0;
-    transition: var(--transition) ease;
-}
-.container .box .img span {
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    background-color: var(--orange-primary);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: var(--border-rad-10);
-    font-size: 12px;
-    font-weight: bold;
-    text-transform: uppercase;
+    img {
+        width: 100%;
+        height: 250px;
+        border-radius: var(--border-5) var(--border-5) 0 0;
+        transition: var(--transition) ease;
+    }
+    span {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        background: #fff;
+        border-radius: 30px;
+        font-size: 12px;
+        padding: 2px 5px;
+        i {
+            color: var(--orange-primary);
+            margin-right: 3px;
+        }
+    } 
 }
 .container .box:hover .img img {
     transform: scale(1.05);
@@ -504,11 +505,10 @@ header nav ul li a:hover  {
     margin-bottom: 25px;
     position: relative;
     h3 {
-        font-weight: 600;
+        font-weight: 700;
         margin-bottom: 5px;
         font-size: 1.1em;
-        line-height: 1.8;
-        color: #222;
+        color: var(--blue-primary);
         i {
             margin-right: 5px;
             color: var(--orange-primary);
@@ -529,40 +529,41 @@ header nav ul li a:hover  {
     background-color: #ccc;
 }
 .container .prise-book {
-    padding: 0 20px;
+    padding: 0 15px;
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     margin-bottom: 0;
-}
-.container .prise-book p {
-    font-size: 15px;
-    color: var(--p-color);
-    text-transform: uppercase;
-    span {
-        font-size: 1.7em;
-        font-weight: bold;
-        color:var(--orange-primary);
+    p {
+        font-size: 15px;
+        color: var(--p-color);
+        text-transform: uppercase;
+        span {
+            font-size: 1.7em;
+            font-weight: bold;
+            color:var(--orange-primary);
+        }
     }
-}
-.container .prise-book a {
-    margin-top: 10px;
-    border: 0;
-    outline: 0;
-    border-radius: var(--border-rad-10);
-    background-color: var(--orange-primary);
-    color: #fff;
-    font-weight: bold;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: var(--transition);
-    text-align: center;
-}
-.container .prise-book a:hover {
-    background-color: var(--orange-light);
-    color: #fff;
-    border: 0;
+    a {
+        border: 0;
+        outline: 0;
+        border-radius: var(--border-rad-10);
+        background-color: var(--orange-primary);
+        color: #fff;
+        font-weight: 600;
+        padding: 10px 20px;
+        font-size: 1.05rem;
+        cursor: pointer;
+        border: 1px solid #ddd;
+        transition: var(--transition);
+        text-align:center;
+        margin-top: 10px;
+    }
+    a:hover {
+        background-color: var(--orange-light);
+        color: #fff;
+        border: 0;
+    }
 }
 /* choose me  */
 .choose-me {
@@ -619,7 +620,7 @@ header nav ul li a:hover  {
 footer {
     background: #333;
     color: #fff;
-    padding-bottom: 30px !important;
+    padding: 50px 30px 20px;
 }
 footer .content{
     display: grid;
@@ -763,16 +764,8 @@ footer .two h4 ,.three h4, .four h4 {
     padding-top: 68px;
     text-align: center;
 }
-.about .landing-about {
-    /* Background image settings */
-    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
-    background-size: cover;   /* Cover the entire section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
-    background-attachment: fixed; /* Optional: makes background fixed on scroll */
-}
 .special-landing{
-    padding: 80px 0;
+    padding: 60px 0;
     background-color :#0076b648;
     h1{
         font-size: 2.6rem;
@@ -781,7 +774,7 @@ footer .two h4 ,.three h4, .four h4 {
     }
     p{
         font-size: .95rem;
-        color: var(--blue-secondary);
+        color: var(--p-color);
     }
 }
 
@@ -905,14 +898,6 @@ footer .two h4 ,.three h4, .four h4 {
     padding-top: 68px;
     text-align: center;
 }
-.contact .landing-contact {
-    /* Background image settings */
-    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
-    background-size: cover;   /* Cover the entire section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
-    background-attachment: fixed; /* Optional: makes background fixed on scroll */
-}
 .contact .wrapper{
     padding: 60px;
     text-align: left;
@@ -998,14 +983,6 @@ footer .two h4 ,.three h4, .four h4 {
 .all-flights{
     padding-top: 68px;
     text-align: center;
-}
-.all-flights .landing-all-flights {
-    /* Background image settings */
-    background-image: url("./flights-imges/landing4-min.webp"); /* Replace with your image path */
-    background-size: cover;   /* Cover the entire section */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
-    background-attachment: fixed; /* Optional: makes background fixed on scroll */
 }
 .all-flights .all-head p {
     color: #666;
