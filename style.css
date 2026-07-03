@@ -21,8 +21,8 @@
 
 }
 body{
-  font-family: "Poppins", sans-serif;
-  /* font-family: "Inter", sans-serif; */
+  /* font-family: "Poppins", sans-serif; */
+  font-family: "Inter", sans-serif;
 }
 html[lang="ar"] body {
     direction: rtl;
@@ -246,7 +246,7 @@ header nav ul li a:hover  {
 /* flights */
 .flights {
     width:100%;
-    padding: 60px 30px;
+    padding: 60px;
     background: #f9f9f9;
 }
 .filter {
@@ -287,7 +287,7 @@ header nav ul li a:hover  {
 .flights .wrapper {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 10px;
+    gap: 20px;
 }
 .card {
     padding: 20px;
@@ -459,7 +459,7 @@ header nav ul li a:hover  {
 }
 /* popular */
 .popular {
-    padding: 60px 30px;
+    padding: 60px;
 }
 .popular .container {
     display: grid;
@@ -565,7 +565,7 @@ header nav ul li a:hover  {
 }
 /* choose me  */
 .choose-me {
-    padding:60px 30px;
+    padding:60px ;
     background-color: #f9f9f9;
 }
 .choose-me .parent {
@@ -618,7 +618,7 @@ header nav ul li a:hover  {
 footer {
     background: #333;
     color: #fff;
-    padding: 50px 30px 20px;
+    padding: 50px 60px 20px;
 }
 footer .content{
     display: grid;

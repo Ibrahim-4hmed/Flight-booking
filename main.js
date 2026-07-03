@@ -223,11 +223,11 @@ langBtn.addEventListener('click', () => {
   fetchData(newLang)
 });
 
-
+console.log('hello')
 
 async function fetchData(language) {    
   // fetch data
-  const response = await fetch(`data.json?nocache=${Date.now()}`)
+  const response = await fetch(`https://flights-api-1.onrender.com/api`)
 
   // english and arabic data
   const allData = await response.json();
