@@ -223,16 +223,19 @@ langBtn.addEventListener('click', () => {
   fetchData(newLang)
 });
 
-console.log('hello')
-
 async function fetchData(language) {    
   // fetch data
-  const response = await fetch(`https://flights-api-1.onrender.com/api`)
+  const responseEn = await fetch(`https://flights-api-1.onrender.com/api/en`)
+  const responseAr = await fetch(`https://flights-api-1.onrender.com/api/ar`)
 
-  // english and arabic data
-  const allData = await response.json();
 
-  const flightsData = allData[language]
+  // english data
+  const EnData = await responseEn.json();
+
+  // arabic data
+  const ArData = await responseAr.json();
+
+  const flightsData = language === 'en' ? EnData : ArData
 
   const template = document.getElementById("template")
   const wrapper = document.createElement("div");
