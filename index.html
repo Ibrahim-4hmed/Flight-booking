@@ -123,16 +123,32 @@
 
     <!-- flights section -->
     <section id="flights" class="flights main-container">
-      <div class="section-head">
-        <h2>This Week's Top Flights</h2>
+      <div class="form">
+        <div class="section-head">
+        <h2>Find your next flight</h2>
         <p>
-          Grab the best deals from your personal travel agent. Quick booking via
-          WhatsApp available!
+          Search hundreds of airlines and destinations in seconds.
         </p>
       </div>
+        <form action="">
+          <div class="inputs">
+            <div class="input-group">
+              <i class="fa-solid fa-plane-departure"></i>
+              <input type="text" class="" id="from" name="from" placeholder="From Country" required />
+            </div>
+            <div class="input-group">
+              <i class="fa-solid fa-plane-arrival"></i>
+              <input type="text" id="to" name="to" placeholder="To Country" required />
+            </div>
+          </div>
+          <button type="submit">Search Flights</button>
+        </form>
+      </div>
+      
+      <!--
       <div class="cards">
         <template id="template">
-          <!-- flight card -->
+           flight card
           <article class="card">
             
             <div class="row-1">
@@ -170,7 +186,7 @@
           </article>
         </template>
       </div>
-      <a href="all-flights.html" class="see-all">Explore More</a>
+      <a href="all-flights.html" class="see-all">Explore More</a> -->
     </section>
 
     <!-- why me section -->

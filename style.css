@@ -29,6 +29,9 @@ html[lang="ar"] body {
     text-align: right;
     font-family:'Cairo', sans-serif;
 }
+html[lang="ar"] .input-group input::placeholder{
+    font-family:'Cairo', sans-serif;
+}
 a {
     display: inline-block;
     text-decoration: none;
@@ -398,29 +401,72 @@ header nav ul li a:hover  {
     background-color: var(--orange-light);
     scale: 1.05;
 }
-.see-all{
-    display: block;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border: none;
-    border: 1px solid var(--orange-primary);
-    color: var(--orange-primary);
-    background-color: #fff;
-    padding: 10px 20px;
-    width: fit-content;
-    margin: 70px auto 0;
-    border-radius: var(--border-5);
-    cursor: pointer;
+/* from */
+.form {
     text-align: center;
-    transition: background-color var(--transition) ease;
-    text-decoration: none;
-    transition: var(--transition);
+    padding: 20px ;
+    margin: 30px auto;
+    background: #fff;
+    border-radius: var(--border-rad-10);
+    box-shadow: 0px 5px 0px rgba(0, 0, 0, .1);
 }
-.see-all:hover{
+.form form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.form .inputs {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+@media (max-width:767px){
+    .form .inputs {
+        flex-direction: column;
+    }
+}
+.form .input-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: #ccc 1px solid;
+    border-radius: var(--border-rad-10);
+    padding: 5px 10px;
+}
+.form .inputs input {
+    width: 100%;
+    padding: 10px;
+    height: 40px;
+    border: 0;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 0;
+}
+.form .inputs i {
+    color: var(--orange-light);
+    font-size: 1.2rem;
+}
+.form .inputs input::placeholder {
+    font-family: "Inter", sans-serif;
+    font-family: 'Cairo', sans-serif;
+}
+.form button {
+    padding: 15px 30px;
+    border: 0;
+    outline: 0;
+    border-radius: var(--border-rad-10);
+    color: #fff;
+    background:var(--orange-primary);
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.form button:hover {
     background-color: var(--orange-light);
+    scale: 1.02;
 }
 /* why me */
-.why-me {
+.why-me, .form {
     width: fit-content;
     text-align: center;
     padding: 20px ;
@@ -490,9 +536,10 @@ header nav ul li a:hover  {
         background-color: var(--orange-primary);
         color: #fff;
         padding: 5px 10px;
-        border-radius: var(--border-rad-10);
+        border-radius: var(--border-5);
         font-size: 12px;
         font-weight: 600;
+        text-transform: uppercase;
     } 
 }
 .container .box:hover .img img {
@@ -556,6 +603,9 @@ header nav ul li a:hover  {
         transition: var(--transition);
         text-align:center;
         margin-top: 10px;
+        i {
+            margin: 7px;
+        }
     }
     a:hover {
         background-color: var(--orange-light);
@@ -669,6 +719,7 @@ footer .one{
             padding: 10px;
             font-size: 1.4em;
             cursor: pointer;
+            transition: var(--transition);
         }
         i.fa-facebook-f:hover {
             background-color: #1877f2;
@@ -740,6 +791,9 @@ footer .two h4 ,.three h4, .four h4 {
     .popular .container  {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap:10px;
+    }
+    .form .inputs {
+        flex-direction: column;
     }
 }
 
@@ -1022,4 +1076,65 @@ body:dir(rtl),body[lang="ar"]{
     .contact .wrapper{
         text-align: right;
     }
+}
+
+/* Not Found Page */
+.not-found-page {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(
+        135deg,
+        #f8fbff,
+        #eef6ff
+    );
+}
+
+.error-code {
+    font-size: clamp(1.5rem, 7vw, 5rem);
+    font-weight: 800;
+    color: var(--blue-primary);
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+.not-found-page h1 {
+    font-size: 1.5rem;
+    color: var(--blue-secondary);
+    margin-bottom: 15px;
+}
+
+.not-found-page p {
+    max-width: 500px;
+    color: var(--p-color);
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 32px;
+
+    background: var(--orange-primary);
+    color: white;
+
+    text-decoration: none;
+    font-weight: 600;
+
+    border-radius: var(--border-rad-10);
+    transition: var(--transition);
+}
+
+.home-btn:hover {
+    background: var(--orange-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.25);
 }

@@ -15,7 +15,6 @@ document.addEventListener("click", (event) => {
     }
 });
 
-
 // Texts in English and Arabic
 const texts = {
   en: {
@@ -26,9 +25,11 @@ const texts = {
       btn: "Chat on WhatsApp"
     },
     flights: {
-      title: "This Week's Top Flights",
-      desc: "Grab the best deals from your personal travel agent. Quick booking via WhatsApp available!",
-      seeAll: "Explore More"
+      title: "Find your next flight",
+      desc: "Search hundreds of airlines and destinations in seconds.",
+      btn:"Search Flights",
+      from:"From Country",
+      to:"To Country"
     },
     why: {
       title: "Why Book With Us?",
@@ -82,14 +83,11 @@ const texts = {
       btn: "تواصل على واتساب"
     },
     flights: {
-      title: "أفضل الرحلات هذا الأسبوع",
-      desc: "احصل على أفضل العروض من وكيلك الشخصي. الحجز السريع متاح عبر واتساب!",
-      filterTitle:"تخصيص",
-      filters: ["الكل", "تاركو", "بدر", "الخطوط السودانية", "مصر للطيران", "الخطوط القطرية", "الخطوط التركية"],
-      price: ["المبلغ الكلي"],
-      cardBtn: "احجز الآن على واتساب",
-      cardLabels: { from: "المغادرة", to: "الوصول", depTime: "انطلاق", arivTime: "وصول", duration: "مدة الرحلة", airline: "شركة الطيران", date: "تاريخ السفر", price: "سعر التذكرة" },
-      seeAll: " جميع الرحلات"
+      title: "ابحث عن وجهتك القادمة",
+      desc: "ابحث في مئات شركات الطيران والوجهات خلال ثوانٍ.",
+      btn: "ابحث عن الرحلات",
+      from:"بلد المقادرة",
+      to:"بلد الوصول"
     },
     why: {
       title: "لماذا تحجز معنا؟",
@@ -146,8 +144,6 @@ const langBtn = document.getElementById('lang-btn');
 // Apply saved language on page load
 changeLanguage(currentLang);
 
-// Fetch flights for saved language
-fetchData(currentLang);
 
 
 function changeLanguage(lang) {
@@ -164,7 +160,10 @@ function changeLanguage(lang) {
   // Flights section
   document.querySelector('#flights .section-head h2').textContent = texts[lang].flights.title;
   document.querySelector('#flights .section-head p').textContent = texts[lang].flights.desc;
-  document.querySelector('.see-all').textContent = texts[lang].flights.seeAll;
+  document.querySelector('#flights .form button').textContent = texts[lang].flights.btn;
+  document.querySelector('#flights .form #from').placeholder = texts[lang].flights.from;
+  document.querySelector('#flights .form #to').placeholder = texts[lang].flights.to;
+
 
   // Popular Destinations
   document.querySelector('.popular .section-head h2').textContent = texts[lang].popular.title;
@@ -217,45 +216,7 @@ langBtn.addEventListener('click', () => {
   const newLang = currentLang === "en" ? "ar" : "en";
   localStorage.setItem("lang",newLang);
   changeLanguage(newLang);
-  const temp = document.getElementById("template");
-  document.querySelector(".cards").innerHTML = null;
-  document.querySelector(".cards").appendChild(temp);
-  fetchData(newLang)
 });
-
-async function fetchData(language) {    
-  // fetch data
-  const responseEn = await fetch(`https://flights-api-1.onrender.com/api/en`)
-  const responseAr = await fetch(`https://flights-api-1.onrender.com/api/ar`)
-
-
-  // english data
-  const EnData = await responseEn.json();
-
-  // arabic data
-  const ArData = await responseAr.json();
-
-  const flightsData = language === 'en' ? EnData : ArData
-
-  const template = document.getElementById("template")
-  const wrapper = document.createElement("div");
-  wrapper.className = "wrapper";
-  flightsData.slice(0,6).forEach(flight => {
-      const clone = template.content.cloneNode(true);
-      clone.querySelector(".from").textContent = flight.from;
-      clone.querySelector(".to").textContent = flight.to;
-      clone.querySelector(".airline").textContent = flight.airline;
-      clone.querySelector(".from-country").textContent = flight.fromCountry;
-      clone.querySelector(".to-country").textContent = flight.toCountry;
-      clone.querySelector(".duration").textContent = flight.duration;
-      clone.querySelector(".price").textContent = flight.price;
-      clone.querySelector('.row-3 span').textContent =flight.totalPrice;
-      clone.querySelector('.row-3 a').textContent =flight.bookBtn;
-      
-      wrapper.appendChild(clone);
-  });
-  document.querySelector(".cards").appendChild(wrapper);
-}
 
 
 
