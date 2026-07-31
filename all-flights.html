@@ -308,8 +308,8 @@
 
         //fetch data from json file
         async function fetchData(language) {    
-       // fetch data
-        const responseEn = await fetch(`https://flights-api-1.onrender.com/api/en`)
+        // fetch data
+        const responseEn = await fetch(`https://flights-api-1.onrender.com/api`)
         const responseAr = await fetch(`https://flights-api-1.onrender.com/api/ar`)
 
 
@@ -321,7 +321,7 @@
 
         const flightsData = language === 'en' ? EnData : ArData
 
-        
+
         const template = document.getElementById("template")
         const wrapper = document.createElement("div");
         wrapper.className = "wrapper";

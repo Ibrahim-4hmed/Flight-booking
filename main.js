@@ -144,6 +144,46 @@ const langBtn = document.getElementById('lang-btn');
 // Apply saved language on page load
 changeLanguage(currentLang);
 
+// Fetch Data from api
+fetchData(currentLang)
+
+
+//fetch data from json file
+    async function fetchData(language) {    
+    // fetch data
+    const responseEn = await fetch(`https://flights-api-1.onrender.com/api`)
+    const responseAr = await fetch(`https://flights-api-1.onrender.com/api/ar`)
+
+
+    // english data
+    const EnData = await responseEn.json();
+
+    // arabic data
+    const ArData = await responseAr.json();
+
+    const flightsData = language === 'en' ? EnData : ArData
+
+    
+    const template = document.getElementById("template")
+    const wrapper = document.createElement("div");
+    wrapper.className = "wrapper";
+    flightsData.forEach(flight => {
+        const clone = template.content.cloneNode(true);
+        clone.querySelector(".from").textContent = flight.from;
+        clone.querySelector(".to").textContent = flight.to;
+        clone.querySelector(".airline").textContent = flight.airline;
+        clone.querySelector(".from-country").textContent = flight.fromCountry;
+        clone.querySelector(".to-country").textContent = flight.toCountry;
+        clone.querySelector(".duration").textContent = flight.duration;
+        clone.querySelector(".price").textContent = flight.price;
+        clone.querySelector('.row-3 span').textContent =flight.totalPrice;
+        clone.querySelector('.row-3 a').textContent =flight.bookBtn;
+        
+        wrapper.appendChild(clone);
+    });
+    document.querySelector(".cards").appendChild(wrapper);
+    }
+
 
 
 function changeLanguage(lang) {
@@ -161,8 +201,8 @@ function changeLanguage(lang) {
   document.querySelector('#flights .section-head h2').textContent = texts[lang].flights.title;
   document.querySelector('#flights .section-head p').textContent = texts[lang].flights.desc;
   document.querySelector('#flights .form button').textContent = texts[lang].flights.btn;
-  document.querySelector('#flights .form #from').placeholder = texts[lang].flights.from;
-  document.querySelector('#flights .form #to').placeholder = texts[lang].flights.to;
+  document.querySelector('#flights .form #fromCountry').placeholder = texts[lang].flights.from;
+  document.querySelector('#flights .form #toCountry').placeholder = texts[lang].flights.to;
 
 
   // Popular Destinations
@@ -216,6 +256,10 @@ langBtn.addEventListener('click', () => {
   const newLang = currentLang === "en" ? "ar" : "en";
   localStorage.setItem("lang",newLang);
   changeLanguage(newLang);
+  const temp = document.getElementById("template");
+  document.querySelector(".cards").innerHTML = null;
+  document.querySelector(".cards").appendChild(temp);
+  fetchData(newLang)
 });
 
 
