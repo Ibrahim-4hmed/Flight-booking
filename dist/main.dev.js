@@ -1,6 +1,6 @@
 "use strict";
 
-var _js = require("./js/");
+var _skeleton = require("./js/skeleton.js");
 
 var _handleLang = require("./js/handleLang.js");
 
@@ -13,7 +13,9 @@ var langBtn = document.getElementById('lang-btn');
 var flightForm = document.getElementById("flights-search");
 var skeletonTemp = document.getElementById('skeleton-template');
 var cardTemp = document.getElementById("card-template");
-var submitBtn = document.getElementById("search-btn"); //Get current language
+var submitBtn = document.getElementById("search-btn");
+var ulNav = document.getElementById("small-sc");
+var links = document.querySelector(".nav-links a"); //Get current language
 
 var currentLang = localStorage.getItem("lang") || "en"; // Apply saved language on page load
 
@@ -32,7 +34,7 @@ flightForm.addEventListener("submit", function _callee(e) {
             block: "center"
           });
           startLoading();
-          (0, _js.renderSkeleton)(2, cards, skeletonTemp);
+          (0, _skeleton.renderSkeleton)(2, cards, skeletonTemp);
           from = flightForm.elements.from.value.trim();
           to = flightForm.elements.to.value.trim();
           flightForm.elements.from.value = "";
@@ -62,7 +64,7 @@ flightForm.addEventListener("submit", function _callee(e) {
             wrapper.appendChild(clone);
           });
           cards.appendChild(wrapper);
-          _context.next = 27;
+          _context.next = 28;
           break;
 
         case 22:
@@ -70,21 +72,22 @@ flightForm.addEventListener("submit", function _callee(e) {
           _context.t0 = _context["catch"](11);
           err = document.createElement("p");
           err.textContent = _context.t0.message;
+          console.log(err);
           cards.appendChild(err);
 
-        case 27:
-          _context.prev = 27;
+        case 28:
+          _context.prev = 28;
           stopLoading(); // remove queries from the url => /index.html
 
           window.history.replaceState({}, document.title, window.location.pathname);
-          return _context.finish(27);
+          return _context.finish(28);
 
-        case 31:
+        case 32:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[11, 22, 27, 31]]);
+  }, null, null, [[11, 22, 28, 32]]);
 }); //Switch between languages
 
 langBtn.addEventListener('click', function () {
@@ -95,6 +98,18 @@ langBtn.addEventListener('click', function () {
   cards.innerHTML = "";
   cards.appendChild(cardTemp);
   cards.appendChild(skeletonTemp);
+}); //////////// Borgar Menu /////////////
+
+document.querySelector(".menu-icon").addEventListener("click", function () {
+  ulNav.classList.toggle("sm-sc");
+}); // Close menu when clicking outside 
+
+document.addEventListener("click", function (event) {
+  var isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
+
+  if (!isClickInside) {
+    ulNav.classList.remove("sm-sc");
+  }
 });
 
 function startLoading() {

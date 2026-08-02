@@ -1,11 +1,6 @@
-function renderSkeleton(count = 4){
-
-    const cards = document.querySelector(".cards");
+export function renderSkeleton(count = 4,cards,template){
 
     cards.innerHTML = "";
-
-    const template =
-        document.getElementById("skeleton-template");
 
     for(let i = 0; i < count; i++){
 
