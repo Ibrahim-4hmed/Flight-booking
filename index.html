@@ -130,7 +130,7 @@
           Search hundreds of airlines and destinations in seconds.
         </p>
       </div>
-        <form action="">
+        <form id="flights-search">
           <div class="inputs">
             <div class="input-group">
               <i class="fa-solid fa-plane-departure"></i>
@@ -141,13 +141,14 @@
               <input type="text" id="toCountry" name="to" placeholder="To Country" required />
             </div>
           </div>
-          <button type="submit">Search Flights</button>
+          <button id="search-btn" type="submit">Search Flights</button>
         </form>
       </div>
-
-      
+      <div class="section-head available-flights">
+        <h2 class="abalibable-flights">Available Flights</h2>
+      </div>
       <div class="cards">
-        <template id="template">
+        <template id="card-template">
            <!-- flight card -->
           <article class="card">
             
@@ -185,6 +186,15 @@
             </div>
           </article>
         </template>
+        <!-- skeleton template -->
+        <template id="skeleton-template">
+        <div class="card skeleton">
+            <div class="line large"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line small"></div>
+        </div>
+    </template>
       </div>
     </section>
 
@@ -213,7 +223,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/cairo-city.webp" alt="Cairo City"  loading="lazy"/>
-            <span>hot destination</span>
+            <span class="hot-destination">hot destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-location-dot"></i>Cairo</h3>
@@ -237,7 +247,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/entebbe-city.webp" alt="Entebbe city" loading="lazy" />
-            <span>hot destination</span>
+            <span class="hot-destination">hot destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-location-dot"></i>Entebbe</h3>
@@ -261,7 +271,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/istanbul-city.webp" alt="Istanbul city" loading="lazy" />
-            <span>hot destination</span>
+            <span class="hot-destination">hot destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-location-dot"></i>Istanbul</h3>
@@ -285,7 +295,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/doha-city.webp" alt="Doha city" loading="lazy" />
-            <span>hot destination</span>
+            <span class="hot-destination">hot destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-location-dot"></i>Doha</h3>
@@ -309,7 +319,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/maka.webp" alt="Maka city" loading="lazy" />
-            <span>hot destination</span>
+            <span class="hot-destination">hot destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-location-dot"></i>Mecca</h3>
@@ -333,7 +343,7 @@
         <div class="box">
           <div class="img">
             <img src="./flights-imges/riyadh-city.webp" alt="Riyadh" loading="lazy" />
-            <span >Hot Destination</span>
+            <span class="hot-destination">Hot Destination</span>
           </div>
           <div class="text">
             <h3><i class="fa-solid fa-map-location-dot"></i></i>Riyadh</h3>

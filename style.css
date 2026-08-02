@@ -41,6 +41,11 @@ a {
     transition: var(--transition);
 
 }
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    color: red;
+}
 /* writing */
 .section-head {
     width: fit-content;
@@ -420,11 +425,6 @@ header nav ul li a:hover  {
     justify-content: space-between;
     gap: 20px;
 }
-@media (max-width:767px){
-    .form .inputs {
-        flex-direction: column;
-    }
-}
 .form .input-group {
     display: flex;
     justify-content: space-between;
@@ -464,6 +464,47 @@ header nav ul li a:hover  {
 .form button:hover {
     background-color: var(--orange-light);
     scale: 1.02;
+}
+/* skeleton */
+.skeleton .line{
+    height:14px;
+    margin:12px 0;
+    border-radius:6px;
+    background:#ddd;
+}
+
+.skeleton .large{
+    width:80%;
+    height:20px;
+}
+
+.skeleton .small{
+    width:40%;
+}
+
+.skeleton{
+    animation:pulse 1.2s infinite;
+}
+
+@keyframes pulse{
+
+    0%{
+        opacity:.5;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.5;
+    }
+
+}
+/* Available Flights */
+.available-flights {
+    text-align: center;
+    display: none;
 }
 /* why me */
 .why-me, .form {
@@ -510,7 +551,7 @@ header nav ul li a:hover  {
 .popular .container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 60px;
+    gap: 50px;
 }
 .container .box {
     background: #fff;
@@ -773,6 +814,7 @@ footer .two h4 ,.three h4, .four h4 {
     }
 }
 
+
 @media (max-width:350px) {
     .landing h1 {
         font-size: 1rem;
@@ -784,7 +826,7 @@ footer .two h4 ,.three h4, .four h4 {
     .flights,
     .choose-me,
     .popular {
-        padding:40px 15px;
+        padding:20px ;
     }
     .flights .wrapper,
     .choose-me .parent,
@@ -795,8 +837,10 @@ footer .two h4 ,.three h4, .four h4 {
     .form .inputs {
         flex-direction: column;
     }
+    footer {
+        padding: 50px 20px 20px;
+    }
 }
-
 @media (max-width:768px) {
     .landing h1 {
         font-size: 2.2rem;
@@ -804,6 +848,15 @@ footer .two h4 ,.three h4, .four h4 {
     .landing p{
         font-size: 1.1rem;
         padding:5px;
+    }
+     .flights,
+    .choose-me,
+    .popular {
+        padding:35px ;
+        text-align: center;
+    }
+    .form .inputs {
+        flex-direction: column;
     }
 }
 /* End of  Home page  */
@@ -885,8 +938,8 @@ footer .two h4 ,.three h4, .four h4 {
     margin-bottom: 10px;
 }
 .about-values{
-    margin: 70px 0;
-    padding: 0 30px;
+    margin: 40px 0;
+    padding: 0 60px;
 }
 .about-values .wrapper {
     display: grid;

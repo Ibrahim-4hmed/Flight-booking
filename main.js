@@ -1,174 +1,59 @@
-//////////// Borgar Menu /////////////
-const ulNav = document.getElementById("small-sc");
-const links = document.querySelector(".nav-links a")
+import { renderSkeleton } from "./js/"
+import { changeLanguage } from "./js/handleLang.js"
+import { fetchData } from "./js/fetchFlights.js";
 
-document.querySelector(".menu-icon").addEventListener("click", () => {
-    ulNav.classList.toggle("sm-sc")
-})
 
-// Close menu when clicking outside 
-document.addEventListener("click", (event) => {
-    const isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
-
-    if (!isClickInside) {
-        ulNav.classList.remove("sm-sc");
-    }
-});
-
-// Texts in English and Arabic
-const texts = {
-  en: {
-    header: ["Home", "About Us", "Contact Us", "Flights"],
-    landing: {
-      h1: "Fly Smarter with SudaFly",
-      p: "Unlock exclusive flight offers and enjoy personalized travel assistance. Chat with us on WhatsApp to book instantly!",
-      btn: "Chat on WhatsApp"
-    },
-    flights: {
-      title: "Find your next flight",
-      desc: "Search hundreds of airlines and destinations in seconds.",
-      btn:"Search Flights",
-      from:"From Country",
-      to:"To Country"
-    },
-    why: {
-      title: "Why Book With Us?",
-      desc: "We provide tailor-made service, exclusive deals, and 24/7 support to make your travel smooth and worry-free.",
-      btn: "Book Now on WhatsApp"
-    },
-    popular: {
-      title: "Hot Destinations",
-      desc: "Travel the world and enjoy our specially curated flight deals.",
-      cities: [
-        { city: "Cairo", country: "Egypt" },
-        { city: "Entebbe", country: "Uganda" },
-        { city: "Istanbul", country: "Turkey" },
-        { city: "Doha", country: "Qatar" },
-        { city: "Mecca", country: "Saudi Arabia" },
-        { city: "Riyadh", country: "Saudi Arabia" }
-      ],
-      bookBtn: `Reserve Now`,
-      startFrom: "starting from"
-    },
-    choose: {
-      title: "Why Choose SudaFly ?",
-      desc: "Tailored travel, exclusive offers, and instant support via WhatsApp.",
-      features: [
-        { title: "Safe Payments", desc: "All transactions are secure, fast, and fully protected." },
-        { title: "Instant Booking", desc: "Quick replies for your flight bookings and inquiries." },
-        { title: "Exclusive Offers", desc: "Access unique airline deals not available elsewhere." },
-        { title: "Personal Assistance", desc: "One-on-one help for every step of your journey." },
-        { title: "Trusted Experience", desc: "Years of helping travelers get the best flights and rates." },
-        { title: "Flexible Options", desc: "Change or cancel your flights easily, including group bookings." }
-      ]
-    },
-    footer: {
-      logoText: "SudaFly",
-      desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
-      follow:"Follow Us",
-      quickLinksTitle:['Quick Links'],
-      quickLinks: ["About Us","Contact Us", "All Flights"],
-      workingHoursTitle:['Working Hours'],
-      workingHours: ["Monday-Friday:9:00AM-6:00PM", "Satrday:10:00AM-4:00PM", "Sunday:Closed"],
-      contactTitle:["Contact Info"],
-      contact: { phone: "+1-800-FLIGHT", email: "support@sudafly.com", address: "123 Travel Avenue, New York, NY" },
-      copyright: "SudaFly All rights reserved.",
-    }
-  },
-  ar: {
-    header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
-    landing: {
-      h1: "سافر بذكاء مع سودا فلاي",
-      p: "استمتع بأفضل عروض الرحلات وخدمة شخصية متميزة. تواصل معنا على واتساب للحجز الفوري!",
-      btn: "تواصل على واتساب"
-    },
-    flights: {
-      title: "ابحث عن وجهتك القادمة",
-      desc: "ابحث في مئات شركات الطيران والوجهات خلال ثوانٍ.",
-      btn: "ابحث عن الرحلات",
-      from:"بلد المقادرة",
-      to:"بلد الوصول"
-    },
-    why: {
-      title: "لماذا تحجز معنا؟",
-      desc: "نقدّم خدمة سفر مخصصة، عروض حصرية، ودعم على مدار الساعة لجعل رحلتك سهلة وخالية من القلق.",
-      btn: "احجز الآن عبر واتساب"
-    },
-    popular: {
-      title: "الوجهات الرائجة",
-      desc: "سافر حول العالم واستمتع بأفضل عروض الرحلات المختارة بعناية.",
-      cities: [
-        { city: "القاهرة", country: "مصر" },
-        { city: "انتيبي", country: "أوغندا" },
-        { city: "اسطنبول", country: "تركيا" },
-        { city: "الدوحة", country: "قطر" },
-        { city: "مكة", country: "المملكة العربية السعودية" },
-        { city: "الرياض", country: "المملكة العربية السعودية" }
-      ],
-      bookBtn: "احجز الآن",
-      startFrom: "تبدأ من"
-    },
-    choose: {
-      title: "لماذا تختار سودا فلاي؟",
-      desc: "سفر مخصص، عروض حصرية، ودعم فوري عبر واتساب.",
-      features: [
-        { title: "مدفوعات آمنة", desc: "جميع المعاملات آمنة وسريعة ومحمية بالكامل." },
-        { title: "حجز فوري", desc: "رد سريع على جميع استفسارات وحجوزات الرحلات." },
-        { title: "عروض حصرية", desc: "الوصول إلى أفضل عروض شركات الطيران غير المتاحة للآخرين." },
-        { title: "خدمة شخصية", desc: "مساعدة فردية في كل خطوة من رحلتك." },
-        { title: "خبرة موثوقة", desc: "سنوات من الخبرة في مساعدة المسافرين للحصول على أفضل الرحلات والأسعار." },
-        { title: "خيارات مرنة", desc: "سهولة تعديل أو إلغاء الرحلات، بما في ذلك الحجز الجماعي." }
-      ]
-    },
-    footer: {
-      logoText: "سودا فلاي",
-      desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
-      follow:"تابعنا",
-      quickLinksTitle:["روابط سريعة"],
-      quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
-      workingHoursTitle: ['ساعات العمل'],
-      workingHours: [" الاثنين-الخميس :9:00 ص-6:00م", "السبت:1:00ص-4:00م", "الاحد:مغلق"],
-      contactTitle:['معلومات الاتصال'],
-      contact: { phone: "+1-800-FLIGHT", email: "support@sudafly.com", address: "123 عمارة صندل,  كمبالا KM" },
-      copyright: "سودا فلاي. جميع الحقوق محفوظة.",
-    }
-  }
-};
-
-//current language
-let currentLang = localStorage.getItem("lang") || "en";
-
+// variables 
+const cards = document.querySelector(".cards");
 //language button
 const langBtn = document.getElementById('lang-btn');
+const flightForm = document.getElementById("flights-search");
+const skeletonTemp = document.getElementById('skeleton-template')
+const cardTemp = document.getElementById("card-template");
+const submitBtn = document.getElementById("search-btn")
+
+//Get current language
+let currentLang = localStorage.getItem("lang") || "en";
+
 
 // Apply saved language on page load
 changeLanguage(currentLang);
 
-// Fetch Data from api
-fetchData(currentLang)
+
+//form submttion
+flightForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  document.querySelector('.available-flights').style.display = "block";
+  
+  cards.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+    startLoading()
+
+  renderSkeleton(2,cards,skeletonTemp)
+
+  const from = flightForm.elements.from.value.trim();
+  const to = flightForm.elements.to.value.trim();
+
+  flightForm.elements.from.value = "";
+  flightForm.elements.to.value = "";
+
+  const endpoint = currentLang === "en" ? "flights" : "flights/ar";
+
+  const url = 
+  `https://flights-api-1.onrender.com/${endpoint}?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
 
 
-//fetch data from json file
-    async function fetchData(language) {    
-    // fetch data
-    const responseEn = await fetch(`https://flights-api-1.onrender.com/api`)
-    const responseAr = await fetch(`https://flights-api-1.onrender.com/api/ar`)
-
-
-    // english data
-    const EnData = await responseEn.json();
-
-    // arabic data
-    const ArData = await responseAr.json();
-
-    const flightsData = language === 'en' ? EnData : ArData
-
-    
-    const template = document.getElementById("template")
+  try {
+    const flightsData = await fetchData(url);
+    cards.innerHTML = "";
     const wrapper = document.createElement("div");
     wrapper.className = "wrapper";
     flightsData.forEach(flight => {
-        const clone = template.content.cloneNode(true);
+        const clone = cardTemp.content.cloneNode(true);
         clone.querySelector(".from").textContent = flight.from;
         clone.querySelector(".to").textContent = flight.to;
         clone.querySelector(".airline").textContent = flight.airline;
@@ -181,92 +66,48 @@ fetchData(currentLang)
         
         wrapper.appendChild(clone);
     });
-    document.querySelector(".cards").appendChild(wrapper);
-    }
+    cards.appendChild(wrapper);
+    
+  } catch (error) {
+      const err = document.createElement("p");
+      err.textContent = error.message;
+      cards.appendChild(err);
+  } finally {
+      stopLoading();
+      // remove queries from the url => /index.html
+      window.history.replaceState({}, document.title, window.location.pathname);
+  }
 
+});
 
-
-function changeLanguage(lang) {
-  currentLang = lang;
-
-  // Header
-  document.querySelectorAll('ul.nav-links li a').forEach((link, i) => link.textContent = texts[lang].header[i]);
-
-  // Landing section
-  document.querySelector('.landing h1').textContent = texts[lang].landing.h1;
-  document.querySelector('.landing p').textContent = texts[lang].landing.p;
-  document.querySelector('.landing button a').textContent = texts[lang].landing.btn;
-
-  // Flights section
-  document.querySelector('#flights .section-head h2').textContent = texts[lang].flights.title;
-  document.querySelector('#flights .section-head p').textContent = texts[lang].flights.desc;
-  document.querySelector('#flights .form button').textContent = texts[lang].flights.btn;
-  document.querySelector('#flights .form #fromCountry').placeholder = texts[lang].flights.from;
-  document.querySelector('#flights .form #toCountry').placeholder = texts[lang].flights.to;
-
-
-  // Popular Destinations
-  document.querySelector('.popular .section-head h2').textContent = texts[lang].popular.title;
-  document.querySelector('.popular .section-head p').textContent = texts[lang].popular.desc;
-  document.querySelectorAll('.popular .container .box').forEach((box, i) => {
-    box.querySelector('.text h3').innerHTML = `<i class="fa-solid fa-map-location-dot"></i>${texts[lang].popular.cities[i].city}`;
-    box.querySelector('.text span').textContent = texts[lang].popular.cities[i].country;
-    box.querySelector('.prise-book a').innerHTML = `<i
-                class="fa-brands fa-whatsapp"
-                style="margin-right: 5px; font-weight: bold"
-              ></i
-              >${texts[lang].popular.bookBtn}`;
-    box.querySelector('.prise-book .start-from').textContent = texts[lang].popular.startFrom;
-  });
-
-  // Why Book section
-  document.querySelector('.why-me h2').textContent = texts[lang].why.title;
-  document.querySelector('.why-me p').textContent = texts[lang].why.desc;
-  document.querySelector('.why-me a').textContent = texts[lang].why.btn;
-
-  // Choose Me section
-  document.querySelector('.choose-me .section-head h2').textContent = texts[lang].choose.title;
-  document.querySelector('.choose-me .section-head p').textContent = texts[lang].choose.desc;
-  document.querySelectorAll('.choose-me .parent .child').forEach((box, i) => {
-    box.querySelector('h3').textContent = texts[lang].choose.features[i].title;
-    box.querySelector('p').textContent = texts[lang].choose.features[i].desc;
-  });
-
-  // Footer
-  document.querySelector('.content .one h3').innerHTML = `<img src="./flights-imges/sudafly-logo.png" alt="sudafly logo">${texts[lang].footer.logoText}`;
-  document.querySelector('.content .one p').textContent = texts[lang].footer.desc;
-  document.querySelector('.content .one h4').textContent = texts[lang].footer.follow;
-  document.querySelector('.two h4').textContent = texts[lang].footer.quickLinksTitle;
-  document.querySelectorAll('.two ul li a').forEach((li, i) => li.textContent = texts[lang].footer.quickLinks[i]);
-  document.querySelector('.three h4').textContent = texts[lang].footer.workingHoursTitle;
-  document.querySelectorAll('.three .text-sm p').forEach((p, i) => p.textContent = texts[lang].footer.workingHours[i]);
-  document.querySelector('.four h4').textContent = texts[lang].footer.contactTitle
-  document.querySelector('.four h5:nth-child(2)').textContent = texts[lang].footer.contact.phone;
-  document.querySelector('.four h5:nth-child(3)').textContent = texts[lang].footer.contact.email;
-  document.querySelector('.four p').textContent = texts[lang].footer.contact.address;
-  document.querySelector('.footer p .skyWing').textContent = texts[lang].footer.copyright;
-
-  // Direction
-  document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
-  langBtn.textContent = lang === "ar" ? "English" : "عربي";
-}
 
 //Switch between languages
 langBtn.addEventListener('click', () => {
   const newLang = currentLang === "en" ? "ar" : "en";
+  currentLang = newLang; 
   localStorage.setItem("lang",newLang);
   changeLanguage(newLang);
-  const temp = document.getElementById("template");
-  document.querySelector(".cards").innerHTML = null;
-  document.querySelector(".cards").appendChild(temp);
-  fetchData(newLang)
+  cards.innerHTML = "";
+  cards.appendChild(cardTemp);
+  cards.appendChild(skeletonTemp)
 });
 
+function startLoading() {
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Searching...";
+}
+
+
+function stopLoading() {
+    submitBtn.disabled = false;
+    submitBtn.textContent = "Search Flights";
+}
 
 
 
 // footer with current time
-const copyRight = new Date(); 
-document.querySelector(".cRight").textContent = copyRight.getFullYear()
+const currentDate = new Date(); 
+document.querySelector(".cRight").textContent = currentDate.getFullYear()
+
 
 
