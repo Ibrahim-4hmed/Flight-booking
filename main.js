@@ -52,6 +52,25 @@ flightForm.addEventListener("submit", async (e) => {
 
   try {
     const flightsData = await fetchData(url);
+
+    if (flightsData.length === 0) {
+        cards.innerHTML = cards.innerHTML = `
+        <div class="wrapper">
+            <div class="no-results-card">
+                <div class="icon">✈️</div>
+                <h2>No Flights Found</h2>
+                <p>
+                    We couldn't find any flights matching your search.
+                    Try changing your departure or destination.
+                </p>
+            </div>
+        </div>
+        `;
+
+return;
+    return;
+    }
+
     cards.innerHTML = "";
     const wrapper = document.createElement("div");
     wrapper.className = "wrapper";

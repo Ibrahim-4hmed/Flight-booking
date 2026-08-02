@@ -861,6 +861,51 @@ footer .two h4 ,.three h4, .four h4 {
 }
 /* End of  Home page  */
 
+/* no flights found */
+.no-results-card {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2.5rem 2rem;
+    background: #fff;
+    border-radius: var(--border-rad-10);
+    border: 2px solid var(--blue-light);
+    box-shadow: 0 15px 35px rgba(0, 119, 182, 0.12);
+    text-align: center;
+    transition: var(--transition);
+}
+
+.no-results-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 119, 182, 0.18);
+}
+
+.no-results-card .icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.25rem;
+    border-radius: 50%;
+    background: rgba(249, 115, 22, .12);
+    color: var(--orange-primary);
+    font-size: 2.5rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.no-results-card h2 {
+    color: var(--blue-secondary);
+    margin-bottom: .75rem;
+    font-size: 1.6rem;
+}
+
+.no-results-card p {
+    color: var(--p-color);
+    line-height: 1.7;
+    font-size: .95rem;
+    max-width: 350px;
+    margin: 0 auto;
+}
 
 /*===========
  about page 

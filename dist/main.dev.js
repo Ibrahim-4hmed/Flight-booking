@@ -47,6 +47,16 @@ flightForm.addEventListener("submit", function _callee(e) {
 
         case 14:
           flightsData = _context.sent;
+
+          if (!(flightsData.length === 0)) {
+            _context.next = 19;
+            break;
+          }
+
+          cards.innerHTML = cards.innerHTML = "\n        <div class=\"wrapper\">\n            <div class=\"no-results-card\">\n                <div class=\"icon\">\u2708\uFE0F</div>\n                <h2>No Flights Found</h2>\n                <p>\n                    We couldn't find any flights matching your search.\n                    Try changing your departure or destination.\n                </p>\n            </div>\n        </div>\n        ";
+          return _context.abrupt("return");
+
+        case 19:
           cards.innerHTML = "";
           wrapper = document.createElement("div");
           wrapper.className = "wrapper";
@@ -64,30 +74,30 @@ flightForm.addEventListener("submit", function _callee(e) {
             wrapper.appendChild(clone);
           });
           cards.appendChild(wrapper);
-          _context.next = 28;
+          _context.next = 32;
           break;
 
-        case 22:
-          _context.prev = 22;
+        case 26:
+          _context.prev = 26;
           _context.t0 = _context["catch"](11);
           err = document.createElement("p");
           err.textContent = _context.t0.message;
           console.log(err);
           cards.appendChild(err);
 
-        case 28:
-          _context.prev = 28;
+        case 32:
+          _context.prev = 32;
           stopLoading(); // remove queries from the url => /index.html
 
           window.history.replaceState({}, document.title, window.location.pathname);
-          return _context.finish(28);
+          return _context.finish(32);
 
-        case 32:
+        case 36:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[11, 22, 28, 32]]);
+  }, null, null, [[11, 26, 32, 36]]);
 }); //Switch between languages
 
 langBtn.addEventListener('click', function () {
