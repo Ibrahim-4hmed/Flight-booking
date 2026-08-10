@@ -7,7 +7,7 @@ exports.fetchData = fetchData;
 
 //fetch data from api 
 function fetchData(url) {
-  var response;
+  var response, error;
   return regeneratorRuntime.async(function fetchData$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -19,20 +19,25 @@ function fetchData(url) {
           response = _context.sent;
 
           if (response.ok) {
-            _context.next = 5;
+            _context.next = 8;
             break;
           }
 
-          throw new Error("Failed to fetch flights");
-
-        case 5:
-          _context.next = 7;
+          _context.next = 6;
           return regeneratorRuntime.awrap(response.json());
 
-        case 7:
-          return _context.abrupt("return", _context.sent);
+        case 6:
+          error = _context.sent;
+          throw new Error(error.error);
 
         case 8:
+          _context.next = 10;
+          return regeneratorRuntime.awrap(response.json());
+
+        case 10:
+          return _context.abrupt("return", _context.sent);
+
+        case 11:
         case "end":
           return _context.stop();
       }

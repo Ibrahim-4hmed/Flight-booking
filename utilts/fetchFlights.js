@@ -5,7 +5,8 @@ export async function fetchData(url) {
     const response = await fetch(url);
 
     if (!response.ok) {
-        throw new Error("Failed to fetch flights");
+        const error = await response.json()
+        throw new Error(error.error);
     }
 
     return await response.json();

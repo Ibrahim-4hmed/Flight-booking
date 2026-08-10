@@ -1,6 +1,6 @@
-import { renderSkeleton } from "./js/skeleton.js"
-import { changeLanguage } from "./js/handleLang.js"
-import { fetchData } from "./js/fetchFlights.js";
+import { renderSkeleton } from "./utilts/skeleton.js"
+import { changeLanguage } from "./utilts/handleLang.js"
+import { fetchData } from "./utilts/fetchFlights.js";
 
 
 // variables 
@@ -66,8 +66,6 @@ flightForm.addEventListener("submit", async (e) => {
             </div>
         </div>
         `;
-
-return;
     return;
     }
 
@@ -90,10 +88,17 @@ return;
     });
     cards.appendChild(wrapper);    
   } catch (error) {
-      const err = document.createElement("p");
-      err.textContent = error.message;
-      console.log(err)
-      cards.appendChild(err);
+    cards.innerHTML = cards.innerHTML = `
+        <div class="wrapper">
+            <div class="no-results-card">
+                <div class="icon">✈️</div>
+                <h2>${currentLang === 'ar' ? "لا توجد رحلات" : "No Flights Found"}</h2>
+                <p>
+                    ${error}
+                </p>
+            </div>
+        </div>
+        `;
   } finally {
       stopLoading();
       // remove queries from the url => /index.html

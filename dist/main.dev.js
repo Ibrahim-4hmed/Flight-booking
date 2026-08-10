@@ -1,10 +1,10 @@
 "use strict";
 
-var _skeleton = require("./js/skeleton.js");
+var _skeleton = require("./utilts/skeleton.js");
 
-var _handleLang = require("./js/handleLang.js");
+var _handleLang = require("./utilts/handleLang.js");
 
-var _fetchFlights = require("./js/fetchFlights.js");
+var _fetchFlights = require("./utilts/fetchFlights.js");
 
 // variables 
 var cards = document.querySelector(".cards"); //language button
@@ -22,7 +22,7 @@ var currentLang = localStorage.getItem("lang") || "en"; // Apply saved language 
 (0, _handleLang.changeLanguage)(currentLang); //form submttion
 
 flightForm.addEventListener("submit", function _callee(e) {
-  var from, to, endpoint, url, flightsData, wrapper, err;
+  var from, to, endpoint, url, flightsData, wrapper;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -49,14 +49,14 @@ flightForm.addEventListener("submit", function _callee(e) {
           flightsData = _context.sent;
 
           if (!(flightsData.length === 0)) {
-            _context.next = 19;
+            _context.next = 18;
             break;
           }
 
           cards.innerHTML = cards.innerHTML = "\n        <div class=\"wrapper\">\n            <div class=\"no-results-card\">\n                <div class=\"icon\">\u2708\uFE0F</div>\n                <h2>No Flights Found</h2>\n                <p>\n                    We couldn't find any flights matching your search.\n                    Try changing your departure or destination.\n                </p>\n            </div>\n        </div>\n        ";
           return _context.abrupt("return");
 
-        case 19:
+        case 18:
           cards.innerHTML = "";
           wrapper = document.createElement("div");
           wrapper.className = "wrapper";
@@ -74,30 +74,27 @@ flightForm.addEventListener("submit", function _callee(e) {
             wrapper.appendChild(clone);
           });
           cards.appendChild(wrapper);
-          _context.next = 32;
+          _context.next = 28;
           break;
 
-        case 26:
-          _context.prev = 26;
+        case 25:
+          _context.prev = 25;
           _context.t0 = _context["catch"](11);
-          err = document.createElement("p");
-          err.textContent = _context.t0.message;
-          console.log(err);
-          cards.appendChild(err);
+          cards.innerHTML = cards.innerHTML = "\n        <div class=\"wrapper\">\n            <div class=\"no-results-card\">\n                <div class=\"icon\">\u2708\uFE0F</div>\n                <h2>".concat(currentLang === 'ar' ? "لا توجد رحلات" : "No Flights Found", "</h2>\n                <p>\n                    ").concat(_context.t0, "\n                </p>\n            </div>\n        </div>\n        ");
 
-        case 32:
-          _context.prev = 32;
+        case 28:
+          _context.prev = 28;
           stopLoading(); // remove queries from the url => /index.html
 
           window.history.replaceState({}, document.title, window.location.pathname);
-          return _context.finish(32);
+          return _context.finish(28);
 
-        case 36:
+        case 32:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[11, 26, 32, 36]]);
+  }, null, null, [[11, 25, 28, 32]]);
 }); //Switch between languages
 
 langBtn.addEventListener('click', function () {
