@@ -88,7 +88,7 @@ flightForm.addEventListener("submit", async (e) => {
     });
     cards.appendChild(wrapper);    
   } catch (error) {
-    cards.innerHTML = cards.innerHTML = `
+        cards.innerHTML = cards.innerHTML = `
         <div class="wrapper">
             <div class="no-results-card">
                 <div class="icon">✈️</div>
@@ -100,9 +100,10 @@ flightForm.addEventListener("submit", async (e) => {
         </div>
         `;
   } finally {
-      stopLoading();
-      // remove queries from the url => /index.html
-      window.history.replaceState({}, document.title, window.location.pathname);
+        stopLoading();
+        // remove queries from the url => /index.html
+        window.history.replaceState({}, document.title, window.location.pathname);
+        document.querySelector('.available-flights').style.display = "none";
   }
 
 });

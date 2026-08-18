@@ -87,14 +87,15 @@ flightForm.addEventListener("submit", function _callee(e) {
           stopLoading(); // remove queries from the url => /index.html
 
           window.history.replaceState({}, document.title, window.location.pathname);
+          document.querySelector('.available-flights').style.display = "none";
           return _context.finish(28);
 
-        case 32:
+        case 33:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[11, 25, 28, 32]]);
+  }, null, null, [[11, 25, 28, 33]]);
 }); //Switch between languages
 
 langBtn.addEventListener('click', function () {
