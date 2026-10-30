@@ -47,7 +47,7 @@ flightForm.addEventListener("submit", async (e) => {
   const endpoint = currentLang === "en" ? "/" : "/ar";
 
   const url = 
-  `https://ex-api-o3fy.onrender.com/${endpoint}?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
+  `https://ex-api-o3fy.onrender.com${endpoint}?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
 
 
   try {

@@ -40,7 +40,7 @@ flightForm.addEventListener("submit", function _callee(e) {
           flightForm.elements.from.value = "";
           flightForm.elements.to.value = "";
           endpoint = currentLang === "en" ? "/" : "/ar";
-          url = "https://ex-api-o3fy.onrender.com/".concat(endpoint, "?from=").concat(encodeURIComponent(from), "&to=").concat(encodeURIComponent(to));
+          url = "https://ex-api-o3fy.onrender.com".concat(endpoint, "?from=").concat(encodeURIComponent(from), "&to=").concat(encodeURIComponent(to));
           _context.prev = 11;
           _context.next = 14;
           return regeneratorRuntime.awrap((0, _fetchFlights.fetchData)(url));
