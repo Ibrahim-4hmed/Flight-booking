@@ -101,9 +101,12 @@
               <li><a href="all-flights.html">Flights</a></li>
             </ul>
             <div class="borgar-icon">
-                <i class="fa-solid fa-bars menu-icon"></i>
+              <i class="fa-solid fa-bars menu-icon"></i>
             </div>
-        </nav>
+          </nav>
+          <a href="login.html"><i class="fa-solid fa-user"></i>Login</a>
+          <a href="register.html"><i class="fa-solid fa-user"></i>Register</a>
+          <p>Welcome , <span>John Doe</span></p>
         <button id="lang-btn" class="lang-toggle">عربي</button>
     </header>
     <!-- Landing section -->
@@ -134,11 +137,11 @@
           <div class="inputs">
             <div class="input-group">
               <i class="fa-solid fa-plane-departure"></i>
-              <input type="text" class="" id="fromCountry" name="from" placeholder="From Country" />
+              <input type="text" class="" id="fromCountry" required name="from" placeholder="From Country" />
             </div>
             <div class="input-group">
               <i class="fa-solid fa-plane-arrival"></i>
-              <input type="text" id="toCountry" name="to" placeholder="To Country"  />
+              <input type="text" id="toCountry" required name="to" placeholder="To Country"  />
             </div>
           </div>
           <button id="search-btn" type="submit">Search Flights</button>
