@@ -39,24 +39,25 @@ flightForm.addEventListener("submit", function _callee(e) {
           to = flightForm.elements.to.value.trim();
           flightForm.elements.from.value = "";
           flightForm.elements.to.value = "";
-          endpoint = currentLang === "en" ? "flights" : "flights/ar";
-          url = "https://flights-api-1.onrender.com/".concat(endpoint, "?from=").concat(encodeURIComponent(from), "&to=").concat(encodeURIComponent(to));
+          endpoint = currentLang === "en" ? "/" : "/ar";
+          url = "https://ex-api-o3fy.onrender.com/".concat(endpoint, "?from=").concat(encodeURIComponent(from), "&to=").concat(encodeURIComponent(to));
           _context.prev = 11;
           _context.next = 14;
           return regeneratorRuntime.awrap((0, _fetchFlights.fetchData)(url));
 
         case 14:
           flightsData = _context.sent;
+          console.log(flightsData);
 
           if (!(flightsData.length === 0)) {
-            _context.next = 18;
+            _context.next = 19;
             break;
           }
 
           cards.innerHTML = cards.innerHTML = "\n        <div class=\"wrapper\">\n            <div class=\"no-results-card\">\n                <div class=\"icon\">\u2708\uFE0F</div>\n                <h2>No Flights Found</h2>\n                <p>\n                    We couldn't find any flights matching your search.\n                    Try changing your departure or destination.\n                </p>\n            </div>\n        </div>\n        ";
           return _context.abrupt("return");
 
-        case 18:
+        case 19:
           cards.innerHTML = "";
           wrapper = document.createElement("div");
           wrapper.className = "wrapper";
@@ -74,28 +75,28 @@ flightForm.addEventListener("submit", function _callee(e) {
             wrapper.appendChild(clone);
           });
           cards.appendChild(wrapper);
-          _context.next = 28;
+          _context.next = 29;
           break;
 
-        case 25:
-          _context.prev = 25;
+        case 26:
+          _context.prev = 26;
           _context.t0 = _context["catch"](11);
           cards.innerHTML = cards.innerHTML = "\n        <div class=\"wrapper\">\n            <div class=\"no-results-card\">\n                <div class=\"icon\">\u2708\uFE0F</div>\n                <h2>".concat(currentLang === 'ar' ? "لا توجد رحلات" : "No Flights Found", "</h2>\n                <p>\n                    ").concat(_context.t0, "\n                </p>\n            </div>\n        </div>\n        ");
 
-        case 28:
-          _context.prev = 28;
+        case 29:
+          _context.prev = 29;
           stopLoading(); // remove queries from the url => /index.html
 
           window.history.replaceState({}, document.title, window.location.pathname);
           document.querySelector('.available-flights').style.display = "none";
-          return _context.finish(28);
+          return _context.finish(29);
 
-        case 33:
+        case 34:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[11, 25, 28, 33]]);
+  }, null, null, [[11, 26, 29, 34]]);
 }); //Switch between languages
 
 langBtn.addEventListener('click', function () {

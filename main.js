@@ -44,15 +44,15 @@ flightForm.addEventListener("submit", async (e) => {
   flightForm.elements.from.value = "";
   flightForm.elements.to.value = "";
 
-  const endpoint = currentLang === "en" ? "flights" : "flights/ar";
+  const endpoint = currentLang === "en" ? "/" : "/ar";
 
   const url = 
-  `https://flights-api-1.onrender.com/${endpoint}?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
+  `https://ex-api-o3fy.onrender.com/${endpoint}?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`;
 
 
   try {
     const flightsData = await fetchData(url);
-
+    console.log(flightsData)
     if (flightsData.length === 0) {
         cards.innerHTML = cards.innerHTML = `
         <div class="wrapper">
