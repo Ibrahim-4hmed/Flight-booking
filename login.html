@@ -89,25 +89,73 @@
 </head>
 <body>
 
-    <header>
-      <div class="logo">
+  <header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
         <a href="index.html">
-          <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo" />
+            <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo">
         </a>
-      </div>
-      <nav>
-          <ul class="nav-links" id="small-sc">
-              <li><a class="" href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="all-flights.html">Flights</a></li>
-            </ul>
-            <div class="borgar-icon">
-                <i class="fa-solid fa-bars menu-icon"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+
+        <ul class="nav-links" id="small-sc">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="all-flights.html">Flights</a></li>
+        </ul>
+
+        <!-- User Actions -->
+        <div class="mobile-actions">
+
+            <!-- Guest Navigation -->
+            <div class="auth-links">
+                <a href="login.html" class="auth-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login
+                </a>
+
+                <a href="register.html" class="auth-btn register-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Register
+                </a>
             </div>
-        </nav>
-        <button id="lang-btn" class="lang-toggle">عربي</button>
-    </header>
+
+            <!-- Logged-in User -->
+            <div class="user-info">
+                <p>Welcome, <span>John Doe</span></p>
+            </div>
+
+            <!-- Language -->
+            <button id="lang-btn" class="lang-toggle" type="button">
+                عربي
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+
+        <!-- Mobile Menu -->
+        <button
+            class="borgar-icon"
+            id="menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="small-sc"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </button>
+
+    </div>
+
+</header>
 
   <main class="login-container">
 
@@ -230,6 +278,247 @@
       </div>
     </footer>
 
-  <script src="login.js"></script>
+    <script>
+      /* =================================
+   HEADER & NAVIGATION
+================================= */
+
+const menuBtn = document.querySelector("#menu-btn");
+const navbar = document.querySelector(".navbar");
+const menuIcon = menuBtn.querySelector("i");
+const navLinks = document.querySelector("#small-sc");
+
+// Toggle mobile menu
+menuBtn.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("show");
+
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+    menuIcon.classList.toggle("fa-bars", !isOpen);
+    menuIcon.classList.toggle("fa-xmark", isOpen);
+});
+
+// Close mobile menu
+function closeMenu() {
+    navbar.classList.remove("show");
+
+    menuBtn.setAttribute("aria-expanded", "false");
+
+    menuIcon.classList.remove("fa-xmark");
+    menuIcon.classList.add("fa-bars");
+}
+
+// Close menu after clicking a navigation link
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+// Close menu when clicking outside the header
+document.addEventListener("click", (event) => {
+    if (!event.target.closest(".header")) {
+        closeMenu();
+    }
+});
+
+// Close menu using Escape
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeMenu();
+        menuBtn.focus();
+    }
+});
+
+// Close menu when switching to desktop
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 850) {
+        closeMenu();
+    }
+});
+
+// Automatically detect active page
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.querySelectorAll("a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+    } else {
+        link.classList.remove("active");
+        link.removeAttribute("aria-current");
+    }
+});
+
+
+      texts = {
+        en: {
+          header : ["Home", "About Us", "Contact Us", "Flights"],
+          userActions : ["Login", "Register"],
+          userInfo : ["Welcome, ", "John Doe"],
+          form : {
+            title: "Welcome",
+            titleSpan: "Back!",
+            subtitle: "We're glad to have you back. Login to manage your bookings and continue your journey with Sudafly.",
+            emailLabel: "Email Address",
+            emailPlaceholder: "Enter your registered email",
+            passwordLabel: "Password",
+            passwordPlaceholder: "Enter your password",
+            rememberMe: "Remember me",
+            forgotPassword: "Forgot password?",
+            submitBtn: "Login to Your Account",
+            signInText: "Don't have an account yet?",
+            signInLink: "Create an account",
+            backHome: "← Back to homepage"
+        },
+        footer: {
+            logoText: "SudaFly",
+            desc: "Your travel companion for affordable flights worldwide. Making travel dreams come true with exceptional deals.",
+            follow:"Follow Us",
+            quickLinksTitle: ["Quick Links"],
+            quickLinks: ["About Us","Contact Us", "All Flights"],
+            workingHoursTitle: ["Working Hours"],
+            workingHours: [
+              "Monday-Friday:9:00AM-6:00PM",
+              "Satrday:10:00AM-4:00PM",
+              "Sunday:Closed",
+            ],
+            contactTitle: ["Contact Info"],
+            contact: {
+              phone: "+1-800-FLIGHT",
+              email: "support@sudafly.com",
+              address: "123 Travel Avenue, New York, NY",
+            },
+            copyright: "SudaFly. All rights reserved.",
+          },
+      },
+      ar : {
+        header : ["الرئيسية", "من نحن", "اتصل بنا", "الرحلات"],
+        userActions : ["تسجيل الدخول", "إنشاء حساب"],
+        userInfo : ["مرحباً، ", "ضيفنا العزيز"],
+        form : {
+          title: "مرحباً !",
+          titleSpan: "بعودتك",
+          subtitle: "نحن سعداء بعودتك. قم بتسجيل الدخول لإدارة حجوزاتك ومتابعة رحلتك مع سودا فلاي.",
+          emailLabel: "البريد الإلكتروني",
+          emailPlaceholder: "أدخل بريدك الإلكتروني المسجل",
+          passwordLabel: "كلمة المرور",
+          passwordPlaceholder: "أدخل كلمة المرور الخاصة بك",
+          rememberMe: "تذكرني",
+          forgotPassword: "نسيت كلمة المرور؟",
+          submitBtn: "تسجيل الدخول إلى حسابك",
+          signInText: "ليس لديك حساب بعد؟",
+          signInLink: "إنشاء حساب",
+          backHome: "← العودة إلى الصفحة الرئيسية"
+      },
+     footer: {
+            logoText: "سودا فلاي",
+            desc: "شريكك للسفر الميسور عالمياً. نجعل أحلام السفر حقيقة مع أفضل العروض والخدمة المميزة.",
+            follow:"تابعنا",
+            quickLinksTitle: ["روابط سريعة"],
+            quickLinks: ["من نحن", " اتصل بنا", " جميع الرحلات"],
+            workingHoursTitle: ["ساعات العمل"],
+            workingHours: [
+              " الاثنين-الخميس :9:00 ص-6:00م",
+              "السبت:1:00ص-4:00م",
+              "الاحد:مغلق",
+            ],
+            contactTitle: ["معلومات الاتصال"],
+            contact: {
+              phone: "+1-800-FLIGHT",
+              email: "support@sudafly.com",
+              address: "123 عمارة صندل,  كمبالا KM",
+            },
+            copyright: " سودا فلاي .جميع الحقوق محفوظة.",
+          },
+        }
+      }
+      
+       //current language
+      let currentLang = localStorage.getItem("lang") || "en";
+
+      //set lang
+      const langBtn = document.getElementById("lang-btn");
+
+      changeLanguage(currentLang);
+
+      function changeLanguage(lang) {
+        currentLang = lang;
+        localStorage.setItem("lang", lang);
+
+        // Header
+        const navLinks = document.querySelectorAll(".nav-links a");
+        navLinks.forEach((link, index) => {
+          link.textContent = texts[lang].header[index];
+        });
+        document.querySelector(".auth-links .auth-btn").textContent = texts[lang].userActions[0];
+        document.querySelector(".auth-links .register-btn").textContent = texts[lang].userActions[1];
+        document.querySelector(".user-info p").innerHTML = texts[lang].userInfo[0] + "<span>" + texts[lang].userInfo[1] + "</span>";
+
+        // Form
+        document.querySelector("#loginForm h1").innerHTML = texts[lang].form.title + " <span>" + texts[lang].form.titleSpan + "</span>";
+        document.querySelector("#loginForm p").textContent = texts[lang].form.subtitle;
+        document.querySelector("#loginForm label[for='email']").textContent = texts[lang].form.emailLabel;
+        document.querySelector("#email").placeholder = texts[lang].form.emailPlaceholder;
+        document.querySelector("#loginForm label[for='password']").textContent = texts[lang].form.passwordLabel;
+        document.querySelector("#password").placeholder = texts[lang].form.passwordPlaceholder;
+        document.querySelector(".remember").textContent = texts[lang].form.rememberMe;
+        document.querySelector(".form-options a").textContent = texts[lang].form.forgotPassword;
+        document.querySelector("#loginForm button[type='submit']").textContent = texts[lang].form.submitBtn;
+        document.querySelector(".register-link").innerHTML =
+            texts[lang].form.signInText +
+            " " +
+            `<a href="/register.html" class="sign-link">${texts[lang].form.signInLink}</a>`;
+        document.querySelector(".back-home").textContent = texts[lang].form.backHome;
+
+        //Footer
+        document.querySelector(
+          ".content .one h3"
+        ).innerHTML = `<img src="./flights-imges/sudafly-logo.png" alt="sudafly logo">${texts[lang].footer.logoText}`;
+        document.querySelector(".content .one p").textContent =
+          texts[lang].footer.desc;
+        document.querySelector('.content .one h4').textContent = 
+            texts[lang].footer.follow;
+        document.querySelector(".two h4").textContent =
+          texts[lang].footer.quickLinksTitle;
+        document
+          .querySelectorAll(".two ul li a")
+          .forEach(
+            (li, i) => (li.textContent = texts[lang].footer.quickLinks[i])
+          );
+        document.querySelector(".three h4").textContent =
+          texts[lang].footer.workingHoursTitle;
+        document
+          .querySelectorAll(".three .text-sm p")
+          .forEach(
+            (p, i) => (p.textContent = texts[lang].footer.workingHours[i])
+          );
+        document.querySelector(".four h4").textContent =
+          texts[lang].footer.contactTitle;
+        document.querySelector(".four h5:nth-child(2)").textContent =
+          texts[lang].footer.contact.phone;
+        document.querySelector(".four h5:nth-child(3)").textContent =
+          texts[lang].footer.contact.email;
+        document.querySelector(".four p").textContent =
+          texts[lang].footer.contact.address;
+        document.querySelector(".footer p .skyWing").textContent =
+          texts[lang].footer.copyright;
+
+        // Direction
+        document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+        langBtn.textContent = lang === "ar" ? "English" : "عربي";
+      }
+
+       langBtn.addEventListener("click", () => {
+        const newLang = currentLang === "en" ? "ar" : "en";
+        localStorage.setItem("lang", newLang);
+        changeLanguage(newLang);
+      });
+
+      // footer with current time
+      const copyRight = new Date(); 
+      document.querySelector(".cRight").textContent = copyRight.getFullYear()
+    </script>
 </body>
 </html>

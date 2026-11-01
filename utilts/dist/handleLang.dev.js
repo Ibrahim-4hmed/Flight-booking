@@ -12,7 +12,10 @@ function changeLanguage(lang) {
   // Header
   document.querySelectorAll('ul.nav-links li a').forEach(function (link, i) {
     return link.textContent = texts[lang].header[i];
-  }); // Landing section
+  });
+  document.querySelector(".auth-links .auth-btn").textContent = texts[lang].userActions[0];
+  document.querySelector(".auth-links .register-btn").textContent = texts[lang].userActions[1];
+  document.querySelector(".user-info p").innerHTML = texts[lang].userInfo[0] + "<span>" + texts[lang].userInfo[1] + "</span>"; // Landing section
 
   document.querySelector('.landing h1').textContent = texts[lang].landing.h1;
   document.querySelector('.landing p').textContent = texts[lang].landing.p;
@@ -71,6 +74,8 @@ function changeLanguage(lang) {
 var texts = {
   en: {
     header: ["Home", "About Us", "Contact Us", "Flights"],
+    userActions: ["Login", "Register"],
+    userInfo: ["Welcome, ", "John Doe"],
     landing: {
       h1: "Fly Smarter with SudaFly",
       p: "Unlock exclusive flight offers and enjoy personalized travel assistance. Chat with us on WhatsApp to book instantly!",
@@ -157,6 +162,8 @@ var texts = {
   },
   ar: {
     header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
+    userActions: ["تسجيل الدخول", "إنشاء حساب"],
+    userInfo: ["مرحباً، ", "ضيفنا العزيز"],
     landing: {
       h1: "سافر بذكاء مع سودا فلاي",
       p: "استمتع بأفضل عروض الرحلات وخدمة شخصية متميزة. تواصل معنا على واتساب للحجز الفوري!",

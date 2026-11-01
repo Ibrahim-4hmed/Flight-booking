@@ -25,25 +25,57 @@
     <title>Not Found</title>
 </head>
 <body>
-     <header>
-      <div class="logo">
+     <header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
         <a href="index.html">
-          <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo" />
+            <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo">
         </a>
-      </div>
-      <nav>
-          <ul class="nav-links" id="small-sc">
-              <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="all-flights.html">Flights</a></li>
-            </ul>
-            <div class="borgar-icon">
-                <i class="fa-solid fa-bars menu-icon"></i>
-            </div>
-        </nav>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul class="nav-links" id="small-sc">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="all-flights.html">Flights</a></li>
+        </ul>
+    </nav>
+
+    <!-- User Actions -->
+    <div class="header-actions">
+
+        <!-- Guest Navigation -->
+        <div class="auth-links">
+            <a href="login.html" class="auth-btn">
+                <i class="fa-solid fa-right-to-bracket"></i>
+                Login
+            </a>
+
+            <a href="register.html" class="auth-btn register-btn">
+                <i class="fa-solid fa-user-plus"></i>
+                Register
+            </a>
+        </div>
+
+        <!-- Logged-in User -->
+        <div class="user-info">
+            <p>Welcome, <span>John Doe</span></p>
+        </div>
+
+        <!-- Language -->
         <button id="lang-btn" class="lang-toggle">عربي</button>
-    </header>
+
+        <!-- Mobile Menu -->
+        <button class="borgar-icon" id="menu-btn" aria-label="Toggle navigation">
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </button>
+
+    </div>
+
+</header>
     <section class="not-found-page">
     <div class="error-code">404</div>
 

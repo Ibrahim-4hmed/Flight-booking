@@ -87,28 +87,77 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body class="home-body" dir="auto">
-    <header>
-      <div class="logo">
+
+    
+<header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
         <a href="index.html">
-          <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo" />
+            <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo">
         </a>
-      </div>
-      <nav>
-          <ul class="nav-links" id="small-sc">
-              <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="about.html">About Us</a></li>
-              <li><a href="contact.html">Contact Us</a></li>
-              <li><a href="all-flights.html">Flights</a></li>
-            </ul>
-            <div class="borgar-icon">
-              <i class="fa-solid fa-bars menu-icon"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+
+        <ul class="nav-links" id="small-sc">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="all-flights.html">Flights</a></li>
+        </ul>
+
+        <!-- User Actions -->
+        <div class="mobile-actions">
+
+            <!-- Guest Navigation -->
+            <div class="auth-links">
+                <a href="login.html" class="auth-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login
+                </a>
+
+                <a href="register.html" class="auth-btn register-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Register
+                </a>
             </div>
-          </nav>
-          <a href="login.html"><i class="fa-solid fa-user"></i>Login</a>
-          <a href="register.html"><i class="fa-solid fa-user"></i>Register</a>
-          <p>Welcome , <span>John Doe</span></p>
-        <button id="lang-btn" class="lang-toggle">عربي</button>
-    </header>
+
+            <!-- Logged-in User -->
+            <div class="user-info">
+                <p>Welcome, <span>John Doe</span></p>
+            </div>
+
+            <!-- Language -->
+            <button id="lang-btn" class="lang-toggle" type="button">
+                عربي
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+
+        <!-- Mobile Menu -->
+        <button
+            class="borgar-icon"
+            id="menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="small-sc"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </button>
+
+    </div>
+
+</header>
+
+  
     <!-- Landing section -->
     <section class="landing">
       <h1>Fly Smarter with SudaFly</h1>

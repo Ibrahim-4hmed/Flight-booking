@@ -38,25 +38,73 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     <header>
-        <div class="logo">
-            <a href="index.html">
-             <img src="./flights-imges/sudafly-logo.png" alt="SudaFly logo">
-            </a>
-        </div>
-        <nav>
-            <ul class="nav-links" id="small-sc">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a class="active" href="contact.html">Contact Us</a></li>
-                <li><a href="all-flights.html">Flights</a></li>
-            </ul>
-            <div class="borgar-icon">
-                <i class="fa-solid fa-bars menu-icon"></i>
+    <header class="header">
+
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html">
+            <img src="./flights-imges/sudafly-logo.png" alt="SudaFly Logo">
+        </a>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" aria-label="Main navigation">
+
+        <ul class="nav-links" id="small-sc">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a class="active" href="contact.html">Contact Us</a></li>
+            <li><a href="all-flights.html">Flights</a></li>
+        </ul>
+
+        <!-- User Actions -->
+        <div class="mobile-actions">
+
+            <!-- Guest Navigation -->
+            <div class="auth-links">
+                <a href="login.html" class="auth-btn">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login
+                </a>
+
+                <a href="register.html" class="auth-btn register-btn">
+                    <i class="fa-solid fa-user-plus"></i>
+                    Register
+                </a>
             </div>
-        </nav>
-        <button id="lang-btn" class="lang-toggle">عربي</button>
-    </header> 
+
+            <!-- Logged-in User -->
+            <div class="user-info">
+                <p>Welcome, <span>John Doe</span></p>
+            </div>
+
+            <!-- Language -->
+            <button id="lang-btn" class="lang-toggle" type="button">
+                عربي
+            </button>
+
+        </div>
+
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+
+        <!-- Mobile Menu -->
+        <button
+            class="borgar-icon"
+            id="menu-btn"
+            type="button"
+            aria-label="Toggle navigation"
+            aria-controls="small-sc"
+            aria-expanded="false"
+        >
+            <i class="fa-solid fa-bars menu-icon"></i>
+        </button>
+
+    </div>
+
+</header>
 
     <main class="contact">
         <section class="special-landing landing-contact">
@@ -157,29 +205,86 @@
         </div>
     </footer>
     <script>
-        //////////// Borgar Menu /////////////
-        const ulNav = document.getElementById("small-sc");
-        const links = document.querySelector(".nav-links a")
+      /* =================================
+   HEADER & NAVIGATION
+================================= */
 
-        
-        document.querySelector(".menu-icon").addEventListener("click", () => {
-            ulNav.classList.toggle("sm-sc")
-        })
+const menuBtn = document.querySelector("#menu-btn");
+const navbar = document.querySelector(".navbar");
+const menuIcon = menuBtn.querySelector("i");
+const navLinks = document.querySelector("#small-sc");
 
-        // Close menu when clicking outside 
-        document.addEventListener("click", (event) => {
-            const isClickInside = ulNav.contains(event.target) || event.target.classList.contains("menu-icon");
+// Toggle mobile menu
+menuBtn.addEventListener("click", () => {
+    const isOpen = navbar.classList.toggle("show");
 
-            if (!isClickInside) {
-                ulNav.classList.remove("sm-sc");
-            }
-        });
+    menuBtn.setAttribute("aria-expanded", isOpen);
+
+    menuIcon.classList.toggle("fa-bars", !isOpen);
+    menuIcon.classList.toggle("fa-xmark", isOpen);
+});
+
+// Close mobile menu
+function closeMenu() {
+    navbar.classList.remove("show");
+
+    menuBtn.setAttribute("aria-expanded", "false");
+
+    menuIcon.classList.remove("fa-xmark");
+    menuIcon.classList.add("fa-bars");
+}
+
+// Close menu after clicking a navigation link
+navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+});
+
+// Close menu when clicking outside the header
+document.addEventListener("click", (event) => {
+    if (!event.target.closest(".header")) {
+        closeMenu();
+    }
+});
+
+// Close menu using Escape
+document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+        closeMenu();
+        menuBtn.focus();
+    }
+});
+
+// Close menu when switching to desktop
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 850) {
+        closeMenu();
+    }
+});
+
+// Automatically detect active page
+const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+navLinks.querySelectorAll("a").forEach(link => {
+    const linkPage = link.getAttribute("href");
+
+    if (linkPage === currentPage) {
+        link.classList.add("active");
+        link.setAttribute("aria-current", "page");
+    } else {
+        link.classList.remove("active");
+        link.removeAttribute("aria-current");
+    }
+});
+
 
 
         //Texts
         const texts = {
         en:{
             header: ["Home", "About Us", "Contact Us", "Flights"],
+            userActions : ["Login", "Register"],
+            userInfo : ["Welcome, ", "John Doe"],
             landing: {
                 h1 : "Get In Touch",
                 p :"Fly smart and stress-free—get in touch for instant bookings anywhere."
@@ -220,6 +325,8 @@
             },
         ar: {
             header: ["الرئيسية", "معلومات عنا", "تواصل معنا", "الرحلات"],
+            userActions : ["تسجيل الدخول", "إنشاء حساب"],
+            userInfo : ["مرحباً، ", "ضيفنا العزيز"],
             landing: {
                 h1: "ابقَ على تواصل معنا",
                 p: "سافر بذكاء وراحة—تواصل معنا للحجز الفوري في أي مكان."
@@ -274,6 +381,9 @@
             currentLang = lang;
             //header
             document.querySelectorAll('ul.nav-links li a').forEach((link, i) => link.textContent = texts[lang].header[i]);
+            document.querySelector(".auth-links .auth-btn").textContent = texts[lang].userActions[0];
+            document.querySelector(".auth-links .register-btn").textContent = texts[lang].userActions[1];
+            document.querySelector(".user-info p").innerHTML = texts[lang].userInfo[0] + "<span>" + texts[lang].userInfo[1] + "</span>";
             // Landing section
             document.querySelector('.special-landing h1').textContent = texts[lang].landing.h1;
             document.querySelector('.special-landing p').textContent = texts[lang].landing.p;
