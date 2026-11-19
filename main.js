@@ -165,8 +165,6 @@ flightForm.addEventListener("submit", async (e) => {
 
         const flightsData = await fetchData(url);
 
-        console.log(flightsData);
-
         // No results
         if (flightsData.length === 0) {
 

@@ -418,19 +418,19 @@ navLinks.querySelectorAll("a").forEach(link => {
         }
 
         //fetch data from json file
-        async function fetchData(language) {    
+        async function fetchData(language) {   
+            
+        // API endpoint
+        const endpoint = language === "en" ? "api" : "api/ar";
+
+        const url = `https://ex-api-o3fy.onrender.com/${endpoint}`;
+
         // fetch data
-        const responseEn = await fetch(`https://ex-api-o3fy.onrender.com/api`)
-        const responseAr = await fetch(`https://ex-api-o3fy.onrender.com/api/ar`)
+        const response = await fetch(url);
 
 
-        // english data
-        const EnData = await responseEn.json();
-
-        // arabic data
-        const ArData = await responseAr.json();
-
-        const flightsData = language === 'en' ? EnData : ArData
+        // All Flight data
+        const flightsData = await response.json();
 
 
         const template = document.getElementById("template")

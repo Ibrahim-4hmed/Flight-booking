@@ -133,17 +133,16 @@ flightForm.addEventListener("submit", function _callee(e) {
 
         case 14:
           flightsData = _context.sent;
-          console.log(flightsData); // No results
 
           if (!(flightsData.length === 0)) {
-            _context.next = 19;
+            _context.next = 18;
             break;
           }
 
           cards.innerHTML = "\n                <div class=\"wrapper\">\n                    <div class=\"no-results-card\">\n                        <div class=\"icon\">\u2708\uFE0F</div>\n                        <h2>\n                            ".concat(currentLang === "ar" ? "لا توجد رحلات" : "No Flights Found", "\n                        </h2>\n                        <p>\n                            ").concat(currentLang === "ar" ? "لم نتمكن من العثور على رحلات تطابق بحثك. حاول تغيير مدينة المغادرة أو الوجهة." : "We couldn't find any flights matching your search. Try changing your departure or destination.", "\n                        </p>\n                    </div>\n                </div>\n            ");
           return _context.abrupt("return");
 
-        case 19:
+        case 18:
           // Clear previous results
           cards.innerHTML = ""; // Create wrapper
 
@@ -164,29 +163,29 @@ flightForm.addEventListener("submit", function _callee(e) {
             wrapper.appendChild(clone);
           });
           cards.appendChild(wrapper);
-          _context.next = 30;
+          _context.next = 29;
           break;
 
-        case 26:
-          _context.prev = 26;
+        case 25:
+          _context.prev = 25;
           _context.t0 = _context["catch"](11);
           console.error("Flight search error:", _context.t0);
           cards.innerHTML = "\n            <div class=\"wrapper\">\n                <div class=\"no-results-card\">\n                    <div class=\"icon\">\u2708\uFE0F</div>\n                    <h2>\n                        ".concat(currentLang === "ar" ? "حدث خطأ" : "Something went wrong", "\n                    </h2>\n                    <p>\n                        ").concat(currentLang === "ar" ? "تعذر تحميل الرحلات. يرجى المحاولة مرة أخرى." : "Unable to load flights. Please try again later.", "\n                    </p>\n                </div>\n            </div>\n        ");
 
-        case 30:
-          _context.prev = 30;
+        case 29:
+          _context.prev = 29;
           stopLoading(); // Remove query parameters from URL
 
           window.history.replaceState({}, document.title, window.location.pathname);
           document.querySelector(".available-flights").style.display = "none";
-          return _context.finish(30);
+          return _context.finish(29);
 
-        case 35:
+        case 34:
         case "end":
           return _context.stop();
       }
     }
-  }, null, null, [[11, 26, 30, 35]]);
+  }, null, null, [[11, 25, 29, 34]]);
 });
 /* =================================
    LOADING STATE
